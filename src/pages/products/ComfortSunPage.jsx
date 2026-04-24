@@ -10,8 +10,8 @@ import { generateProductSchema } from '@/utils/schemaMarkup';
 const LINES = [
   {
     name: 'Polivalente',
-    desc: 'Torres portáteis para exterior (IP 65, Bluetooth) e painéis interiores AHT com Wi-Fi e touchscreen.',
-    uses: ['Interior', 'Exterior', 'Torres'],
+    desc: 'Torres portáteis para exterior (IP 65, Bluetooth) para esplanadas, terraços e eventos ao ar livre.',
+    uses: ['Exterior', 'Torres', 'Bluetooth'],
     color: 'bg-blue-50 border-blue-200',
     tag: 'bg-blue-600',
     path: '/products/comfortsun/polivalente',
@@ -49,7 +49,7 @@ const WHY = [
   'Resistente ao vento: calor direto sem dispersão',
   'Não emite gases, não queima oxigénio, não levanta poeiras',
   'Certificados TÜV para uso exterior com exposição à chuva',
-  'Sem peças móveis, sem manutenção regular',
+  'Sem peças móveis, sem manutenção',
   'Opções Bluetooth e app para controlo remoto',
 ];
 
@@ -131,7 +131,7 @@ export default function ComfortSunPage() {
                 <div className="flex-1">
                   <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Aquecimento que imita o sol</h2>
                   <p className="text-gray-700 leading-relaxed mb-4">
-                    A ComfortSun foi fundada por um engenheiro alemão que desenvolveu os radiadores com a tecnologia de lâmpadas <strong>HeLeN</strong>. A <strong>ComfortSun Ibérica</strong>, com sede operacional em Portugal, distribui diretamente para o mercado ibérico com fornecimento da fábrica alemã.
+                    A ComfortSun foi fundada por um engenheiro alemão que desenvolveu os radiadores com a tecnologia de lâmpadas <strong>HeLeN</strong>. O representante da <strong>ComfortSun</strong> para Portugal e Espanha distribui diretamente para o mercado ibérico com fornecimento da fábrica alemã.
                   </p>
                   <p className="text-gray-700 leading-relaxed mb-4">
                     Ao contrário dos aquecedores convencionais, os modelos ComfortSun <strong>não aquecem o ar</strong>, emitem radiação infravermelha que aquece diretamente pessoas e superfícies, como faz o sol. O resultado é um calor saudável, eficaz e resistente ao vento.
@@ -139,7 +139,7 @@ export default function ComfortSunPage() {
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-3 mt-5">
                     {[
-                      { n: '~100%', label: 'Energia convertida em calor' },
+                      { n: '>90%', label: 'Energia convertida em calor' },
                       { n: 'TÜV', label: 'Certificação alemã' },
                       { n: '4', label: 'Linhas especializadas' },
                     ].map(s => (
@@ -219,11 +219,11 @@ export default function ComfortSunPage() {
                 <img
                   src="/ComfortSun/lampadas.webp"
                   alt="Tipos de lâmpadas ComfortSun: Dark Glow, Low Glow, Low Glare"
-                  className="w-full object-cover"
+                  className="w-full object-contain"
                   loading="lazy"
                 />
                 <div className="bg-gray-50 border border-t-0 border-gray-200 rounded-b-2xl px-4 py-3">
-                  <p className="text-xs text-gray-500">Lâmpadas ComfortSun: <strong>Dark Glow</strong>, <strong>Low Glow</strong> e <strong>Low Glare</strong>, diferentes intensidades luminosas para cada contexto.</p>
+                  <p className="text-xs text-gray-500">Lâmpadas ComfortSun: <strong>Dark Glow</strong>, <strong>Low Glow</strong> e <strong>Low Glare</strong>, diferentes intensidades luminosas para cada contexto. Os quatro tipos de lâmpadas são: <strong>Golden Glare</strong> (standard), <strong>Low Glare</strong> (baixa luminosidade), <strong>White Glare</strong> (luz branca) e <strong>Dark Glare</strong> (quase sem luz, ideal para ambientes fechados).</p>
                 </div>
               </div>
 

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter as Router, Navigate } from 'react-router-dom';
 import { LanguageProvider } from '@/contexts/LanguageContext';
 import ScrollToTop from '@/components/ScrollToTop';
 import Header from '@/components/Header';
@@ -24,7 +24,6 @@ const DrymatPage = lazy(() => import('@/pages/products/DrymatPage'));
 const BioclimatizadoresPage = lazy(() => import('@/pages/products/BioclimatizadoresPage'));
 const EcoFireplacesPage = lazy(() => import('@/pages/products/EcoFireplacesPage'));
 const EsquentadoresPage = lazy(() => import('@/pages/products/EsquentadoresPage'));
-const PainelAHTPage = lazy(() => import('@/pages/products/PainelAHTPage'));
 const PisoRadiantePage = lazy(() => import('@/pages/products/PisoRadiantePage'));
 
 const SolutionsHubPage = lazy(() => import('@/pages/solutions/SolutionsHubPage'));
@@ -80,7 +79,7 @@ function App() {
                   <Route path="/products/bioclimatizadores" element={<BioclimatizadoresPage />} />
                   <Route path="/products/eco-fireplaces" element={<EcoFireplacesPage />} />
                   <Route path="/products/esquentadores" element={<EsquentadoresPage />} />
-                  <Route path="/products/painel-aht" element={<PainelAHTPage />} />
+                  <Route path="/products/painel-aht" element={<Navigate to="/products/duotherm" replace />} />
                   <Route path="/products/piso-radiante" element={<PisoRadiantePage />} />
 
                   <Route path="/solutions" element={<SolutionsHubPage />} />

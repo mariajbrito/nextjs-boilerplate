@@ -85,6 +85,49 @@ export default function DuothermPage() {
                 </div>
               </div>
 
+              {/* AHT Panels — economic alternative */}
+              <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="inline-block bg-indigo-600 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Alternativa Económica</span>
+                </div>
+                <h3 className="font-extrabold text-gray-900 text-xl mb-2">Painel AHT ComfortSun</h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  Para quem procura aquecimento por infravermelhos interior a um preço mais acessível, o <strong>Painel AHT</strong> é a alternativa económica às pedras naturais Duotherm. Com tecnologia de infravermelhos de onda longa, aquece diretamente pessoas e superfícies sem circular ar, num formato discreto e moderno.
+                </p>
+                <div className="grid sm:grid-cols-2 gap-2 mb-4">
+                  {[
+                    'Ecrã LED touchscreen integrado',
+                    'Temperatura ajustável: 16°C a 37°C',
+                    'Conectividade Wi-Fi com app de controlo',
+                    'Timer programável até 9 horas e semanal',
+                    'Duplo termostato interno de segurança',
+                    'Telecomando incluído',
+                    'Montagem em parede, teto ou suporte móvel',
+                    'Sem emissão de gases, sem circulação de poeiras',
+                  ].map((f, i) => (
+                    <div key={i} className="flex items-start gap-2 text-sm text-gray-700 bg-white rounded-xl p-3">
+                      <CheckCircle2 className="w-4 h-4 text-indigo-500 flex-shrink-0 mt-0.5" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {[
+                    { label: 'Aplicação', value: 'Interior' },
+                    { label: 'Temperatura', value: '16°C a 37°C' },
+                    { label: 'Conectividade', value: 'Wi-Fi + App' },
+                    { label: 'Timer', value: 'Até 9h / Semanal' },
+                    { label: 'Cor', value: 'Branco PET' },
+                    { label: 'Montagem', value: 'Parede, teto ou suporte' },
+                  ].map(s => (
+                    <div key={s.label} className="bg-white border border-gray-200 rounded-xl p-3">
+                      <div className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">{s.label}</div>
+                      <div className="font-bold text-gray-900 text-sm">{s.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Photo gallery */}
               <div>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Duotherm em Ambiente Real</h2>

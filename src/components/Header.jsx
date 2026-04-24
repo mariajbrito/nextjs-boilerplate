@@ -15,7 +15,6 @@ const NAV = [
       { label: 'ComfortSun', path: '/products/comfortsun', badge: 'Polivalente' },
       { group: 'Aquecimento Interior' },
       { label: 'Duotherm Radiante', path: '/products/duotherm' },
-      { label: 'Painel AHT', path: '/products/painel-aht' },
       { group: 'Proteção e Conforto' },
       { label: 'ClimateCoating', path: '/products/climatecoating' },
       { label: 'Drymat Anti-Humidade', path: '/products/drymat' },
