@@ -41,7 +41,7 @@ export default function EcoFireplacesPage() {
                 <div className="flex gap-5 items-start mb-4">
                   <div className="flex-1 min-w-0">
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      As biolareiras Herkell a bio-etanol e os grelhadores a pellets oferecem todo o conforto e estética de uma lareira tradicional sem necessidade de chaminé, instalação de gás ou obras de qualquer tipo.
+                      As biolareiras Herkell a bio-etanol oferecem todo o conforto e estética de uma lareira tradicional sem necessidade de chaminé, instalação de gás ou obras de qualquer tipo.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
                       O bio-etanol é um combustível renovável derivado de plantas. A combustão produz apenas vapor de água e CO₂ em quantidades mínimas equivalente ao que expiramos ao respirar.

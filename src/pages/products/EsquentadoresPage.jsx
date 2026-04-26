@@ -78,10 +78,10 @@ export default function EsquentadoresPage() {
                   Água quente<br />quando precisa, sem esperas
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Os <strong>esquentadores instantâneos Clage</strong> são equipamentos elétricos de aquecimento de água sem depósito, produzidos na Alemanha com os mais elevados padrões de qualidade e eficiência energética.
+                  Ao contrário dos esquentadores tradicionais a gás, este produto é totalmente elétrico, tornando-se mais económico.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-6">
-                  Ao contrário dos esquentadores tradicionais com reservatório, os modelos Clage aquecem a água <strong>apenas no momento em que é necessária</strong>, eliminando completamente as perdas de energia e proporcionando água quente imediata com higiene superior.
+                  Em comparação com os termoacumuladores elétricos com reservatório, os modelos Clage aquecem a água apenas no momento em que é necessária, de forma descentralizada, eliminando perdas de energia e garantindo água quente imediata com maior higiene.
                 </p>
                 <div className="flex flex-col gap-2.5">
                   {[

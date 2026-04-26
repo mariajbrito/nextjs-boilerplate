@@ -72,8 +72,11 @@ export default function DuothermPage() {
 
               <div className="bg-orange-50 border border-orange-200 rounded-2xl p-6">
                 <h3 className="font-extrabold text-gray-900 mb-2">Calor Saudável por Radiação</h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className="text-gray-700 text-sm leading-relaxed mb-3">
                   O aquecimento por radiação funciona como o sol aquece os corpos e as superfícies diretamente, sem circular ar ou criar correntes. Resultado: sem poeiras em suspensão, sem ressecamento do ar, melhor para alergias e vias respiratórias.
+                </p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Tanto os aquecedores da Duotherm como o painel AHT funcionam por calor radiante (infravermelhos). A diferença está no tipo de onda utilizada, sendo distinta do aquecimento de exterior da ComfortSun / Solamagic.
                 </p>
               </div>
 

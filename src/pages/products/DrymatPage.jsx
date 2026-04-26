@@ -11,8 +11,8 @@ export default function DrymatPage() {
   const symptoms = ['Manchas escuras nas paredes', 'Cheiro a bolor', 'Salitre e eflorescências', 'Tinta a descascar', 'Paredes frias e húmidas', 'Problemas respiratórios'];
   const how = [
     { step: '1', title: 'Instalação', text: 'O aparelho é colocado estrategicamente numa das paredes com humidade ascendente. Sem obras, sem demolições.' },
-    { step: '2', title: 'Ação', text: 'O equipamento altera a polaridade da água dentro das paredes. A humidade que subia começa a descer e volta à terra.' },
-    { step: '3', title: 'Resultado', text: 'Após alguns meses as paredes ficam progressivamente secas. Redução de 80 a 100% da humidade ascendente.' },
+    { step: '2', title: 'Ação', text: 'O equipamento altera a polaridade da água existente dentro das paredes. Como resultado dessa mudança, a humidade que subia começa a descer e volta para a terra. Após alguns meses, as paredes ficam secas.' },
+    { step: '3', title: 'Resultado', text: 'Após alguns meses as paredes ficam progressivamente secas. Redução de 80 a 100% da humidade ascendente. Em Portugal existem mais de 500 casos de sucesso!' },
   ];
 
   return (
@@ -45,11 +45,8 @@ export default function DrymatPage() {
             <div className="lg:col-span-2 space-y-10">
               <div>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">O Que É o Drymat?</h2>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  O Drymat® é um aparelho desenvolvido e produzido na Alemanha, que se instala <strong>sem obras</strong> numa das paredes com humidade ascendente. É uma das poucas soluções no mercado que realmente seca as paredes e elimina a causa do salitre.
-                </p>
                 <p className="text-gray-700 leading-relaxed mb-5">
-                  O equipamento altera a polaridade da água existente dentro das paredes. Como resultado dessa mudança, a humidade que subia começa a descer e volta para a terra. Após alguns meses, as paredes ficam secas.
+                  O Drymat® é um aparelho desenvolvido e produzido na Alemanha, que se instala <strong>sem obras</strong> numa das paredes com humidade ascendente para resolver esse problema na casa inteira. É uma das poucas soluções no mercado que realmente elimina a causa da humidade ascendente e seca as paredes de forma eficaz. Sem água nas paredes, o salitre deixa de surgir.
                 </p>
                 <div className="rounded-xl overflow-hidden aspect-[4/3] mb-2 max-w-xs">
                   <img src="/Drymat/drymat.jpg" alt="Aparelho Drymat instalado" className="w-full h-full object-cover" loading="lazy" />

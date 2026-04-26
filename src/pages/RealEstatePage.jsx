@@ -153,7 +153,7 @@ export default function RealEstatePage() {
                 Eduardo Catarino
               </h1>
               <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.35rem)', fontWeight: 600, color: '#B84500', marginBottom: '24px', letterSpacing: '0.01em' }}>
-                Consultor Imobiliário · Algarve
+                Consultor Imobiliário · Sotavento Algarvio
               </p>
               <p style={{ fontSize: '17px', color: '#B0AAA6', lineHeight: 1.8, marginBottom: '36px', maxWidth: '480px' }}>
                 Agente imobiliário e empreendedor no setor do conforto térmico. Uma combinação única que oferece ao cliente muito mais do que a mediação tradicional.
@@ -274,8 +274,11 @@ export default function RealEstatePage() {
               <p style={{ fontSize: '16px', color: '#A8A29E', lineHeight: 1.8, marginBottom: '16px' }}>
                 Eduardo Catarino é empreendedor de longa data no setor do conforto térmico e, em simultâneo, agente imobiliário certificado pela EXP Portugal. Esta combinação única permite oferecer um serviço que vai muito além da mediação tradicional.
               </p>
+              <p style={{ fontSize: '16px', color: '#A8A29E', lineHeight: 1.8, marginBottom: '16px' }}>
+                Eduardo acompanha o cliente desde a decisão inicial de comprar ou vender até ao fecho do negócio. Da pesquisa qualificada ao contrato-promessa e à escritura, cada etapa é conduzida com transparência e rigor.
+              </p>
               <p style={{ fontSize: '16px', color: '#A8A29E', lineHeight: 1.8, marginBottom: '28px' }}>
-                Ao acompanhar o cliente na compra ou venda de um imóvel, Eduardo avalia gratuitamente o estado das paredes, o isolamento térmico e a eficiência energética, identificando problemas e apresentando soluções concretas sem obras invasivas.
+                Em cada visita ao imóvel, avalia gratuitamente o estado das paredes, o isolamento térmico e a eficiência energética, identificando problemas e apresentando soluções concretas sem obras invasivas.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                 {[

@@ -11,7 +11,7 @@ export default function ClimateCoatingPage() {
   const products = [
     { name: 'ThermoVital / ThermoPlus', zone: 'Interior', desc: 'Regula a humidade do ar (≈55%), funciona como esponja. Ideal para todas as paredes e tetos interiores.' },
     { name: 'ThermoProtect', zone: 'Exterior', desc: 'Membrana impermeável para fachadas. Reflete o calor solar e protege contra chuva e humidade.' },
-    { name: 'ThermoActive', zone: 'Coberturas', desc: 'Aplicação em coberturas planas e telhados. Reduz drasticamente o ganho de calor no verão.' },
+    { name: 'ThermoActive', zone: 'Coberturas', desc: 'Aplicação em coberturas planas e telhados. Reduz drasticamente a temperatura no verão, graças à reflexão de 92% da radiação UV.' },
   ];
 
   return (
@@ -47,8 +47,11 @@ export default function ClimateCoatingPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   O ClimateCoating® é a marca alemã original de produtos com base em nanotecnologia que formam uma <strong>membrana cerâmica com microesferas de vácuo</strong>. Aplica-se exatamente como uma tinta normal mas os efeitos são radicalmente diferentes.
                 </p>
-                <p className="text-gray-700 leading-relaxed mb-5">
+                <p className="text-gray-700 leading-relaxed mb-4">
                   Esta membrana produz <strong>efeitos endotérmicos</strong> que promovem a secagem de paredes e aumentam o conforto térmico. Estudos internacionais registam economias de <strong>30 a 40%</strong> nos custos de climatização apenas por pintar com estes produtos.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-5">
+                  Climate Coating é aplicado como se fosse uma tinta, mas tecnicamente trata-se de um revestimento líquido altamente respirável, que forma uma membrana flexível e resistente com propriedades endotérmicas. Com base em resultados globais, verifica-se uma poupança energética entre 15% e 40%, dependendo de vários fatores.
                 </p>
                 <blockquote className="border-l-4 border-blue-600 bg-blue-50 rounded-r-2xl px-5 py-4">
                   <p className="text-gray-800 font-bold text-base leading-snug">
@@ -103,7 +106,7 @@ export default function ClimateCoatingPage() {
                     'Aplica-se como tinta convencional',
                     'Proteção exterior contra chuva',
                     'Reduz ganho de calor no verão',
-                    'Produtos para interior, exterior e cobertura',
+                    'Produtos para interior, exterior e cobertura, aplicações industriais, madeiras e muito mais.',
                     'Nanotecnologia testada internacionalmente',
                   ].map((b, i) => (
                     <div key={i} className="flex items-start gap-2 text-sm text-gray-700">

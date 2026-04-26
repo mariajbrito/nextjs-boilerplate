@@ -151,15 +151,13 @@ export default function ComfortSunPage() {
                   </div>
                 </div>
 
-                {/* Vertical video */}
+                {/* Product image */}
                 <div className="flex-shrink-0 hidden sm:block" style={{ width: '180px' }}>
-                  <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: '9/16' }}>
-                    <iframe
-                      src="https://www.youtube.com/embed/gOkds_PFvpE"
-                      title="ComfortSun Aquecimento Infravermelhos"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 w-full h-full"
+                  <div className="relative w-full rounded-2xl overflow-hidden shadow-lg" style={{ aspectRatio: '3/4' }}>
+                    <img
+                      src="/ComfortSun/esplanada.png"
+                      alt="ComfortSun aquecedor infravermelhos em esplanada"
+                      className="absolute inset-0 w-full h-full object-cover"
                       loading="lazy"
                     />
                   </div>
@@ -223,7 +221,7 @@ export default function ComfortSunPage() {
                   loading="lazy"
                 />
                 <div className="bg-gray-50 border border-t-0 border-gray-200 rounded-b-2xl px-4 py-3">
-                  <p className="text-xs text-gray-500">Lâmpadas ComfortSun: <strong>Dark Glow</strong>, <strong>Low Glow</strong> e <strong>Low Glare</strong>, diferentes intensidades luminosas para cada contexto. Os quatro tipos de lâmpadas são: <strong>Golden Glare</strong> (standard), <strong>Low Glare</strong> (baixa luminosidade), <strong>White Glare</strong> (luz branca) e <strong>Dark Glare</strong> (quase sem luz, ideal para ambientes fechados).</p>
+                  <p className="text-xs text-gray-500">Os quatro tipos de lâmpadas são: <strong>Golden Glare</strong> (standard), <strong>Low Glare</strong> (baixa luminosidade), <strong>White Glare</strong> (luz branca) e <strong>Dark Glare</strong> (quase sem luz, ideal para ambientes fechados).</p>
                 </div>
               </div>
 
