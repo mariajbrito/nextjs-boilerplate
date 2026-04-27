@@ -105,7 +105,7 @@ export default function PisoRadiantePage() {
                   Com o termostato programável incluído, é possível definir horários e temperaturas para cada divisão, maximizando o conforto e a eficiência energética.
                 </p>
                 <p className="text-gray-700 leading-relaxed mt-4">
-                  A Evoluimos Comércio disponibiliza igualmente piso radiante da marca Duotherm. O que distingue o AHT dos restantes pisos radiantes elétricos é o facto de ser ultrafino, em metal amorfo, e de aquecimento rápido, com apenas 1 mm de espessura e 15 anos de garantia do fabricante.
+                  A Evoluimos Comércio disponibiliza igualmente <strong>piso radiante da marca Duotherm</strong>. O que distingue o AHT dos restantes pisos radiantes elétricos é o facto de ser ultrafino, em metal amorfo, e de aquecimento rápido, com apenas 1 mm de espessura e 15 anos de garantia do fabricante.
                 </p>
               </div>
 

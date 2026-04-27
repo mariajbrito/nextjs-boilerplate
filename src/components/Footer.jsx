@@ -79,6 +79,26 @@ export default function Footer() {
               </li>
             </ul>
             <p style={{ marginTop: '20px', fontSize: '12px', color: '#6A6460' }}>NIF: {COMPANY.nif}</p>
+            <div style={{ marginTop: '16px', display: 'flex', gap: '10px' }}>
+              <a href="https://www.facebook.com/evoluimoscomercio/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(184,69,0,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8A8480', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#F0EBE3'; e.currentTarget.style.background = 'rgba(184,69,0,0.22)'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#8A8480'; e.currentTarget.style.background = 'rgba(184,69,0,0.12)'; }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/evoluimos_edu?igsh=MW10ZmltZ3FrNXAwaA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(184,69,0,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8A8480', textDecoration: 'none', transition: 'color 0.2s, background 0.2s' }}
+                onMouseEnter={e => { e.currentTarget.style.color = '#F0EBE3'; e.currentTarget.style.background = 'rgba(184,69,0,0.22)'; }}
+                onMouseLeave={e => { e.currentTarget.style.color = '#8A8480'; e.currentTarget.style.background = 'rgba(184,69,0,0.12)'; }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Produtos */}
@@ -152,6 +172,12 @@ export default function Footer() {
       <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '18px 24px' }}>
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontSize: '13px', color: '#6A6460' }}>© {year} {COMPANY.legalName}. Todos os direitos reservados.</p>
+          <a href="https://digitaldetails.pt/" target="_blank" rel="noopener noreferrer"
+            style={{ fontSize: '12px', color: '#4A4440', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#6A6460'}
+            onMouseLeave={e => e.currentTarget.style.color = '#4A4440'}>
+            Website desenvolvido por Digital Details
+          </a>
           <div style={{ display: 'flex', gap: '20px' }}>
             {[
               { l: 'Sobre', p: '/about' },

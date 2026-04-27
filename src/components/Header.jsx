@@ -144,6 +144,24 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
+            <a href="https://www.facebook.com/evoluimoscomercio/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '34px', height: '34px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', color: '#8A8490', textDecoration: 'none', transition: 'all 0.15s' }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#F0EBE3'; e.currentTarget.style.background = 'rgba(255,255,255,0.10)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = '#8A8490'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com/evoluimos_edu?igsh=MW10ZmltZ3FrNXAwaA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+              style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '34px', height: '34px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', color: '#8A8490', textDecoration: 'none', transition: 'all 0.15s' }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#F0EBE3'; e.currentTarget.style.background = 'rgba(255,255,255,0.10)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = '#8A8490'; e.currentTarget.style.background = 'rgba(255,255,255,0.04)'; }}>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
             <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="Contactar via WhatsApp"
               style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '9px 15px', background: '#16A34A', color: '#fff', borderRadius: '10px', fontWeight: 600, fontSize: '14px', textDecoration: 'none' }}>
               <MessageCircle style={{ width: '16px', height: '16px' }} aria-hidden="true" />
@@ -218,6 +236,22 @@ export default function Header() {
               </div>
 
               <div style={{ padding: '14px', borderTop: '1px solid rgba(255,255,255,0.07)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', paddingBottom: '4px' }}>
+                  <a href="https://www.facebook.com/evoluimoscomercio/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', color: '#8A8490', textDecoration: 'none' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                  </a>
+                  <a href="https://www.instagram.com/evoluimos_edu?igsh=MW10ZmltZ3FrNXAwaA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
+                    style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '40px', height: '40px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.09)', background: 'rgba(255,255,255,0.04)', color: '#8A8490', textDecoration: 'none' }}>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                      <circle cx="12" cy="12" r="4"/>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                  </a>
+                </div>
                 <a href={WA} target="_blank" rel="noopener noreferrer" aria-label="Contactar via WhatsApp"
                   style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '14px', background: '#16A34A', color: '#fff', borderRadius: '12px', fontWeight: 700, fontSize: '15px', textDecoration: 'none' }}>
                   <MessageCircle style={{ width: '18px', height: '18px' }} aria-hidden="true" />
