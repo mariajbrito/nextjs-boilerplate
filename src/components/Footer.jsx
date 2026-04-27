@@ -173,10 +173,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontSize: '13px', color: '#6A6460' }}>© {year} {COMPANY.legalName}. Todos os direitos reservados.</p>
           <a href="https://digitaldetails.pt/" target="_blank" rel="noopener noreferrer"
-            style={{ fontSize: '12px', color: '#4A4440', textDecoration: 'none', transition: 'color 0.2s' }}
-            onMouseEnter={e => e.currentTarget.style.color = '#6A6460'}
-            onMouseLeave={e => e.currentTarget.style.color = '#4A4440'}>
-            Website desenvolvido por Digital Details
+            style={{ fontSize: '13px', color: '#8A8480', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => e.currentTarget.style.color = '#F0EBE3'}
+            onMouseLeave={e => e.currentTarget.style.color = '#8A8480'}>
+            Website desenvolvido por <span style={{ color: '#F0A020', fontWeight: 600 }}>Digital Details</span>
           </a>
           <div style={{ display: 'flex', gap: '20px' }}>
             {[
