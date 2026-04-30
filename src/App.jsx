@@ -37,6 +37,7 @@ const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const RealEstatePage = lazy(() => import('@/pages/RealEstatePage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
@@ -93,6 +94,7 @@ function App() {
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/real-estate" element={<RealEstatePage />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+                  <Route path="/terms" element={<TermsPage />} />
                   <Route path="/faqs" element={<FAQPage />} />
 
                   {/* 404 deve ser sempre a última rota */}

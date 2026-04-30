@@ -36,18 +36,18 @@ const FAQS = [
   },
   {
     cat: 'infrared',
-    q: 'Com que rapidez os aquecedores aquecem um espaço?',
+    q: 'Com que rapidez os aquecedores ComfortSun e Solamagic aquecem?',
     a: 'O aquecimento é praticamente imediato. Como o calor é emitido diretamente para superfícies e pessoas, sente-se a diferença em segundos, ao contrário dos sistemas tradicionais que demoram a aquecer todo o volume de ar.',
   },
   {
     cat: 'infrared',
     q: 'Posso usar aquecedores por infravermelhos no exterior?',
-    a: 'Sim, são a solução ideal para esplanadas, jardins e terraços. O calor não é disperso pelo vento, proporcionando conforto mesmo em dias frios e ventosos. Modelos como o Solamagic e ComfortSun têm certificação IP65 para uso ao ar livre.',
+    a: 'Sim, são a solução ideal para esplanadas, jardins e terraços. O calor não é disperso pelo vento, proporcionando conforto mesmo em dias frios e ventosos. Modelos como o Solamagic e ComfortSun têm certificação IP25 para uso ao ar livre.',
   },
   {
     cat: 'infrared',
     q: 'Posso usar aquecedores por infravermelhos no interior?',
-    a: 'Sim. Modelos como o ComfortSun Especializado, os painéis AHT e as pedras da Duotherm são concebidos especificamente para interiores, sem ruído, sem odores, sem circulação de poeiras. São particularmente indicados para pessoas com alergias ou sensibilidades respiratórias.',
+    a: 'Sim. Os painéis AHT e as pedras da Duotherm são concebidos especificamente para interiores, sem ruído, sem odores, sem circulação de poeiras. São particularmente indicados para pessoas com alergias ou sensibilidades respiratórias.',
   },
   {
     cat: 'infrared',
@@ -67,12 +67,12 @@ const FAQS = [
   {
     cat: 'infrared',
     q: 'O que é a linha Especializado da ComfortSun?',
-    a: 'A linha Especializado da ComfortSun destina-se a ambientes com requisitos específicos. Inclui o aquecedor CSB para casa de banho, certificado IP 24 (proteção contra salpicos) e aprovado pelo TÜV, disponível em 1000W, 1200W e 1400W, com telecomando e timer programável. Inclui também um aquecedor para fraldário de bebé com lâmpada Low Glare de iluminação suave e proteção de dupla camada para máxima segurança.',
+    a: 'A linha Especializado da ComfortSun destina-se a ambientes com requisitos específicos. Inclui o aquecedor CSB para casa de banho, certificado IP25 (proteção contra salpicos) e aprovado pelo TÜV, disponível em 1000W, 1200W e 1400W, com telecomando e timer programável. Inclui também um aquecedor para fraldário de bebé com lâmpada Low Glare de iluminação suave e proteção de dupla camada para máxima segurança.',
   },
   {
     cat: 'infrared',
-    q: 'O que são os painéis AHT da linha Polivalente ComfortSun?',
-    a: 'Os painéis AHT são aquecedores de infravermelhos para interior integrados na linha Polivalente da ComfortSun. Funcionam com infravermelhos de onda longa, ideais para aquecimento de divisões interiores. Incluem ecrã LED touchscreen, conectividade Wi-Fi com app de controlo, timer programável, duplo termostato de segurança e temperatura ajustável entre 16°C e 37°C. São silenciosos, sem emissão de gases e sem circulação de poeiras.',
+    q: 'O que são os painéis AHT?',
+    a: 'Os painéis AHT são aquecedores de infravermelhos para interior. Funcionam com infravermelhos de onda longa, ideais para aquecimento de divisões interiores. Incluem ecrã LED touchscreen, conectividade Wi-Fi com app de controlo, timer programável, duplo termostato de segurança e temperatura ajustável entre 16°C e 37°C. São silenciosos, sem emissão de gases e sem circulação de poeiras.',
   },
   {
     cat: 'infrared',
@@ -94,7 +94,7 @@ const FAQS = [
   {
     cat: 'moisture',
     q: 'Quanto tempo demora o Drymat a secar as paredes?',
-    a: 'Os resultados visíveis surgem entre 2 a 6 meses, dependendo da espessura das paredes e do grau de humidade. A redução de humidade situa-se entre 80% e 100%.',
+    a: 'Os resultados visíveis surgem entre 2 a 6 meses, dependendo da espessura das paredes e do grau de humidade.',
   },
   {
     cat: 'moisture',
@@ -104,7 +104,7 @@ const FAQS = [
   {
     cat: 'moisture',
     q: 'O que é o ClimateCoating e como funciona?',
-    a: 'É um revestimento cerâmico de nanotecnologia alemã que se aplica como tinta normal mas funciona como uma membrana térmica inteligente. Regula a humidade do ar (~55%), seca paredes húmidas, e pode reduzir custos de climatização em 30-40%. Disponível para interiores (ThermoVital/ThermoPlus), exteriores (ThermoProtect) e coberturas (ThermoActive).',
+    a: 'É um revestimento cerâmico de nanotecnologia alemã que se aplica como tinta normal mas funciona como uma membrana térmica inteligente. Regula a humidade do ar (~55%), seca paredes húmidas e pode reduzir custos de climatização entre 10% e 40%, de acordo com estudos efetuados. Disponível para interiores (ThermoVital/ThermoPlus), exteriores (ThermoProtect) e coberturas (ThermoActive).',
   },
   {
     cat: 'moisture',
@@ -121,7 +121,7 @@ const FAQS = [
   {
     cat: 'interior',
     q: 'O que são os radiadores Duotherm?',
-    a: 'São sistemas de aquecimento por radiação infravermelha integrados em pedra natural. Fabricados com tecnologia alemã e produção portuguesa, funcionam como elemento decorativo e de aquecimento. Existe também a versão Deluxe com placa de vidro de nanotecnologia.',
+    a: 'São sistemas de aquecimento por radiação infravermelha integrados em pedra natural. Fabricados com tecnologia alemã e produção portuguesa, funcionam como elemento decorativo e de aquecimento.',
   },
   {
     cat: 'interior',
@@ -170,7 +170,7 @@ const FAQS = [
   {
     cat: 'safety',
     q: 'Os aquecedores são resistentes às intempéries?',
-    a: 'Os modelos para exterior são concebidos para resistir a condições adversas. Modelos com classificação IP65 (ComfortSun, Solamagic) são totalmente resistentes à água e poeiras. Modelos com certificação TÜV podem permanecer expostos à chuva.',
+    a: 'Os modelos para exterior são concebidos para resistir a condições adversas. Modelos com classificação IP25 (ComfortSun, Solamagic) são resistentes à água e poeiras. Modelos com certificação TÜV podem permanecer expostos à chuva.',
   },
   {
     cat: 'safety',
@@ -187,13 +187,9 @@ const FAQS = [
   {
     cat: 'purchase',
     q: 'Que garantias oferecem os vossos produtos?',
-    a: 'As garantias variam por produto: Duotherm oferece 10 anos de garantia de fábrica, e todos os produtos ComfortSun e Solamagic têm certificação TÜV e suporte técnico do fabricante alemão.',
+    a: 'As garantias variam por produto: a Duotherm oferece 10 anos de garantia de fábrica, e os produtos ComfortSun e Solamagic têm 3 anos de garantia.',
   },
-  {
-    cat: 'purchase',
-    q: 'O envio está incluído no preço?',
-    a: 'Sim, a entrega está incluída para Portugal continental. Para produtos ComfortSun e Solamagic, a entrega é feita diretamente da fábrica na Alemanha, garantindo que recebe equipamento em perfeitas condições.',
-  },
+
   {
     cat: 'purchase',
     q: 'Devo consultar um profissional antes de comprar?',

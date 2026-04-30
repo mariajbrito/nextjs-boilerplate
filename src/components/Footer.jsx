@@ -142,6 +142,7 @@ export default function Footer() {
                 { label: 'Serviços Imobiliários', path: '/real-estate' },
                 { label: 'Contactos', path: '/contact' },
                 { label: 'Política de Privacidade', path: '/privacy-policy' },
+                { label: 'Termos e Condições', path: '/terms' },
               ].map(l => (
                 <li key={l.path}>
                   <Link to={l.path} style={{ color: '#7A7470', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}
@@ -183,6 +184,7 @@ export default function Footer() {
               { l: 'Sobre', p: '/about' },
               { l: 'Contactos', p: '/contact' },
               { l: 'Privacidade', p: '/privacy-policy' },
+              { l: 'Termos', p: '/terms' },
             ].map(x => (
               <Link key={x.p} to={x.p} style={{ color: '#6A6460', fontSize: '13px', textDecoration: 'none' }}
                 onMouseEnter={e => e.target.style.color = '#8A8480'}
