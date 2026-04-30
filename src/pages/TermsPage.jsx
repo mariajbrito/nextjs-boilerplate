@@ -25,7 +25,7 @@ export default function TermsPage() {
             },
             {
               title: '2. Objeto',
-              content: 'Os presentes Termos e Condições regulam o acesso e utilização do website evoluimoscomercio.com, bem como a comercialização de produtos e serviços de aquecimento por infravermelhos, eliminação de humidade, isolamento térmico e climatização.'
+              content: 'Os presentes Termos e Condições regulam o acesso e utilização do website evolucom.pt, bem como a comercialização de produtos e serviços de aquecimento por infravermelhos, eliminação de humidade, isolamento térmico e climatização.'
             },
             {
               title: '3. Processo de Encomenda e Celebração do Contrato',
