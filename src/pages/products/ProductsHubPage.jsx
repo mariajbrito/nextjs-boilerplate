@@ -31,9 +31,9 @@ const ALL_PRODUCTS = [
   {
     name: 'Duotherm',
     tag: 'AQUECIMENTO RADIANTE',
-    desc: 'Radiadores em pedra natural produzidos na Alemanha. Calor saudável por infravermelhos, sem emissão de CO₂, com termostato e efeito decorativo único.',
+    desc: 'Radiadores em pedra natural produzidos em Portugal. Calor saudável por infravermelhos, sem emissão de CO₂, com termostato e efeito decorativo único.',
     path: '/products/duotherm',
-    img: '/Duotherm/saladeestar.png',
+    img: '/Duotherm/pedraduotherm.jpeg',
   },
   {
     name: 'ClimateCoating',
