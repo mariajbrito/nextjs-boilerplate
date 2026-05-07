@@ -292,8 +292,8 @@ export default function FAQPage() {
   return (
     <>
       <SEOHead
-        title="Perguntas Frequentes | Evoluimos Comércio"
-        description="Respostas sobre aquecimento infravermelho, eliminação de humidade, isolamento térmico, biolareiras, bioclimatizadores e mais. Tudo sobre as nossas soluções de conforto."
+        title="Perguntas Frequentes sobre Aquecimento e Humidade | FAQ"
+        description="Respostas sobre aquecedores infravermelhos, eliminação de humidade ascendente, isolamento térmico, esquentadores elétricos, bioclimatizadores e biolareiras."
         canonical="/faqs"
         schemas={[faqSchema]}
       />

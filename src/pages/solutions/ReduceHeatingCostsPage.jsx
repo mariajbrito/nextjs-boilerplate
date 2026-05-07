@@ -13,11 +13,11 @@ const ReduceHeatingCostsPage = () => {
 
   const title = isPt ? 'Reduzir Custos de Aquecimento' : 'Reduce Heating Costs';
   const metaTitle = isPt
-    ? 'Reduzir Custos de Aquecimento até 40% | Duotherm + ClimateCoating'
-    : 'Reduce Heating Costs by up to 40% | Duotherm + ClimateCoating';
+    ? 'Como Reduzir Custos de Aquecimento até 40%'
+    : 'How to Reduce Heating Costs by up to 40%';
   const desc = isPt
-    ? 'Reduza os custos de aquecimento entre 30 e 40% com radiadores de pedra natural Duotherm e revestimento cerâmico ClimateCoating. Retorno do investimento em 3 a 5 anos.'
-    : 'Reduce heating costs by 30 to 40% with Duotherm natural stone radiators and ClimateCoating ceramic coating. Return on investment in 3 to 5 years.';
+    ? 'Reduza a fatura de aquecimento entre 30 e 40% com radiadores Duotherm em pedra natural e revestimento cerâmico ClimateCoating. Retorno do investimento em 3 a 5 anos.'
+    : 'Cut heating bills by 30 to 40% with Duotherm natural stone radiators and ClimateCoating ceramic coating. Return on investment in 3 to 5 years.';
 
   const faqs = isPt ? [
     { question: 'Quanto posso poupar na fatura de energia?', answer: 'Os nossos clientes registam poupanças de 30 a 40% nos custos de aquecimento, dependendo do isolamento existente e dos hábitos de uso.' },

@@ -1,0 +1,18 @@
+{
+  "name": "Evoluimos Comércio",
+  "short_name": "Evoluimos",
+  "description": "Aquecimento, arrefecimento e proteção de edifícios com tecnologia europeia de alta eficiência.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0F0F11",
+  "theme_color": "#0F0F11",
+  "lang": "pt-PT",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

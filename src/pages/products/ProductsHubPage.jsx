@@ -128,8 +128,8 @@ export default function ProductsHubPage() {
   return (
     <>
       <SEOHead
-        title="Produtos de Aquecimento e Conforto Térmico | Evoluimos Comércio"
-        description="Solamagic, ComfortSun, Duotherm, ClimateCoating, Drymat, Bioclimatizadores e Esquentadores Clage. Tecnologia alemã para aquecimento, arrefecimento e proteção térmica."
+        title="Aquecimento, Anti-Humidade e Arrefecimento | Produtos Evoluimos"
+        description="Aquecedores infravermelhos para esplanadas e interior, eliminação de humidade ascendente, isolamento térmico cerâmico, esquentadores elétricos e bioclimatizadores."
         canonical="/products"
       />
 

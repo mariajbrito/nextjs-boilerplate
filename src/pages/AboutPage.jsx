@@ -13,8 +13,8 @@ export default function AboutPage() {
   return (
     <>
       <SEOHead
-        title="Sobre Nós Eduardo Catarino | Evoluimos Comércio"
-        description="Fundada por Eduardo Catarino em 2018. Especialistas em conforto térmico sustentável aquecimento, arrefecimento e proteção de edifícios com tecnologia alemã."
+        title="Sobre a Evoluimos Comércio | Especialistas em Conforto Térmico"
+        description="Empresa fundada em 2018 por Eduardo Catarino, no Algarve. Distribuidor oficial de Solamagic, Drymat, ClimateCoating e Clage. Mais de 25 anos de experiência."
         canonical="/about"
         schemas={[generateOrganizationSchema()]}
       />

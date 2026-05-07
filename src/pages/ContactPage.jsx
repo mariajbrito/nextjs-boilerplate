@@ -143,8 +143,8 @@ export default function ContactPage() {
   return (
     <>
       <SEOHead
-        title="Contactos | Evoluimos Comércio"
-        description="Fale connosco via WhatsApp, telefone ou email. Análise gratuita e sem compromisso."
+        title="Pedir Análise Gratuita ao Imóvel | Contactos"
+        description="Análise gratuita ao seu projeto de aquecimento, humidade ou arrefecimento. Fale connosco por WhatsApp, telefone ou email. Atendimento em todo o Portugal."
         canonical="/contact"
         schemas={[generateLocalBusinessSchema(), generateContactSchema()]}
       />

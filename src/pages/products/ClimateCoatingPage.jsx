@@ -17,8 +17,8 @@ export default function ClimateCoatingPage() {
   return (
     <>
       <SEOHead
-        title="ClimateCoating Revestimento Térmico Cerâmico | Evoluimos Comércio"
-        description="ClimateCoating: membrana cerâmica de nanotecnologia alemã. Isola termicamente, regula humidade, aplica-se como tinta. Economias de 30-40% em climatização."
+        title="Tinta Isolante Térmica e Anti-Humidade | ClimateCoating"
+        description="Membrana cerâmica ClimateCoating: isola termicamente fachadas, regula humidade interior, aplica-se como tinta. 30 a 40% menos custos de climatização, garantia 15 anos."
         canonical="/products/climatecoating"
         image="/ClimateCoating/bannermarketing.png"
         schemas={[generateProductSchema({ name: 'ClimateCoating', description: 'Membrana cerâmica de nanotecnologia alemã. Isola termicamente, regula humidade, aplica-se como tinta. Economias de 30-40% em climatização.', image: `${COMPANY.baseUrl}/ClimateCoating/bannermarketing.png`, brand: 'ClimateCoating', url: `${COMPANY.baseUrl}/products/climatecoating` })]}

@@ -325,8 +325,8 @@ export default function HomePage() {
       `}</style>
 
       <SEOHead
-        title="Evoluimos Comércio | Conforto Térmico Sustentável"
-        description="Aquecimento, arrefecimento e proteção de edifícios com tecnologia europeia de alta eficiência. Distribuidores oficiais de Solamagic, Duotherm, Drymat e mais."
+        title="Aquecimento, Anti-Humidade e Conforto Térmico | Evoluimos Comércio"
+        description="Soluções de aquecimento exterior e interior, eliminação de humidade nas paredes e arrefecimento natural. Tecnologia alemã, instalação sem obras, no Algarve e em Portugal."
         canonical="/"
         schemas={[generateLocalBusinessSchema(), generateOrganizationSchema()]}
       />

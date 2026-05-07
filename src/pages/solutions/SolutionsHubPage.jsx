@@ -10,10 +10,13 @@ import { WA_URL as WA } from '@/config/company';
 const SolutionsHubPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
 
-  const title = language === 'pt' ? 'Soluções para Cada Necessidade' : 'Solutions for Every Need';
+  const title = language === 'pt' ? 'Soluções de Conforto Térmico e Anti-Humidade' : 'Thermal Comfort and Anti-Moisture Solutions';
+  const metaTitle = language === 'pt'
+    ? 'Soluções de Conforto Térmico e Anti-Humidade | Evoluimos Comércio'
+    : 'Thermal Comfort and Anti-Moisture Solutions | Evoluimos Comércio';
   const desc = language === 'pt'
-    ? 'Eliminar humidade, reduzir custos de aquecimento, aquecer esplanadas ou tornar o negócio mais sustentável temos a solução certa para si.'
-    : 'Eliminate moisture, reduce heating costs, heat outdoor spaces, or make your business more sustainable we have the right solution for you.';
+    ? 'Eliminar humidade nas paredes, aquecer esplanadas, reduzir custos de aquecimento, arrefecer sem ar condicionado. Soluções por problema, com tecnologia europeia.'
+    : 'Eliminate wall moisture, heat patios, reduce heating costs, cool without air conditioning. Problem-driven solutions with European technology.';
 
   const solutions = [
     {
@@ -55,7 +58,7 @@ const SolutionsHubPage = () => {
 
   return (
     <>
-      <SEOHead title={`${title} | Evoluimos Comércio`} description={desc} canonical="/solutions" language={language} image="/semhumidade.png" />
+      <SEOHead title={metaTitle} description={desc} canonical="/solutions" language={language} image="/semhumidade.png" />
       <div className="min-h-screen pt-24 pb-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <Breadcrumb items={[{ label: t?.nav?.home || 'Home', path: '/' }, { label: t?.nav?.solutions || 'Solutions', path: '/solutions' }]} />

@@ -14,11 +14,11 @@ const ArrefecimentoNaturalPage = () => {
 
   const title = isPt ? 'Arrefecimento Natural sem Ar Condicionado' : 'Natural Cooling Without Air Conditioning';
   const metaTitle = isPt
-    ? 'Arrefecimento Natural por Evaporação | Alternativa ao Ar Condicionado'
-    : 'Natural Evaporative Cooling | Air Conditioning Alternative';
+    ? 'Casa Fresca sem Ar Condicionado | Arrefecimento Natural'
+    : 'Cool Home Without Air Conditioning | Natural Cooling';
   const desc = isPt
-    ? 'Arrefecimento ecológico por evaporação: sem compressor, sem gases, até 80% menos consumo que o ar condicionado. Ideal para espaços abertos, armazéns, restaurantes e habitações.'
-    : 'Eco-friendly evaporative cooling: no compressor, no gases, up to 80% less consumption than air conditioning. Ideal for open spaces, warehouses, restaurants and homes.';
+    ? 'Arrefecimento ecológico por evaporação, sem compressor e sem gases. Até 80% menos consumo do que o ar condicionado, ideal para esplanadas, lojas, armazéns e habitação.'
+    : 'Eco-friendly evaporative cooling, no compressor or gases. Up to 80% less consumption than air conditioning, ideal for patios, shops, warehouses and homes.';
 
   const faqs = isPt ? [
     { question: 'Como funciona o arrefecimento por evaporação?', answer: 'A água evapora ao passar por painéis alveolares, absorvendo o calor do ar e reduzindo a temperatura ambiente em 5 a 15 °C. É o mesmo princípio da brisa junto ao mar ou de um rio.' },

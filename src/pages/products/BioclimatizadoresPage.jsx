@@ -17,8 +17,8 @@ export default function BioclimatizadoresPage() {
   return (
     <>
       <SEOHead
-        title="Bioclimatizadores Arrefecimento Natural por Evaporação | Evoluimos Comércio"
-        description="Bioclimatizadores Elite e MF60. Arrefecimento natural sem compressor, baixo consumo, sem gases. Alternativa saudável ao ar condicionado."
+        title="Bioclimatizadores | Alternativa Saudável ao Ar Condicionado"
+        description="Bioclimatizadores Elite e MF60 arrefecem por evaporação. Sem compressor, sem gases, até 80% menos consumo. Solução para casa, escritório, restaurante e esplanada."
         canonical="/products/bioclimatizadores"
         image="/Bioclimatizadores/bioclimatizadorquarto.png"
         schemas={[generateProductSchema({ name: 'Bioclimatizadores', description: 'Arrefecimento natural sem compressor, baixo consumo, sem gases. Alternativa saudável ao ar condicionado.', image: `${COMPANY.baseUrl}/Bioclimatizadores/bioclimatizadorquarto.png`, brand: 'Evoluimos Comércio', url: `${COMPANY.baseUrl}/products/bioclimatizadores` })]}

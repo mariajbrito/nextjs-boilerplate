@@ -57,8 +57,8 @@ export default function ComfortSunEspecializadoPage() {
   return (
     <>
       <SEOHead
-        title="ComfortSun Aquecimento Especializado, Casa de Banho e Fraldário | Evoluimos Comércio"
-        description="Aquecimento especializado ComfortSun: aquecedores para casa de banho (IP24, TÜV) e fraldário para bebés. Segurança e conforto em ambientes húmidos."
+        title="Aquecedor para Casa de Banho e Fraldário | ComfortSun"
+        description="Aquecedores infravermelhos ComfortSun para casa de banho (IP24, TÜV) e fraldário de bebé. Aquecimento instantâneo seguro em ambientes húmidos."
         canonical="/products/comfortsun/especializado"
         schemas={[generateProductSchema({ name: 'ComfortSun Especializado', description: 'Aquecedores para casa de banho (IP24, TÜV) e fraldário para bebés. Segurança e conforto em ambientes húmidos.', image: `${COMPANY.baseUrl}/ComfortSun/aquecedorwc.jpg`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/especializado` })]}
       />

@@ -53,8 +53,8 @@ export default function ComfortSunProfessionalPage() {
   return (
     <>
       <SEOHead
-        title="ComfortSun Linha Profissional, Aquecimento Infravermelhos Comercial | Evoluimos Comércio"
-        description="Linha Profissional ComfortSun: aquecedores infravermelhos de 1400W e 2000W para hotéis, restaurantes, spas e esplanadas. Tecnologia alemã."
+        title="Aquecimento para Restaurantes, Hotéis e Spas | ComfortSun Pro"
+        description="Aquecedores infravermelhos profissionais ComfortSun 1400W e 2000W para esplanadas, hotéis, restaurantes e spas. Tecnologia alemã, instalação rápida."
         canonical="/products/comfortsun/professional"
         image="/ComfortSun/esplanada.png"
         schemas={[generateProductSchema({ name: 'ComfortSun Linha Profissional', description: 'Aquecedores infravermelhos de 1400W e 2000W para hotéis, restaurantes, spas e esplanadas. Tecnologia alemã.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/professional` })]}

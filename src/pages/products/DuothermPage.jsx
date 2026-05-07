@@ -23,8 +23,8 @@ export default function DuothermPage() {
   return (
     <>
       <SEOHead
-        title="Duotherm Aquecimento Radiante em Pedra Natural | Evoluimos Comércio"
-        description="Radiadores Duotherm em pedra natural. Sistema de aquecimento por infravermelhos produzido em Portugal, tecnologia alemã. Sem CO₂, sem manutenção."
+        title="Radiadores em Pedra Natural | Aquecimento Saudável Sem CO2"
+        description="Radiadores Duotherm em pedra natural com aquecimento por infravermelhos. Baixo consumo, sem CO2, sem manutenção. Produção em Portugal, tecnologia alemã."
         canonical="/products/duotherm"
         image="/Duotherm/saladeestar.png"
         schemas={[generateProductSchema({ name: 'Duotherm', description: 'Radiadores em pedra natural com aquecimento por infravermelhos. Produzido em Portugal, tecnologia alemã. Sem CO2, sem manutenção.', image: `${COMPANY.baseUrl}/Duotherm/saladeestar.png`, brand: 'Duotherm', url: `${COMPANY.baseUrl}/products/duotherm` })]}

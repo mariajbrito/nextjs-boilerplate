@@ -90,8 +90,8 @@ export default function ComfortSunPage() {
   return (
     <>
       <SEOHead
-        title="ComfortSun Aquecimento Infravermelhos | Evoluimos Comércio"
-        description="Gama ComfortSun de aquecedores infravermelhos: Polivalente, Profissional, Deluxe e Especializado. Tecnologia alemã TÜV para esplanadas, hotéis, jardins e interior."
+        title="Aquecedores Infravermelhos Interior e Exterior | ComfortSun"
+        description="Quatro linhas ComfortSun para aquecer qualquer espaço sem obras: torres exterior, painéis interior, casa de banho. Tecnologia alemã com TÜV. Pedir orçamento."
         canonical="/products/comfortsun"
         image="/ComfortSun/esplanada.png"
         schemas={[generateProductSchema({ name: 'ComfortSun', description: 'Gama de aquecedores infravermelhos para esplanadas, hotéis, jardins e interior. Tecnologia alemã TÜV.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun` })]}

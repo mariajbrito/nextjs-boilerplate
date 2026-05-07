@@ -27,8 +27,8 @@ export default function SolamagicPage() {
   return (
     <>
       <SEOHead
-        title="Solamagic Infravermelhos Premium para Esplanadas | Evoluimos Comércio"
-        description="Representante nacional Solamagic em Portugal. Aquecedores infravermelhos de onda curta para exterior. Calor imediato, 92% eficiência, made in Germany."
+        title="Aquecedores Infravermelhos para Esplanadas | Solamagic Portugal"
+        description="Aquecedores Solamagic para esplanadas, terraços e restaurantes. Calor imediato à prova de chuva, 92% de eficiência, made in Germany. Análise gratuita."
         canonical="/products/solamagic"
         image="/Solamagic/aquecedorexterior.png"
         schemas={[generateProductSchema({ name: 'Solamagic', description: 'Aquecedores infravermelhos de onda curta para exterior. Calor imediato, 92% eficiência, made in Germany.', image: `${COMPANY.baseUrl}/Solamagic/aquecedorexterior.png`, brand: 'Solamagic', url: `${COMPANY.baseUrl}/products/solamagic` })]}

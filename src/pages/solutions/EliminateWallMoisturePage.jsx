@@ -13,11 +13,11 @@ const EliminateWallMoisturePage = () => {
   const isPt = language === 'pt';
   const title = isPt ? 'Eliminar Humidade nas Paredes' : 'Eliminate Wall Moisture';
   const metaTitle = isPt
-    ? 'Eliminar Humidade Ascendente nas Paredes | DRYMAT + ClimateCoating'
-    : 'Eliminate Ascending Wall Moisture | DRYMAT + ClimateCoating';
+    ? 'Como Eliminar Humidade Ascendente nas Paredes Sem Obras'
+    : 'How to Eliminate Ascending Wall Moisture Without Renovation';
   const desc = isPt
-    ? 'Solução definitiva para humidade ascendente e condensação. Reduza 80-100% da humidade nas paredes em 2-6 meses com DRYMAT e ClimateCoating.'
-    : 'Definitive solution for ascending moisture and condensation. Reduce 80-100% of wall moisture in 2-6 months with DRYMAT and ClimateCoating.';
+    ? 'Solução para humidade ascendente, salitre e condensação nas paredes sem obras. Drymat reduz 80 a 100% da humidade em 2 a 6 meses. ClimateCoating regula o ar interior.'
+    : 'Solution for ascending moisture, saltpeter and condensation without renovation. Drymat reduces wall moisture by 80 to 100% in 2 to 6 months, with ClimateCoating support.';
 
   const faqs = isPt ? [
     { question: 'Quanto tempo demora a eliminar a humidade?', answer: 'Em 2 a 6 meses observa-se uma redução de 80 a 100% da humidade nas paredes.' },

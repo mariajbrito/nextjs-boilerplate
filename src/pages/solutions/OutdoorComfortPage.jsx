@@ -13,11 +13,11 @@ const OutdoorComfortPage = () => {
 
   const title = isPt ? 'Conforto em Esplanadas e Terraços' : 'Outdoor Patio & Terrace Comfort';
   const metaTitle = isPt
-    ? 'Aquecimento para Esplanadas e Terraços | Solamagic Infravermelhos'
-    : 'Heating for Patios and Terraces | Solamagic Infrared';
+    ? 'Como Aquecer Esplanadas e Terraços no Inverno'
+    : 'How to Heat Patios and Terraces in Winter';
   const desc = isPt
-    ? 'Aumente a ocupação da sua esplanada em 40-50% com aquecimento por infravermelhos Solamagic. Conforto outdoor sem fumo, sem odores, resistente ao vento.'
-    : 'Increase your patio occupancy by 40-50% with Solamagic infrared heating. Outdoor comfort without smoke, without odors, wind resistant.';
+    ? 'Aumente a faturação da esplanada em 40 a 50% com aquecedores por infravermelhos. Calor imediato à prova de chuva, sem fumo nem odores. Solução para restaurantes e hotéis.'
+    : 'Boost patio revenue by 40 to 50% with infrared heating. Instant warmth, rain-resistant, no smoke or odors. Solution for restaurants and hotels.';
 
   const faqs = isPt ? [
     { question: 'O aquecimento por infravermelhos funciona com vento?', answer: 'Sim. Ao contrário do aquecimento convencional, os infravermelhos aqueciam os objetos e pessoas diretamente, não o ar, pelo que o vento não afeta a eficiência.' },

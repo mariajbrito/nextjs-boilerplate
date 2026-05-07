@@ -18,8 +18,8 @@ export default function DrymatPage() {
   return (
     <>
       <SEOHead
-        title="Drymat Eliminar Humidade Ascendente Sem Obras | Evoluimos Comércio"
-        description="Drymat elimina humidade ascendente sem obras. Tecnologia alemã de frequência eletromagnética. Análise gratuita ao seu imóvel."
+        title="Eliminar Humidade Ascendente nas Paredes Sem Obras | Drymat"
+        description="Drymat seca paredes com humidade ascendente sem obras. Tecnologia alemã, redução de 80 a 100% em 2 a 6 meses, garantia 10 anos. Análise gratuita ao imóvel."
         canonical="/products/drymat"
         image="/Drymat/Eliminarhumidadeparedes.png"
         schemas={[generateProductSchema({ name: 'Drymat', description: 'Elimina humidade ascendente sem obras. Tecnologia alemã de frequência eletromagnética. Análise gratuita ao imóvel.', image: `${COMPANY.baseUrl}/Drymat/Eliminarhumidadeparedes.png`, brand: 'Drymat', url: `${COMPANY.baseUrl}/products/drymat` })]}

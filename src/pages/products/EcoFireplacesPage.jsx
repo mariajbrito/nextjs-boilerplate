@@ -11,8 +11,8 @@ export default function EcoFireplacesPage() {
   return (
     <>
       <SEOHead
-        title="Biolareiras Herkell Biolareiras a Bio-Etanol | Evoluimos Comércio"
-        description="Biolareiras a bio-etanol e grelhadores a pellets Herkell. Sem chaminé, sem gás, 100% ecológico. Conforto e estética para qualquer espaço."
+        title="Biolareiras a Bio-Etanol Sem Chaminé | Herkell"
+        description="Biolareiras Herkell a bio-etanol e grelhadores a pellets. Sem chaminé, sem gás, 100% ecológico. Conforto e estética para qualquer espaço interior ou exterior."
         canonical="/products/eco-fireplaces"
         image="/biolareiras/biolareira.jpg"
         schemas={[generateProductSchema({ name: 'Biolareiras Herkell', description: 'Biolareiras a bio-etanol e grelhadores a pellets. Sem chaminé, sem gás, 100% ecológico.', image: `${COMPANY.baseUrl}/biolareiras/biolareira.jpg`, brand: 'Herkell', url: `${COMPANY.baseUrl}/products/eco-fireplaces` })]}

@@ -53,8 +53,8 @@ export default function PisoRadiantePage() {
   return (
     <>
       <SEOHead
-        title="Piso Radiante Eléctrico AHT | Aquecimento de Pavimento | Evoluimos Comércio"
-        description="Piso radiante eléctrico AHT para aquecimento de pavimento interior. Instalação simples, conforto uniforme e eficiência energética. Ideal para casas de banho e cozinhas."
+        title="Piso Radiante Elétrico para Casa de Banho e Cozinha | AHT"
+        description="Piso radiante elétrico AHT para aquecimento de pavimento. Instalação simples sob cerâmica, pedra ou vinyl, baixo consumo. Ideal para casas de banho e cozinhas."
         canonical="/products/piso-radiante"
         image="/Piso radiante/Pisoradianteahtcasadebanho.jpg"
       />

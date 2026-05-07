@@ -22,8 +22,8 @@ export default function PainelAHTPage() {
   return (
     <>
       <SEOHead
-        title="Painel AHT Aquecimento Interior Infravermelhos | Evoluimos Comércio"
-        description="Painel AHT ComfortSun para aquecimento interior. Touchscreen, Wi-Fi, timer programável e duplo termostato. Solução elegante para salas e espaços interiores."
+        title="Painel de Aquecimento Interior com Wi-Fi | AHT ComfortSun"
+        description="Painel AHT ComfortSun para aquecimento interior com infravermelhos. Touchscreen, Wi-Fi, timer programável e duplo termostato. Solução elegante para salas."
         canonical="/products/painel-aht"
         image="/ComfortSun/painelaht.jpg"
         schemas={[generateProductSchema({ name: 'Painel AHT ComfortSun', description: 'Painel de aquecimento interior por infravermelhos. Touchscreen, Wi-Fi, timer programável e duplo termostato.', image: `${COMPANY.baseUrl}/ComfortSun/painelaht.jpg`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/painel-aht` })]}

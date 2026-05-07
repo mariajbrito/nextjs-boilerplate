@@ -13,11 +13,11 @@ const SustainableBusinessPage = () => {
 
   const title = isPt ? 'Negócios Sustentáveis' : 'Sustainable Business';
   const metaTitle = isPt
-    ? 'Aquecimento Sustentável para Empresas | ESG + Eficiência Energética'
-    : 'Sustainable Heating for Businesses | ESG + Energy Efficiency';
+    ? 'Soluções de Aquecimento Sustentável para Empresas'
+    : 'Sustainable Heating Solutions for Businesses';
   const desc = isPt
-    ? 'Soluções de aquecimento e arrefecimento ecológicas para empresas. Reduza as emissões de CO2, melhore o seu relatório ESG e poupe até 40% na energia sem comprometer o conforto.'
-    : 'Eco-friendly heating and cooling solutions for businesses. Reduce CO2 emissions, improve your ESG report, and save up to 40% on energy without compromising comfort.';
+    ? 'Reduza emissões de CO2 e custos energéticos em até 40% com soluções de aquecimento e arrefecimento ecológicas. Para restauração, hotelaria, escritórios e reabilitação.'
+    : 'Reduce CO2 emissions and energy costs by up to 40% with eco-friendly heating and cooling. For restaurants, hotels, offices and building rehabilitation.';
 
   const faqs = isPt ? [
     { question: 'Como é que os produtos contribuem para objetivos ESG?', answer: 'Os equipamentos não emitem CO2 no ponto de uso (são elétricos), têm vida útil longa e contribuem para metas de eficiência energética e bem-estar dos colaboradores.' },
