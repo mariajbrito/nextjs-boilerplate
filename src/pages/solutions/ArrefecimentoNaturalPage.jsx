@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateFAQSchema } from '@/utils/schemaMarkup';
-import { WA_URL as WA } from '@/config/company';
+import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { WA_URL as WA, COMPANY } from '@/config/company';
 
 const ArrefecimentoNaturalPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
@@ -61,7 +61,21 @@ const ArrefecimentoNaturalPage = () => {
         title={metaTitle}
         description={desc}
         canonical="/solutions/natural-cooling"
-        schemas={[generateFAQSchema(faqs)]}
+        schemas={[
+          generateFAQSchema(faqs),
+          generateServiceSchema({
+            name: isPt ? 'Arrefecimento Natural sem Ar Condicionado' : 'Natural Cooling Without Air Conditioning',
+            description: isPt
+              ? 'Arrefecimento por evaporação para casa, escritório, restaurante, esplanada, loja e armazém. Sem compressor, sem gases, baixo consumo.'
+              : 'Evaporative cooling for home, office, restaurant, patio, shop and warehouse. No compressor, no gases, low consumption.',
+            url: `${COMPANY.baseUrl}/solutions/natural-cooling`,
+            serviceType: isPt ? 'Arrefecimento ecológico' : 'Eco-friendly cooling',
+          }),
+          generatePtBreadcrumb([
+            { name: isPt ? 'Soluções' : 'Solutions', path: '/solutions' },
+            { name: title, path: '/solutions/natural-cooling' },
+          ]),
+        ]}
         language={language}
         image="/Bioclimatizadores/bioclimatizadorquarto.png"
       />

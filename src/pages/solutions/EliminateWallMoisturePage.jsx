@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateFAQSchema } from '@/utils/schemaMarkup';
+import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { COMPANY } from '@/config/company';
 
 const EliminateWallMoisturePage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
@@ -20,15 +21,23 @@ const EliminateWallMoisturePage = () => {
     : 'Solution for ascending moisture, saltpeter and condensation without renovation. Drymat reduces wall moisture by 80 to 100% in 2 to 6 months, with ClimateCoating support.';
 
   const faqs = isPt ? [
-    { question: 'Quanto tempo demora a eliminar a humidade?', answer: 'Em 2 a 6 meses observa-se uma redução de 80 a 100% da humidade nas paredes.' },
-    { question: 'O DRYMAT funciona em edifícios antigos?', answer: 'Sim, é especialmente eficaz em edifícios históricos e de reabilitação, sem obras invasivas.' },
-    { question: 'É necessário fazer obras?', answer: 'Não. O sistema DRYMAT é instalado sem demolição e o ClimateCoating é aplicado como tinta normal.' },
-    { question: 'Qual é a garantia?', answer: 'O sistema DRYMAT tem garantia de 10 anos e a Climate Coating tem garantia superior a 15 anos.' },
+    { question: 'O que é a humidade ascendente?', answer: 'É a água que sobe pelas paredes a partir do solo, por capilaridade. É o tipo de humidade mais difícil de tratar e o mais frequente em edifícios antigos ou em zonas húmidas como o litoral.' },
+    { question: 'Como sei que tenho humidade ascendente e não condensação?', answer: 'A humidade ascendente aparece sempre na zona inferior das paredes (até cerca de 1,5 metros), com manchas, salitre, tinta a descascar e cheiro a bolor. Já a condensação aparece nos cantos e tetos, perto de janelas, e tipicamente desaparece com ventilação adequada.' },
+    { question: 'Quanto tempo demora a eliminar a humidade nas paredes?', answer: 'Em 2 a 6 meses observa-se uma redução de 80 a 100% da humidade nas paredes. O Drymat atua continuamente e a parede vai secando progressivamente.' },
+    { question: 'O Drymat funciona em edifícios antigos e casas em reabilitação?', answer: 'Sim, é especialmente eficaz em edifícios históricos e em reabilitação, porque não exige demolição nem injeções químicas que poderiam danificar a estrutura.' },
+    { question: 'É necessário fazer obras para instalar o Drymat?', answer: 'Não. O sistema Drymat é instalado numa parede em poucas horas, sem demolição. O ClimateCoating, quando aplicado posteriormente, funciona como uma tinta normal.' },
+    { question: 'Como elimino o salitre e o cheiro a mofo nas paredes?', answer: 'A causa do salitre e do cheiro a mofo é a humidade. Eliminada a humidade ascendente com Drymat, o salitre deixa de aparecer e o cheiro desaparece em poucos meses.' },
+    { question: 'Qual é a garantia do tratamento?', answer: 'O sistema Drymat tem garantia de 10 anos. O ClimateCoating tem garantia superior a 15 anos.' },
+    { question: 'Atendem no Algarve, Lisboa e Porto?', answer: 'Sim. Estamos sediados no Algarve, com cobertura nacional. Fazemos visitas técnicas gratuitas e instalações em todo o Portugal continental e ilhas.' },
   ] : [
-    { question: 'How long does it take to eliminate moisture?', answer: 'In 2 to 6 months you will see an 80 to 100% reduction in wall moisture.' },
-    { question: 'Does DRYMAT work in old buildings?', answer: 'Yes, it is especially effective in historic and rehabilitation buildings, without invasive works.' },
-    { question: 'Is construction work needed?', answer: 'No. The DRYMAT system is installed without demolition and ClimateCoating is applied like normal paint.' },
-    { question: 'What is the warranty?', answer: 'The DRYMAT system has a 10-year warranty and ClimateCoating has a warranty of over 15 years.' },
+    { question: 'What is ascending moisture?', answer: 'It is water rising through walls from the ground, by capillary action. It is the most difficult type of moisture to treat and the most common in older buildings or coastal areas.' },
+    { question: 'How do I know if I have ascending moisture and not condensation?', answer: 'Ascending moisture appears in the lower part of walls (up to about 1.5 metres), with stains, saltpeter, peeling paint and mold smell. Condensation appears in corners and ceilings, near windows, and usually disappears with proper ventilation.' },
+    { question: 'How long does it take to eliminate wall moisture?', answer: 'In 2 to 6 months you will see an 80 to 100% reduction. Drymat acts continuously and the wall dries progressively.' },
+    { question: 'Does Drymat work in old buildings under rehabilitation?', answer: 'Yes, it is especially effective in historic and rehabilitation buildings, with no demolition or chemical injections that could damage the structure.' },
+    { question: 'Is construction work needed?', answer: 'No. The Drymat system is installed in a few hours without demolition. ClimateCoating is then applied like a normal paint.' },
+    { question: 'How do I eliminate saltpeter and mold smell?', answer: 'Saltpeter and mold smell are caused by moisture. Once moisture is eliminated, both disappear within a few months.' },
+    { question: 'What is the warranty?', answer: 'The Drymat system has a 10-year warranty. ClimateCoating has a warranty of over 15 years.' },
+    { question: 'Do you serve all of Portugal?', answer: 'Yes. We are based in the Algarve and operate nationwide, including mainland Portugal, Madeira and the Azores.' },
   ];
 
   const symptoms = isPt
@@ -48,7 +57,21 @@ const EliminateWallMoisturePage = () => {
         title={metaTitle}
         description={desc}
         canonical="/solutions/eliminate-moisture"
-        schemas={[generateFAQSchema(faqs)]}
+        schemas={[
+          generateFAQSchema(faqs),
+          generateServiceSchema({
+            name: isPt ? 'Eliminação de Humidade Ascendente' : 'Ascending Moisture Elimination',
+            description: isPt
+              ? 'Serviço de eliminação de humidade ascendente em paredes sem obras, com Drymat e ClimateCoating. Análise gratuita ao imóvel.'
+              : 'Service to eliminate ascending wall moisture without renovation, using Drymat and ClimateCoating. Free property analysis.',
+            url: `${COMPANY.baseUrl}/solutions/eliminate-moisture`,
+            serviceType: isPt ? 'Tratamento de humidade nas paredes' : 'Wall moisture treatment',
+          }),
+          generatePtBreadcrumb([
+            { name: isPt ? 'Soluções' : 'Solutions', path: '/solutions' },
+            { name: title, path: '/solutions/eliminate-moisture' },
+          ]),
+        ]}
         language={language}
         image="/ClimateCoating/bannermarketing.png"
       />
@@ -175,6 +198,99 @@ const EliminateWallMoisturePage = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Tipos de humidade */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isPt ? 'Tipos de humidade nas paredes' : 'Types of wall moisture'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-5">
+                  {isPt
+                    ? 'Nem toda a humidade é igual. Identificar corretamente o tipo é essencial para escolher o tratamento certo. Trabalhamos os três tipos mais frequentes em Portugal:'
+                    : 'Not all moisture is the same. Correct identification is essential to choose the right treatment. We address the three most common types in Portugal:'}
+                </p>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-blue-500 bg-blue-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Humidade ascendente' : 'Ascending moisture'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'Sobe do solo pelas paredes por capilaridade. Manchas até 1,5 metros de altura, salitre, tinta a descascar. É a mais comum em casas antigas e edifícios à beira-mar. Resolvida pelo Drymat.'
+                        : 'Rises from the ground by capillary action. Stains up to 1.5m, saltpeter, peeling paint. Most common in old houses and seaside buildings. Solved by Drymat.'}
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-cyan-500 bg-cyan-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Condensação' : 'Condensation'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'Vapor de água que condensa em paredes frias, sobretudo no inverno. Manchas escuras nos cantos, tetos e atrás de móveis. Resolvida com ClimateCoating, que regula a humidade do ar interior para cerca de 55%.'
+                        : 'Water vapor condensing on cold walls, especially in winter. Dark stains in corners, ceilings and behind furniture. Solved with ClimateCoating, which regulates indoor humidity to around 55%.'}
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Infiltrações' : 'Infiltrations'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'Água que entra do exterior por fissuras, telhados ou fachadas. Resolvida com ClimateCoating ThermoProtect na fachada, que cria uma membrana impermeável e respirável.'
+                        : 'Water entering from outside through cracks, roofs or facades. Solved with ClimateCoating ThermoProtect on the facade, creating a waterproof and breathable membrane.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Como funciona o processo */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isPt ? 'Como funciona o tratamento (passo a passo)' : 'How the treatment works (step by step)'}
+                </h2>
+                <ol className="space-y-3">
+                  {(isPt ? [
+                    { t: 'Diagnóstico gratuito', d: 'Visita ao imóvel, medição de humidade nas paredes e identificação do tipo de problema. Apresentamos um plano e orçamento personalizado, sem compromisso.' },
+                    { t: 'Instalação do Drymat', d: 'Em poucas horas, sem obras. O equipamento é fixado a uma parede e ligado à corrente. Não há fios pelas divisões nem demolições.' },
+                    { t: 'Secagem progressiva', d: 'Durante 2 a 6 meses, o Drymat inverte a capilaridade e a água deixa de subir. Acompanhamos a evolução com medições.' },
+                    { t: 'Aplicação de ClimateCoating (opcional)', d: 'Quando a parede já está seca, aplica-se ClimateCoating como tinta interior para regular a humidade do ar e reforçar o isolamento térmico.' },
+                    { t: 'Acompanhamento e garantia', d: 'Apoio técnico durante 10 anos no Drymat e 15 anos no ClimateCoating. Se a humidade voltar, voltamos.' },
+                  ] : [
+                    { t: 'Free diagnosis', d: 'On-site visit, wall moisture measurement and problem identification. We deliver a tailored plan and quote, no commitment.' },
+                    { t: 'Drymat installation', d: 'A few hours, no construction. The device is mounted on a wall and connected to power. No wires across rooms, no demolition.' },
+                    { t: 'Progressive drying', d: 'Over 2 to 6 months, Drymat reverses capillary action. We monitor progress with measurements.' },
+                    { t: 'ClimateCoating application (optional)', d: 'Once the wall is dry, ClimateCoating is applied as interior paint to regulate humidity and reinforce thermal insulation.' },
+                    { t: 'Follow-up and warranty', d: '10-year Drymat warranty and 15-year ClimateCoating warranty. If moisture returns, we return.' },
+                  ]).map((s, i) => (
+                    <li key={i} className="flex gap-4 p-4 bg-white border border-gray-200 rounded-xl">
+                      <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">{i + 1}</div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{s.t}</h3>
+                        <p className="text-sm text-gray-600">{s.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Onde atendemos */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                  {isPt ? 'Onde tratamos humidade nas paredes' : 'Where we treat wall moisture'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isPt
+                    ? 'O problema da humidade é particularmente comum em zonas costeiras e em edifícios antigos. Trabalhamos em todo o Portugal, com sede no Algarve.'
+                    : 'Wall moisture is particularly common in coastal areas and older buildings. We operate throughout Portugal, headquartered in the Algarve.'}
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+                  {['Algarve', 'Lisboa', 'Porto', 'Setúbal', 'Coimbra', 'Madeira', 'Açores', 'Évora', 'Faro'].map(r => (
+                    <div key={r} className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                      {r}
+                    </div>
+                  ))}
+                </div>
+                {isPt && (
+                  <p className="text-sm text-gray-600 mt-4">
+                    Cobertura especial no <Link to="/algarve" className="text-orange-600 font-bold hover:underline">Algarve</Link>, com visita gratuita em 24 a 72 horas.
+                  </p>
+                )}
               </div>
 
               {/* FAQ */}

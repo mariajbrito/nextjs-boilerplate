@@ -6,7 +6,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import ComfortSunLineNav from '@/components/ComfortSunLineNav';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const MODELS = [
   {
@@ -39,7 +39,10 @@ export default function ComfortSunPolivalentePage() {
         title="Torres de Aquecimento para Esplanadas e Eventos | ComfortSun"
         description="Torres de aquecimento por infravermelhos 2000W para exterior (IP65, Bluetooth). Portáteis, ideais para esplanadas, terraços e eventos. A partir de 399€ + IVA."
         canonical="/products/comfortsun/polivalente"
-        schemas={[generateProductSchema({ name: 'ComfortSun Polivalente', description: 'Torres de 2000W para exterior (IP65, Bluetooth). Portáteis, ideais para esplanadas, terraços e eventos ao ar livre.', image: `${COMPANY.baseUrl}/aquecimentopolivalente.webp`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/polivalente` })]}
+        schemas={[
+          generateProductSchema({ name: 'ComfortSun Polivalente', description: 'Torres de 2000W para exterior (IP65, Bluetooth). Portáteis, ideais para esplanadas, terraços e eventos ao ar livre.', image: `${COMPANY.baseUrl}/aquecimentopolivalente.webp`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/polivalente` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'ComfortSun', path: '/products/comfortsun' }, { name: 'Polivalente', path: '/products/comfortsun/polivalente' }]),
+        ]}
       />
 
       <div className="min-h-screen bg-gray-50">

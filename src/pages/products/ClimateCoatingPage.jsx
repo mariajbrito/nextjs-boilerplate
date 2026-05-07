@@ -5,7 +5,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 export default function ClimateCoatingPage() {
   const products = [
@@ -21,7 +21,10 @@ export default function ClimateCoatingPage() {
         description="Membrana cerâmica ClimateCoating: isola termicamente fachadas, regula humidade interior, aplica-se como tinta. 30 a 40% menos custos de climatização, garantia 15 anos."
         canonical="/products/climatecoating"
         image="/ClimateCoating/bannermarketing.png"
-        schemas={[generateProductSchema({ name: 'ClimateCoating', description: 'Membrana cerâmica de nanotecnologia alemã. Isola termicamente, regula humidade, aplica-se como tinta. Economias de 30-40% em climatização.', image: `${COMPANY.baseUrl}/ClimateCoating/bannermarketing.png`, brand: 'ClimateCoating', url: `${COMPANY.baseUrl}/products/climatecoating` })]}
+        schemas={[
+          generateProductSchema({ name: 'ClimateCoating', description: 'Membrana cerâmica de nanotecnologia alemã. Isola termicamente, regula humidade, aplica-se como tinta. Economias de 30-40% em climatização.', image: `${COMPANY.baseUrl}/ClimateCoating/bannermarketing.png`, brand: 'ClimateCoating', url: `${COMPANY.baseUrl}/products/climatecoating` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'ClimateCoating', path: '/products/climatecoating' }]),
+        ]}
       />
       <div className="min-h-screen">
         <div className="relative h-80 md:h-[500px] overflow-hidden">

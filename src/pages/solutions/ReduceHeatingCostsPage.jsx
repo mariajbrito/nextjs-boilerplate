@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateFAQSchema } from '@/utils/schemaMarkup';
+import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { COMPANY } from '@/config/company';
 
 const ReduceHeatingCostsPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
@@ -58,7 +59,21 @@ const ReduceHeatingCostsPage = () => {
         title={metaTitle}
         description={desc}
         canonical="/solutions/reduce-heating-costs"
-        schemas={[generateFAQSchema(faqs)]}
+        schemas={[
+          generateFAQSchema(faqs),
+          generateServiceSchema({
+            name: isPt ? 'Redução de Custos de Aquecimento' : 'Heating Cost Reduction',
+            description: isPt
+              ? 'Redução de 30 a 40% nos custos de aquecimento com radiadores Duotherm em pedra natural e revestimento ClimateCoating. Análise gratuita.'
+              : 'Cut heating costs by 30 to 40% with Duotherm natural stone radiators and ClimateCoating. Free assessment.',
+            url: `${COMPANY.baseUrl}/solutions/reduce-heating-costs`,
+            serviceType: isPt ? 'Eficiência energética em aquecimento' : 'Heating energy efficiency',
+          }),
+          generatePtBreadcrumb([
+            { name: isPt ? 'Soluções' : 'Solutions', path: '/solutions' },
+            { name: title, path: '/solutions/reduce-heating-costs' },
+          ]),
+        ]}
         language={language}
         image="/Duotherm/saladeestar.png"
       />

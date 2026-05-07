@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateFAQSchema } from '@/utils/schemaMarkup';
+import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { COMPANY } from '@/config/company';
 
 const OutdoorComfortPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
@@ -58,7 +59,21 @@ const OutdoorComfortPage = () => {
         title={metaTitle}
         description={desc}
         canonical="/solutions/outdoor-comfort"
-        schemas={[generateFAQSchema(faqs)]}
+        schemas={[
+          generateFAQSchema(faqs),
+          generateServiceSchema({
+            name: isPt ? 'Aquecimento de Esplanadas e Terraços' : 'Patio and Terrace Heating',
+            description: isPt
+              ? 'Aquecimento por infravermelhos para esplanadas, terraços e espaços exteriores de restauração e hotelaria. Calor imediato, à prova de chuva.'
+              : 'Infrared heating for patios, terraces and outdoor hospitality spaces. Instant warmth, rain-resistant.',
+            url: `${COMPANY.baseUrl}/solutions/outdoor-comfort`,
+            serviceType: isPt ? 'Aquecimento exterior' : 'Outdoor heating',
+          }),
+          generatePtBreadcrumb([
+            { name: isPt ? 'Soluções' : 'Solutions', path: '/solutions' },
+            { name: title, path: '/solutions/outdoor-comfort' },
+          ]),
+        ]}
         language={language}
         image="/ComfortSun/aquecimentoesplanada.jpg"
       />

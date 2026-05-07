@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const LINES = [
   {
@@ -94,7 +94,10 @@ export default function ComfortSunPage() {
         description="Quatro linhas ComfortSun para aquecer qualquer espaço sem obras: torres exterior, painéis interior, casa de banho. Tecnologia alemã com TÜV. Pedir orçamento."
         canonical="/products/comfortsun"
         image="/ComfortSun/esplanada.png"
-        schemas={[generateProductSchema({ name: 'ComfortSun', description: 'Gama de aquecedores infravermelhos para esplanadas, hotéis, jardins e interior. Tecnologia alemã TÜV.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun` })]}
+        schemas={[
+          generateProductSchema({ name: 'ComfortSun', description: 'Gama de aquecedores infravermelhos para esplanadas, hotéis, jardins e interior. Tecnologia alemã TÜV.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'ComfortSun', path: '/products/comfortsun' }]),
+        ]}
       />
 
       <div className="min-h-screen">

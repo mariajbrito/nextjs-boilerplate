@@ -6,7 +6,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import ComfortSunLineNav from '@/components/ComfortSunLineNav';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const MODELS = [
   {
@@ -57,7 +57,10 @@ export default function ComfortSunProfessionalPage() {
         description="Aquecedores infravermelhos profissionais ComfortSun 1400W e 2000W para esplanadas, hotéis, restaurantes e spas. Tecnologia alemã, instalação rápida."
         canonical="/products/comfortsun/professional"
         image="/ComfortSun/esplanada.png"
-        schemas={[generateProductSchema({ name: 'ComfortSun Linha Profissional', description: 'Aquecedores infravermelhos de 1400W e 2000W para hotéis, restaurantes, spas e esplanadas. Tecnologia alemã.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/professional` })]}
+        schemas={[
+          generateProductSchema({ name: 'ComfortSun Linha Profissional', description: 'Aquecedores infravermelhos de 1400W e 2000W para hotéis, restaurantes, spas e esplanadas. Tecnologia alemã.', image: `${COMPANY.baseUrl}/ComfortSun/esplanada.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/professional` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'ComfortSun', path: '/products/comfortsun' }, { name: 'Profissional', path: '/products/comfortsun/professional' }]),
+        ]}
       />
 
       <div className="min-h-screen bg-gray-50">

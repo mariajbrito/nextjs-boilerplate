@@ -22,9 +22,8 @@ const SEOHead = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={fullCanonical} />
 
-      {/* hreflang para suporte bilingue (PT/EN no mesmo URL) */}
+      {/* hreflang: o site serve PT como idioma principal. Quando existirem URLs separados em /es ou /en, ativar tags individuais aqui. */}
       <link rel="alternate" hreflang="pt-PT" href={fullCanonical} />
-      <link rel="alternate" hreflang="en" href={fullCanonical} />
       <link rel="alternate" hreflang="x-default" href={fullCanonical} />
 
       {/* Open Graph */}

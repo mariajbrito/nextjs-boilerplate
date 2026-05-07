@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const FEATURES = [
   'Aquecimento instantâneo sem depósito',
@@ -30,7 +30,10 @@ export default function EsquentadoresPage() {
         title="Esquentador Elétrico Instantâneo Sem Gás | Clage"
         description="Esquentadores elétricos Clage com água quente imediata, sem depósito e sem gás. Alta eficiência, alternativa segura ao termoacumulador. Made in Germany."
         canonical="/products/esquentadores"
-        schemas={[generateProductSchema({ name: 'Esquentadores Clage', description: 'Esquentadores elétricos instantâneos sem depósito. Água quente imediata, alta eficiência energética. Tecnologia alemã.', image: `${COMPANY.baseUrl}/Esquentadores/produto1.png`, brand: 'Clage', url: `${COMPANY.baseUrl}/products/esquentadores` })]}
+        schemas={[
+          generateProductSchema({ name: 'Esquentadores Clage', description: 'Esquentadores elétricos instantâneos sem depósito. Água quente imediata, alta eficiência energética. Tecnologia alemã.', image: `${COMPANY.baseUrl}/Esquentadores/produto1.png`, brand: 'Clage', url: `${COMPANY.baseUrl}/products/esquentadores` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Esquentadores Clage', path: '/products/esquentadores' }]),
+        ]}
       />
       <div className="min-h-screen">
 

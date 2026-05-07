@@ -177,3 +177,30 @@ export const generateContactSchema = () => {
     'url': `${COMPANY.baseUrl}/contact`,
   };
 };
+
+export const generateServiceSchema = (service) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': service.name,
+    'description': service.description,
+    'provider': {
+      '@type': 'Organization',
+      'name': COMPANY.name,
+      'url': COMPANY.baseUrl,
+    },
+    'areaServed': service.areaServed || [
+      { '@type': 'Country', 'name': 'Portugal' },
+    ],
+    'serviceType': service.serviceType || service.name,
+    'url': service.url,
+  };
+};
+
+export const generatePtBreadcrumb = (items) => {
+  const built = [{ name: 'Início', url: COMPANY.baseUrl + '/' }, ...items.map(i => ({
+    name: i.name,
+    url: i.path ? `${COMPANY.baseUrl}${i.path}` : i.url,
+  }))];
+  return generateBreadcrumbSchema(built);
+};

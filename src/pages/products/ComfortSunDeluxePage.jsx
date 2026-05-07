@@ -6,7 +6,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import ComfortSunLineNav from '@/components/ComfortSunLineNav';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const MODELS = [
   {
@@ -62,7 +62,10 @@ export default function ComfortSunDeluxePage() {
         title="Aquecedor Infravermelhos com Bluetooth e App | ComfortSun Deluxe"
         description="Aquecedores ComfortSun Deluxe 2000W e 2800W com Bluetooth, app e telecomando. Calor imediato para esplanadas e uso portátil. A partir de 412€ + IVA."
         canonical="/products/comfortsun/deluxe"
-        schemas={[generateProductSchema({ name: 'ComfortSun Linha Deluxe', description: 'Aquecedores infravermelhos com Bluetooth, app móvel e telecomando. 2000W e 2800W para esplanadas e uso portátil.', image: `${COMPANY.baseUrl}/ComfortSun/aquecedorestelecomandados.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/deluxe` })]}
+        schemas={[
+          generateProductSchema({ name: 'ComfortSun Linha Deluxe', description: 'Aquecedores infravermelhos com Bluetooth, app móvel e telecomando. 2000W e 2800W para esplanadas e uso portátil.', image: `${COMPANY.baseUrl}/ComfortSun/aquecedorestelecomandados.png`, brand: 'ComfortSun', url: `${COMPANY.baseUrl}/products/comfortsun/deluxe` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'ComfortSun', path: '/products/comfortsun' }, { name: 'Deluxe', path: '/products/comfortsun/deluxe' }]),
+        ]}
       />
 
       <div className="min-h-screen bg-gray-50">

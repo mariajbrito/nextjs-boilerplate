@@ -5,7 +5,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const MODELS = [
   { name: 'Elite 8', area: 'até 15 m²', desc: 'Compacto e silencioso. Ideal para escritórios, quartos e pequenas salas.' },
@@ -21,7 +21,10 @@ export default function BioclimatizadoresPage() {
         description="Bioclimatizadores Elite e MF60 arrefecem por evaporação. Sem compressor, sem gases, até 80% menos consumo. Solução para casa, escritório, restaurante e esplanada."
         canonical="/products/bioclimatizadores"
         image="/Bioclimatizadores/bioclimatizadorquarto.png"
-        schemas={[generateProductSchema({ name: 'Bioclimatizadores', description: 'Arrefecimento natural sem compressor, baixo consumo, sem gases. Alternativa saudável ao ar condicionado.', image: `${COMPANY.baseUrl}/Bioclimatizadores/bioclimatizadorquarto.png`, brand: 'Evoluimos Comércio', url: `${COMPANY.baseUrl}/products/bioclimatizadores` })]}
+        schemas={[
+          generateProductSchema({ name: 'Bioclimatizadores', description: 'Arrefecimento natural sem compressor, baixo consumo, sem gases. Alternativa saudável ao ar condicionado.', image: `${COMPANY.baseUrl}/Bioclimatizadores/bioclimatizadorquarto.png`, brand: 'Evoluimos Comércio', url: `${COMPANY.baseUrl}/products/bioclimatizadores` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Bioclimatizadores', path: '/products/bioclimatizadores' }]),
+        ]}
       />
       <div className="min-h-screen">
         <div className="relative h-80 md:h-[500px] overflow-hidden">

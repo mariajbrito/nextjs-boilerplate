@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA, COMPANY } from '@/config/company';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 const FEATURES = [
   'Aquecimento uniforme por toda a superfície do piso',
@@ -57,6 +58,10 @@ export default function PisoRadiantePage() {
         description="Piso radiante elétrico AHT para aquecimento de pavimento. Instalação simples sob cerâmica, pedra ou vinyl, baixo consumo. Ideal para casas de banho e cozinhas."
         canonical="/products/piso-radiante"
         image="/Piso radiante/Pisoradianteahtcasadebanho.jpg"
+        schemas={[
+          generateProductSchema({ name: 'Piso Radiante Elétrico AHT', description: 'Piso radiante elétrico AHT para aquecimento de pavimento sob cerâmica, pedra ou vinyl. Termostato programável, baixo consumo.', image: `${COMPANY.baseUrl}/Piso radiante/Pisoradianteahtcasadebanho.jpg`, brand: 'AHT', url: `${COMPANY.baseUrl}/products/piso-radiante` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Piso Radiante', path: '/products/piso-radiante' }]),
+        ]}
       />
 
       <div className="min-h-screen">

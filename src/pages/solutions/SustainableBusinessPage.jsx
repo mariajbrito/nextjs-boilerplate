@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
-import { generateFAQSchema } from '@/utils/schemaMarkup';
+import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { COMPANY } from '@/config/company';
 
 const SustainableBusinessPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
@@ -90,7 +91,21 @@ const SustainableBusinessPage = () => {
         title={metaTitle}
         description={desc}
         canonical="/solutions/sustainable-business"
-        schemas={[generateFAQSchema(faqs)]}
+        schemas={[
+          generateFAQSchema(faqs),
+          generateServiceSchema({
+            name: isPt ? 'Soluções de Aquecimento Sustentável para Empresas' : 'Sustainable Heating Solutions for Businesses',
+            description: isPt
+              ? 'Soluções térmicas ecológicas para restauração, hotelaria, escritórios e reabilitação de edifícios. Reduza emissões e custos energéticos até 40%.'
+              : 'Eco-friendly thermal solutions for restaurants, hotels, offices and building rehabilitation. Reduce emissions and energy costs by up to 40%.',
+            url: `${COMPANY.baseUrl}/solutions/sustainable-business`,
+            serviceType: isPt ? 'Aquecimento sustentável B2B' : 'B2B sustainable heating',
+          }),
+          generatePtBreadcrumb([
+            { name: isPt ? 'Soluções' : 'Solutions', path: '/solutions' },
+            { name: title, path: '/solutions/sustainable-business' },
+          ]),
+        ]}
         language={language}
         image="/ClimateCoating/bannermarketing.png"
       />

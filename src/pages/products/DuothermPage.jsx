@@ -5,7 +5,7 @@ import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 export default function DuothermPage() {
   const benefits = [
@@ -27,7 +27,10 @@ export default function DuothermPage() {
         description="Radiadores Duotherm em pedra natural com aquecimento por infravermelhos. Baixo consumo, sem CO2, sem manutenção. Produção em Portugal, tecnologia alemã."
         canonical="/products/duotherm"
         image="/Duotherm/saladeestar.png"
-        schemas={[generateProductSchema({ name: 'Duotherm', description: 'Radiadores em pedra natural com aquecimento por infravermelhos. Produzido em Portugal, tecnologia alemã. Sem CO2, sem manutenção.', image: `${COMPANY.baseUrl}/Duotherm/saladeestar.png`, brand: 'Duotherm', url: `${COMPANY.baseUrl}/products/duotherm` })]}
+        schemas={[
+          generateProductSchema({ name: 'Duotherm', description: 'Radiadores em pedra natural com aquecimento por infravermelhos. Produzido em Portugal, tecnologia alemã. Sem CO2, sem manutenção.', image: `${COMPANY.baseUrl}/Duotherm/saladeestar.png`, brand: 'Duotherm', url: `${COMPANY.baseUrl}/products/duotherm` }),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Duotherm', path: '/products/duotherm' }]),
+        ]}
       />
       <div className="min-h-screen">
         <div className="relative h-80 md:h-[500px] overflow-hidden">

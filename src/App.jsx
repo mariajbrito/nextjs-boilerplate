@@ -36,6 +36,7 @@ const ArrefecimentoNaturalPage = lazy(() => import('@/pages/solutions/Arrefecime
 const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const RealEstatePage = lazy(() => import('@/pages/RealEstatePage'));
+const AlgarvePage = lazy(() => import('@/pages/AlgarvePage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
@@ -93,6 +94,7 @@ function App() {
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/real-estate" element={<RealEstatePage />} />
+                  <Route path="/algarve" element={<AlgarvePage />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
                   <Route path="/faqs" element={<FAQPage />} />
