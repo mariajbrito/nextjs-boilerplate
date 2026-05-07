@@ -26,12 +26,18 @@ const ReduceHeatingCostsPage = () => {
     { question: 'O Duotherm funciona em todas as divisões?', answer: 'Sim. Existe uma gama ampla de modelos em diferentes tamanhos e acabamentos em pedra natural, adequados a qualquer divisão e estilo de decoração.' },
     { question: 'O ClimateCoating substitui o isolamento tradicional?', answer: 'Complementa o isolamento existente. A membrana cerâmica reduz as perdas térmicas em paredes e tetos, funcionando em conjunto com outros sistemas.' },
     { question: 'Preciso de obras para instalar o Duotherm?', answer: 'Não. Os radiadores Duotherm são plug-and-play ligam à tomada elétrica normal, sem necessidade de instalação de tubagens ou obras.' },
+    { question: 'Qual é a diferença entre Duotherm e caldeira tradicional?', answer: 'O Duotherm aquece por irradiação, sem perder energia por tubagens e circulação de água. Isto resulta em 40% mais eficiência e menor desperdício. A caldeira tradicional aquece o ar que se dispersa facilmente.' },
+    { question: 'O aquecimento infravermelhos é seguro para crianças e animais?', answer: 'Completamente seguro. Os radiadores Duotherm não emitem raio ultravioleta nocivo, apenas infravermelhos que imitam o calor do sol. Não há riscos de queimadura por contato breve.' },
+    { question: 'Posso usar Duotherm apenas no inverno?', answer: 'Sim. Como não requerem manutenção e são plug-and-play, pode guardá-los no verão e instalar apenas quando necessário. Isto torna a solução ainda mais eficiente economicamente.' },
   ] : [
     { question: 'How much can I save on my energy bill?', answer: 'Our clients record savings of 30 to 40% in heating costs, depending on existing insulation and usage habits.' },
     { question: 'How long until I recover my investment?', answer: 'Typically 3 to 5 years, based on monthly energy savings. After that period, all savings are pure gain.' },
     { question: 'Does Duotherm work in all rooms?', answer: 'Yes. There is a wide range of models in different sizes and natural stone finishes, suitable for any room and decorative style.' },
     { question: 'Does ClimateCoating replace traditional insulation?', answer: 'It complements existing insulation. The ceramic membrane reduces thermal losses in walls and ceilings, working alongside other systems.' },
     { question: 'Do I need construction work to install Duotherm?', answer: 'No. Duotherm radiators are plug-and-play they connect to a regular electrical socket, with no pipe installation or construction needed.' },
+    { question: 'What is the difference between Duotherm and traditional boiler?', answer: 'Duotherm heats by radiation without losing energy through piping and water circulation. This results in 40% more efficiency and less waste. Traditional boilers heat air which disperses easily.' },
+    { question: 'Is infrared heating safe for children and pets?', answer: 'Completely safe. Duotherm radiators do not emit harmful ultraviolet radiation, only infrared that mimics heat from the sun. There is no risk of burns from brief contact.' },
+    { question: 'Can I use Duotherm only in winter?', answer: 'Yes. Since they require no maintenance and are plug-and-play, you can store them in summer and install only when needed. This makes the solution even more economically efficient.' },
   ];
 
   const stats = [
@@ -179,6 +185,205 @@ const ReduceHeatingCostsPage = () => {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              {/* Tipos de redução */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Tipos de Redução de Custos' : 'Types of Cost Reduction'}
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <TrendingDown className="w-6 h-6 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Substituição por Duotherm' : 'Duotherm Replacement'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Trocar caldeira ou radiadores ineficientes por Duotherm reduz consumo 30-40%. Sem obras, ligação direta à corrente. Mais seguro, saudável e silencioso.'
+                          : 'Replacing inefficient boiler or radiators with Duotherm reduces consumption by 30-40%. No construction, direct electrical connection. Safer, healthier and quieter.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Isolamento com ClimateCoating' : 'Insulation with ClimateCoating'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Aplicar membrana cerâmica em paredes e tetos reduz perdas de 30%. Melhora o isolamento existente e impede pontes térmicas. ROI em 4-6 anos.'
+                          : 'Applying ceramic membrane to walls and ceilings reduces losses by 30%. Improves existing insulation and prevents thermal bridges. ROI in 4-6 years.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Solução Combinada' : 'Combined Solution'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Duotherm + ClimateCoating juntos potenciam eficiência a até 60%. Aquecimento eficiente com melhor isolamento. Poupança máxima em 3-4 anos.'
+                          : 'Duotherm + ClimateCoating together maximize efficiency up to 60%. Efficient heating with better insulation. Maximum savings in 3-4 years.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Soluções por setor */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Soluções por Setor' : 'Solutions by Sector'}
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Habitação Unifamiliar</h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Casas e apartamentos beneficiam de redução imediata sem obras. Duotherm aquece divisões seletivamente, ClimateCoating melhora paredes. ROI: 3-5 anos.'
+                          : 'Houses and apartments benefit from immediate reduction with no construction. Duotherm selectively heats rooms, ClimateCoating improves walls. ROI: 3-5 years.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Espaços Comerciais</h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Lojas, escritórios e restaurantes reduzem fatura mensal significativamente. Controlo por zona permite aquecimento apenas de áreas ocupadas. ROI: 2-3 anos.'
+                          : 'Shops, offices and restaurants significantly reduce monthly bills. Zone control allows heating only occupied areas. ROI: 2-3 years.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Edifícios Antigos</h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Edifícios históricos com isolamento deficiente beneficiam de Duotherm + ClimateCoating. Sem danificar fachadas, melhoram eficiência 50%. ROI: 4-6 anos.'
+                          : 'Historic buildings with poor insulation benefit from Duotherm + ClimateCoating. Without damaging facades, improve efficiency 50%. ROI: 4-6 years.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">Indústria Ligeira</h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Fábricas e oficinas com grandes áreas aquecidas reduzem consumo com Duotherm modular. Aquecimento por zonas otimiza custos. ROI: 2-4 anos.'
+                          : 'Factories and workshops with large heated areas reduce consumption with modular Duotherm. Zone heating optimizes costs. ROI: 2-4 years.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Processo */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Como Reduzimos Custos (Passo a Passo)' : 'How We Reduce Costs (Step by Step)'}
+                </h2>
+                <div className="space-y-4">
+                  {[
+                    {
+                      num: 1,
+                      title: isPt ? 'Diagnóstico Energético Gratuito' : 'Free Energy Audit',
+                      desc: isPt
+                        ? 'Analisamos consumo atual, sistemas existentes, isolamento das paredes, janelas e hábitos de uso.'
+                        : 'We analyze current consumption, existing systems, wall insulation, windows and usage habits.',
+                    },
+                    {
+                      num: 2,
+                      title: isPt ? 'Plano Personalizado de Redução' : 'Personalized Reduction Plan',
+                      desc: isPt
+                        ? 'Recomendamos solução (Duotherm, ClimateCoating ou combinada) com simulação de poupança anual e ROI específico.'
+                        : 'We recommend solution (Duotherm, ClimateCoating or combined) with annual savings simulation and specific ROI.',
+                    },
+                    {
+                      num: 3,
+                      title: isPt ? 'Orçamento Transparente' : 'Transparent Budget',
+                      desc: isPt
+                        ? 'Apresentamos custo total, poupança estimada mensal/anual, prazo de retorno do investimento e garantias.'
+                        : 'We present total cost, estimated monthly/annual savings, investment payback period and warranties.',
+                    },
+                    {
+                      num: 4,
+                      title: isPt ? 'Instalação Rápida' : 'Quick Installation',
+                      desc: isPt
+                        ? 'Se Duotherm: ligação à corrente em 1 hora. Se ClimateCoating: aplicação sem obras, em 2-5 dias conforme área.'
+                        : 'If Duotherm: plug in within 1 hour. If ClimateCoating: application without construction, in 2-5 days depending on area.',
+                    },
+                    {
+                      num: 5,
+                      title: isPt ? 'Suporte Pós-Venda' : 'After-Sales Support',
+                      desc: isPt
+                        ? 'Monitoramento de poupança, manutenção gratuita dos primeiros 2 anos, assistência técnica telefónica 24/7.'
+                        : 'Savings monitoring, free maintenance for first 2 years, 24/7 technical phone support.',
+                    },
+                  ].map((step, i) => (
+                    <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                      <div className="w-10 h-10 bg-orange-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        {step.num}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{step.title}</h3>
+                        <p className="text-sm text-gray-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Cobertura geográfica */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Onde Reduzimos Custos de Aquecimento' : 'Where We Reduce Heating Costs'}
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    'Algarve', 'Lisboa', 'Porto', 'Cascais', 'Sintra',
+                    'Setúbal', 'Comporta', 'Madeira', 'Açores'
+                  ].map((region, i) => (
+                    <div key={i} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl">
+                      <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">{region}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-5 bg-orange-50 border border-orange-200 rounded-xl">
+                  <p className="text-sm text-gray-700">
+                    {isPt
+                      ? 'Operamos em todo o território português continental e ilhas, com equipe técnica especializada, garantia de serviço e suporte local em cada região.'
+                      : 'We operate throughout mainland Portugal and islands, with specialized technical team, service warranty and local support in each region.'}
+                  </p>
+                  <Link to="/algarve" className="text-orange-600 font-semibold mt-3 inline-flex items-center gap-2 hover:text-orange-700 transition-colors">
+                    {isPt ? 'Ver soluções no Algarve' : 'View Algarve solutions'} <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
 

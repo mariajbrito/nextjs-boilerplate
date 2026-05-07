@@ -26,12 +26,18 @@ const SustainableBusinessPage = () => {
     { question: 'Que tipo de empresas beneficiam mais?', answer: 'Restaurantes, hotéis, escritórios, comércio e indústria ligeira. Qualquer empresa com espaços de aquecimento/arrefecimento regulares.' },
     { question: 'É possível obter apoios ou incentivos fiscais?', answer: 'Sim. Investimentos em eficiência energética podem ser elegíveis para apoios do Portugal 2030 e outros programas. Podemos ajudá-lo a identificar as opções.' },
     { question: 'Qual é a pegada de carbono dos produtos?', answer: 'Utilizando energia elétrica (incluindo renovável), estes sistemas têm emissão operacional zero de CO2 e CO. Alguns produtos, como as biolareiras Herkell, usam bioetanol com emissão mínima.' },
+    { question: 'Qual é o impacto na fatura energética anual de uma empresa?', answer: 'Em média, empresas reduzem 30-40% dos custos de aquecimento/arrefecimento. Para uma empresa com despesa anual de 10 mil euros, a poupança anual é 3-4 mil euros, com ROI em 3-5 anos.' },
+    { question: 'Como reportamos o impacto de sustentabilidade para relatórios ESG?', answer: 'Fornecemos métricas de emissões evitadas, consumo reduzido e certificações ambientais. Estes dados são diretos para relatórios GRI, TCFD e outras frameworks de sustentabilidade.' },
+    { question: 'Oferece consultoria para candidaturas a financiamento de eficiência energética?', answer: 'Sim. Apoiamos empresas na identificação de fundos Portugal 2030, programas de eficiência energética e incentivos fiscais. Temos expertise em desenho de projetos elegíveis.' },
   ] : [
     { question: 'How do the products contribute to ESG goals?', answer: 'The equipment emits no CO2 at point of use (they are electric), has a long lifespan, and contributes to energy efficiency and employee wellbeing targets.' },
     { question: 'Do the products have environmental certifications?', answer: 'Yes. Most products have European energy efficiency certifications (ErP, CE) and some have specific low-emission certifications.' },
     { question: 'What type of businesses benefit most?', answer: 'Restaurants, hotels, offices, retail, and light industry. Any business with regular heating/cooling spaces.' },
     { question: 'Are there grants or tax incentives available?', answer: 'Yes. Energy efficiency investments may be eligible for Portugal 2030 support and other programs. We can help you identify the options.' },
     { question: 'What is the carbon footprint of the products?', answer: 'Using electrical energy (including renewable), these systems have zero operational CO2 and CO emissions. Some products, like Herkell biofireplaces, use bioethanol with minimal emission.' },
+    { question: 'What is the impact on a company\'s annual energy bill?', answer: 'On average, companies reduce heating/cooling costs by 30-40%. For a company with annual expense of 10,000 euros, annual savings are 3-4 thousand euros, with ROI in 3-5 years.' },
+    { question: 'How do we report sustainability impact for ESG reports?', answer: 'We provide metrics on avoided emissions, reduced consumption and environmental certifications. This data goes directly into GRI, TCFD and other sustainability frameworks.' },
+    { question: 'Do you provide consulting for energy efficiency financing applications?', answer: 'Yes. We support companies in identifying Portugal 2030 funds, energy efficiency programs and tax incentives. We have expertise in designing eligible projects.' },
   ];
 
   const stats = [
@@ -179,6 +185,60 @@ const SustainableBusinessPage = () => {
                 </p>
               </div>
 
+              {/* Tipos de Sustentabilidade */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Três Pilares da Sustentabilidade' : 'Three Pillars of Sustainability'}
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <TrendingDown className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Redução de Emissões' : 'Emissions Reduction'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Equipamentos 100% elétricos sem combustão direta. Usados com energia renovável, emissão operacional zero. Contribuem para descarbonização de empresas e cumprimento de metas de neutralidade carbónica até 2050.'
+                          : '100% electric equipment with no direct combustion. Used with renewable energy, zero operational emissions. Contribute to corporate decarbonization and net-zero targets by 2050.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Award className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Eficiência Energética' : 'Energy Efficiency'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Redução de 30-40% no consumo energético. Sistemas com alta eficiência certificados pela UE (ErP). Otimização de custos operacionais e melhoria de performance em relatórios energéticos do edifício.'
+                          : 'Reduction of 30-40% in energy consumption. High-efficiency systems certified by EU (ErP). Cost optimization and improved building energy reports.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Leaf className="w-6 h-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Bem-Estar e Saúde' : 'Wellbeing & Health'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Aquecimento sem poeira, sem ruído, sem emissões internas. Melhora qualidade do ar interior, reduz doenças respiratórias e aumenta produtividade dos colaboradores. Contribui para certificações WELL e Leed.'
+                          : 'Heating without dust, noise, or indoor emissions. Improves indoor air quality, reduces respiratory diseases and increases employee productivity. Contributes to WELL and LEED certifications.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               {/* Use cases */}
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-5">
@@ -197,6 +257,90 @@ const SustainableBusinessPage = () => {
                       </div>
                     </div>
                   ))}
+                </div>
+              </div>
+
+              {/* Processo */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Como Implementamos Sustentabilidade' : 'How We Implement Sustainability'}
+                </h2>
+                <div className="space-y-4">
+                  {[
+                    {
+                      num: 1,
+                      title: isPt ? 'Diagnóstico de Sustentabilidade' : 'Sustainability Audit',
+                      desc: isPt
+                        ? 'Análise completa de consumos energéticos, emissões atuais, certificações possíveis e oportunidades de eficiência.'
+                        : 'Complete analysis of energy consumption, current emissions, possible certifications and efficiency opportunities.',
+                    },
+                    {
+                      num: 2,
+                      title: isPt ? 'Plano de Implementação' : 'Implementation Plan',
+                      desc: isPt
+                        ? 'Recomendações personalizadas com tecnologias, cronograma e custo-benefício. Compatibilidade com objetivos ESG da empresa.'
+                        : 'Personalized recommendations with technologies, timeline and cost-benefit. Alignment with company ESG objectives.',
+                    },
+                    {
+                      num: 3,
+                      title: isPt ? 'Apoio a Financiamento' : 'Financing Support',
+                      desc: isPt
+                        ? 'Identificação de programas Portugal 2030, fundos de eficiência energética e incentivos fiscais. Suporte na candidatura.'
+                        : 'Identification of Portugal 2030 programs, energy efficiency funds and tax incentives. Application support.',
+                    },
+                    {
+                      num: 4,
+                      title: isPt ? 'Instalação e Certificação' : 'Installation & Certification',
+                      desc: isPt
+                        ? 'Implementação profissional com garantias. Emissão de certificados de eficiência energética e documentação ESG.'
+                        : 'Professional implementation with warranties. Issue of energy efficiency certificates and ESG documentation.',
+                    },
+                    {
+                      num: 5,
+                      title: isPt ? 'Monitoramento e Relatório' : 'Monitoring & Reporting',
+                      desc: isPt
+                        ? 'Acompanhamento contínuo de poupanças, emissões evitadas e métricas ESG. Relatórios para stakeholders e reguladores.'
+                        : 'Continuous monitoring of savings, avoided emissions and ESG metrics. Reports for stakeholders and regulators.',
+                    },
+                  ].map((step, i) => (
+                    <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                      <div className="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        {step.num}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{step.title}</h3>
+                        <p className="text-sm text-gray-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Cobertura geográfica */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-5">
+                  {isPt ? 'Onde Trabalhamos com Empresas' : 'Where We Work with Businesses'}
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    'Algarve', 'Lisboa', 'Porto', 'Cascais', 'Sintra',
+                    'Setúbal', 'Comporta', 'Madeira', 'Açores'
+                  ].map((region, i) => (
+                    <div key={i} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl">
+                      <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">{region}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-5 bg-green-50 border border-green-200 rounded-xl">
+                  <p className="text-sm text-gray-700">
+                    {isPt
+                      ? 'Operamos em todo o país, com expertise em restauração, hotelaria, escritórios, comércio e indústria ligeira. Consultoria em sustentabilidade corporativa e candidaturas a financiamento europeu.'
+                      : 'We operate nationwide, with expertise in restaurants, hotels, offices, retail and light industry. Corporate sustainability consulting and European financing applications.'}
+                  </p>
+                  <Link to="/algarve" className="text-green-600 font-semibold mt-3 inline-flex items-center gap-2 hover:text-green-700 transition-colors">
+                    {isPt ? 'Soluções sustentáveis no Algarve' : 'Sustainable solutions in Algarve'} <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
 

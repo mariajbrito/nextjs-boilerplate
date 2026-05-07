@@ -21,15 +21,23 @@ const OutdoorComfortPage = () => {
     : 'Boost patio revenue by 40 to 50% with infrared heating. Instant warmth, rain-resistant, no smoke or odors. Solution for restaurants and hotels.';
 
   const faqs = isPt ? [
-    { question: 'O aquecimento por infravermelhos funciona com vento?', answer: 'Sim. Ao contrário do aquecimento convencional, os infravermelhos aqueciam os objetos e pessoas diretamente, não o ar, pelo que o vento não afeta a eficiência.' },
-    { question: 'Quanto aumenta a faturação com esplanadas aquecidas?', answer: 'Os nossos clientes reportam aumentos de 40-50% na utilização das esplanadas, com extensão da época de 3-4 meses extra por ano.' },
-    { question: 'Os aquecedores são seguros para uso exterior?', answer: 'Sim, os modelos Solamagic têm certificação IP para uso exterior, proteção contra chuva e são seguros para espaços com clientes.' },
-    { question: 'Qual o consumo elétrico dos aquecedores?', answer: 'Os modelos variam entre 900W e 3000W. Com a tecnologia de carbono Solamagic, o consumo é até 30% inferior a aquecedores convencionais.' },
+    { question: 'Como aquecer uma esplanada de restaurante de forma eficiente?', answer: 'A solução mais eficiente são aquecedores por infravermelhos de onda curta. Aquecem pessoas e objetos diretamente, são imunes ao vento e ligam-se em segundos. Para uma esplanada típica de 30 a 50 m², bastam 2 a 4 aparelhos.' },
+    { question: 'O aquecimento por infravermelhos funciona com vento?', answer: 'Sim. Ao contrário do aquecimento convencional, os infravermelhos aquecem objetos e pessoas diretamente, não o ar, pelo que o vento não afeta a eficiência.' },
+    { question: 'Quanto aumenta a faturação com esplanadas aquecidas?', answer: 'Os nossos clientes em restauração reportam aumentos de 40 a 50% na utilização das esplanadas, com extensão da época de 3 a 4 meses por ano.' },
+    { question: 'Os aquecedores são seguros para uso exterior e à chuva?', answer: 'Sim. Os modelos Solamagic têm certificação IP para uso exterior, proteção contra chuva e são seguros para espaços com clientes, mesmo crianças.' },
+    { question: 'Qual o consumo elétrico dos aquecedores para esplanada?', answer: 'Os modelos variam entre 900W e 3000W. Com a tecnologia de carbono Solamagic, o consumo é até 30% inferior a aquecedores convencionais. Por isso, em ciclos de utilização típicos de restauração, o custo elétrico é compensado pelo aumento de faturação.' },
+    { question: 'Cogumelo a gás ou aquecedor por infravermelhos?', answer: 'Os infravermelhos vencem em quase tudo: sem fumo, sem cheiros, sem botija de gás, ligar e desligar imediato, custos de operação mais baixos e maior segurança. O cogumelo a gás tem ainda problemas regulatórios em vários municípios.' },
+    { question: 'Quanto tempo demora a instalação?', answer: 'Tipicamente entre 1 e 3 dias. A maioria dos modelos é fixada em parede, teto ou suporte, com ligação à rede elétrica padrão. Não há obras significativas.' },
+    { question: 'Atendem em todo o Portugal?', answer: 'Sim. Estamos sediados no Algarve, com cobertura nacional. Para esplanadas no Algarve, fazemos visita técnica gratuita em 24 a 72 horas.' },
   ] : [
+    { question: 'How to heat a restaurant patio efficiently?', answer: 'The most efficient solution is short-wave infrared heaters. They heat people and objects directly, are wind-immune and turn on in seconds. For a typical 30 to 50 m² patio, 2 to 4 units are enough.' },
     { question: 'Does infrared heating work in wind?', answer: 'Yes. Unlike conventional heating, infrared warms objects and people directly, not the air, so wind does not affect efficiency.' },
-    { question: 'How much does revenue increase with heated patios?', answer: 'Our clients report 40-50% increases in patio usage, extending the season by 3-4 extra months per year.' },
-    { question: 'Are the heaters safe for outdoor use?', answer: 'Yes, Solamagic models have IP certification for outdoor use, rain protection and are safe for spaces with customers.' },
+    { question: 'How much does revenue increase with heated patios?', answer: 'Our hospitality clients report 40 to 50% increases in patio usage, extending the season by 3 to 4 months per year.' },
+    { question: 'Are the heaters safe for outdoor use and rain?', answer: 'Yes, Solamagic models have IP certification for outdoor use, rain protection and are safe for spaces with customers, including children.' },
     { question: 'What is the electrical consumption?', answer: 'Models range from 900W to 3000W. With Solamagic carbon technology, consumption is up to 30% lower than conventional heaters.' },
+    { question: 'Gas mushroom or infrared heater?', answer: 'Infrared wins almost across the board: no smoke, no odors, no gas bottle, instant on/off, lower operating costs and better safety. Gas mushrooms also face regulatory restrictions in many municipalities.' },
+    { question: 'How long does installation take?', answer: 'Typically 1 to 3 days. Most units mount on wall, ceiling or stand, with standard electrical connection. No major construction.' },
+    { question: 'Do you serve all of Portugal?', answer: 'Yes. We are based in the Algarve and operate nationwide. For Algarve patios, we offer free technical visits within 24 to 72 hours.' },
   ];
 
   const benefits = [
@@ -167,6 +175,124 @@ const OutdoorComfortPage = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Tipos de aquecimento exterior */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isPt ? 'Tipos de aquecimento para exterior' : 'Types of outdoor heating'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-5">
+                  {isPt
+                    ? 'Existem várias tecnologias para aquecer um espaço exterior. Cada uma tem aplicações ideais. Trabalhamos com as mais eficientes:'
+                    : 'There are several technologies for heating outdoor spaces. Each has ideal applications. We work with the most efficient:'}
+                </p>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Infravermelhos onda curta (Solamagic)' : 'Short-wave infrared (Solamagic)'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'O premium de topo de gama. Calor imediato, 92% de eficiência, à prova de chuva. Ideal para esplanadas de restauração e hotelaria com clientela rotativa. Pode ter lâmpadas low glare para ambientes noturnos.'
+                        : 'The premium top tier. Instant heat, 92% efficiency, rain-resistant. Ideal for hospitality patios with rotating customers. Available with low glare lamps for nighttime spaces.'}
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-amber-500 bg-amber-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Infravermelhos onda média (ComfortSun)' : 'Medium-wave infrared (ComfortSun)'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'Polivalente. Aquece de forma menos intensa mas mais uniforme. Bom equilíbrio preço/desempenho para terraços, jardins, esplanadas pequenas e médias.'
+                        : 'Versatile. Heats less intensely but more uniformly. Good price/performance balance for terraces, gardens, small and medium patios.'}
+                    </p>
+                  </div>
+                  <div className="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded-r-xl">
+                    <h3 className="font-bold text-gray-900 mb-1">{isPt ? 'Torres de aquecimento (ComfortSun Polivalente)' : 'Heating towers (ComfortSun Polivalente)'}</h3>
+                    <p className="text-sm text-gray-700">
+                      {isPt
+                        ? 'Portáteis, sem instalação fixa. Ideais para eventos, casamentos, mercados, espaços onde a montagem é temporária ou se quer flexibilidade no layout.'
+                        : 'Portable, no fixed installation. Ideal for events, weddings, markets and spaces where setup is temporary or layout flexibility matters.'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Por setor */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isPt ? 'Soluções por setor' : 'Sector solutions'}
+                </h2>
+                <div className="space-y-4">
+                  {(isPt ? [
+                    { t: 'Restauração: cafés, restaurantes, gelatarias', d: 'Esplanadas com fluxo elevado e clientes que querem decidir rapidamente onde se sentar. Modelos Solamagic e ComfortSun Profissional, com calor imediato. ROI típico em 1 a 2 anos pelo aumento de faturação.' },
+                    { t: 'Hotelaria: hotéis, resorts, alojamento local', d: 'Terraços de quarto, áreas de pequeno-almoço exterior, zonas de bar e piscina. Combinação de aquecedores fixos premium (Solamagic) com bioclimatizadores no verão.' },
+                    { t: 'Eventos: casamentos, festas, mercados', d: 'Solução móvel com torres de aquecimento ComfortSun Polivalente. Sem instalação fixa, sem gás, sem fumo. Perfeito para casamentos e eventos corporativos exteriores.' },
+                    { t: 'Imobiliário e habitação privada', d: 'Terraços, alpendres, jardins. Os Solamagic e ComfortSun aumentam a área útil da casa em meses frios sem necessidade de obras.' },
+                  ] : [
+                    { t: 'Hospitality F&B: cafes, restaurants, gelaterias', d: 'High-traffic patios with customers needing quick seating decisions. Solamagic and ComfortSun Professional models with instant heat. Typical ROI in 1 to 2 years.' },
+                    { t: 'Hotels and resorts', d: 'Room terraces, outdoor breakfast areas, bar and pool zones. Mix of premium fixed heaters (Solamagic) with bioclimators for summer.' },
+                    { t: 'Events: weddings, parties, markets', d: 'Portable solution with ComfortSun Polivalente towers. No fixed install, no gas, no smoke. Perfect for outdoor weddings and corporate events.' },
+                    { t: 'Real estate and private homes', d: 'Terraces, porches, gardens. Solamagic and ComfortSun expand the usable area of the home in cold months with no construction.' },
+                  ]).map((s, i) => (
+                    <div key={i} className="bg-white border border-gray-200 rounded-xl p-5">
+                      <h3 className="font-bold text-gray-900 mb-1">{s.t}</h3>
+                      <p className="text-sm text-gray-600">{s.d}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Como funciona */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                  {isPt ? 'Como dimensionamos a sua esplanada (passo a passo)' : 'How we dimension your patio (step by step)'}
+                </h2>
+                <ol className="space-y-3">
+                  {(isPt ? [
+                    { t: 'Visita gratuita ao espaço', d: 'Medimos a esplanada, observamos a exposição ao vento, identificamos pontos de instalação e tomada elétrica. Conversamos sobre o tipo de cliente e horário de utilização.' },
+                    { t: 'Plano técnico personalizado', d: 'Calculamos a potência total necessária, número e disposição dos aquecedores, e estimamos consumo por mês.' },
+                    { t: 'Estudo de retorno do investimento', d: 'Apresentamos uma estimativa de ROI baseada na ocupação atual da esplanada e no aumento esperado pela extensão da época.' },
+                    { t: 'Instalação rápida', d: 'Em 1 a 3 dias, sem obras. Os aquecedores ficam fixados em parede, pilar ou suporte, com ligação elétrica padrão.' },
+                    { t: 'Apoio pós-venda', d: 'Garantia, manutenção e substituição de lâmpadas. Estamos cá quando precisar.' },
+                  ] : [
+                    { t: 'Free site visit', d: 'We measure the patio, observe wind exposure, identify mounting points and electrical access. We discuss customer type and usage hours.' },
+                    { t: 'Tailored technical plan', d: 'We calculate total power required, number and layout of heaters, and estimate monthly consumption.' },
+                    { t: 'ROI study', d: 'We present an ROI estimate based on current patio occupancy and expected gain from extending the season.' },
+                    { t: 'Fast installation', d: 'In 1 to 3 days, no construction. Heaters mount on wall, pillar or stand, standard electrical connection.' },
+                    { t: 'After-sales support', d: 'Warranty, maintenance and lamp replacement. We are here when you need us.' },
+                  ]).map((s, i) => (
+                    <li key={i} className="flex gap-4 p-4 bg-white border border-gray-200 rounded-xl">
+                      <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">{i + 1}</div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{s.t}</h3>
+                        <p className="text-sm text-gray-600">{s.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              {/* Onde atendemos */}
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                  {isPt ? 'Onde aquecemos esplanadas' : 'Where we heat patios'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  {isPt
+                    ? 'Trabalhamos com restaurantes, hotéis e espaços de eventos em todo o Portugal. Cobertura especial e visita gratuita imediata na zona do Algarve.'
+                    : 'We work with restaurants, hotels and event venues throughout Portugal. Special coverage and immediate free visit in the Algarve.'}
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+                  {['Algarve', 'Lisboa', 'Porto', 'Cascais', 'Sintra', 'Setúbal', 'Comporta', 'Madeira', 'Açores'].map(r => (
+                    <div key={r} className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle2 className="w-4 h-4 text-orange-500 flex-shrink-0" />
+                      {r}
+                    </div>
+                  ))}
+                </div>
+                {isPt && (
+                  <p className="text-sm text-gray-600 mt-4">
+                    Saiba mais sobre o nosso serviço no <Link to="/algarve" className="text-orange-600 font-bold hover:underline">Algarve</Link>.
+                  </p>
+                )}
               </div>
 
               {/* FAQ */}

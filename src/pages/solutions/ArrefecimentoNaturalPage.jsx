@@ -26,12 +26,18 @@ const ArrefecimentoNaturalPage = () => {
     { question: 'Quanto poupa face ao ar condicionado?', answer: 'O consumo é até 80% inferior ao de um sistema de ar condicionado convencional. Um bioclimatizador consome entre 100W e 300W, enquanto um A/C equivalente consome 1500W a 3000W.' },
     { question: 'É necessária instalação complexa?', answer: 'Não. Os modelos portáteis ligam-se a uma tomada e necessitam apenas de água. Os modelos fixos podem ser instalados em parede ou teto com tubagem de água simples.' },
     { question: 'Os bioclimatizadores aumentam a humidade do ar?', answer: 'Sim, ligeiramente. Em climas secos como o Algarve e o Alentejo, isso é uma vantagem adicional. Em zonas muito húmidas, o efeito de arrefecimento é menor.' },
+    { question: 'Qual é a manutenção necessária?', answer: 'Mínima. Trocar ou limpar os painéis alveolares de 2 em 2 anos, verificar o nível de água semanalmente e limpar o depósito regularmente. Muito mais simples do que ar condicionado convencional.' },
+    { question: 'Os bioclimatizadores produzem muito ruído?', answer: 'Não. O ruído é inferior a 70 dB, comparável a uma conversa normal. Os sistemas de ar condicionado compressor produzem 80 a 85 dB e são bem mais incómodos.' },
+    { question: 'Funciona bem no Algarve durante todo o verão?', answer: 'Sim, excelentemente. O Algarve tem clima seco e quente, perfeito para arrefecimento evaporativo. Pode baixar a temperatura 10 a 15°C com relativa facilidade, mesmo em dias muito quentes.' },
   ] : [
     { question: 'How does evaporative cooling work?', answer: 'Water evaporates through honeycomb panels, absorbing heat from the air and reducing ambient temperature by 5 to 15°C. It is the same principle as the breeze near the sea or a river.' },
     { question: 'Do bioclimatic coolers work indoors?', answer: 'They work best in semi-open or cross-ventilated spaces, such as warehouses, covered patios, gyms and pavilions. In fully enclosed rooms, it is recommended to keep an opening for air renewal.' },
     { question: 'How much do you save compared to AC?', answer: 'Consumption is up to 80% lower than a conventional air conditioning system. A bioclimatic cooler uses 100-300W, while an equivalent AC uses 1500-3000W.' },
     { question: 'Is complex installation required?', answer: 'No. Portable models plug into a socket and only need water. Fixed models can be wall or ceiling mounted with simple water piping.' },
     { question: 'Do they increase air humidity?', answer: 'Slightly, yes. In dry climates like the Algarve and Alentejo, this is an additional benefit. In very humid areas, the cooling effect is reduced.' },
+    { question: 'What maintenance is required?', answer: 'Minimal. Replace or clean the honeycomb panels every 2 years, check water level weekly, and clean the tank regularly. Much simpler than conventional air conditioning.' },
+    { question: 'Do they produce much noise?', answer: 'No. Noise is below 70 dB, comparable to normal conversation. Air conditioning with compressor produces 80 to 85 dB and is much more bothersome.' },
+    { question: 'Does it work well in the Algarve throughout summer?', answer: 'Yes, excellently. The Algarve has a dry, hot climate, perfect for evaporative cooling. You can lower temperature 10 to 15°C relatively easily, even on very hot days.' },
   ];
 
   const benefits = [
@@ -177,18 +183,159 @@ const ArrefecimentoNaturalPage = () => {
                 </div>
               </section>
 
+              {/* Tipos de arrefecimento */}
+              <section>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-4">
+                  {isPt ? 'Tipos de Arrefecimento Natural' : 'Types of Natural Cooling'}
+                </h2>
+                <div className="space-y-4">
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Wind className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Portátil por Evaporação' : 'Portable Evaporative'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Unidades móveis ligadas à corrente e a um recipiente de água. Ideais para salas, quartos ou espaços pequenos. Arrefecimento de 5-10°C.'
+                          : 'Mobile units connected to power and a water container. Ideal for rooms, bedrooms or small spaces. Cooling of 5-10°C.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Leaf className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Fixo em Parede/Teto' : 'Wall/Ceiling Mounted'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Instalação permanente para grandes áreas. Tubagem simples de água, ligação elétrica. Arrefecimento de 10-15°C em espaços amplos.'
+                          : 'Permanent installation for large areas. Simple water piping, electrical connection. Cooling of 10-15°C in large spaces.'}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <ThermometerSnowflake className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-gray-900 mb-1">
+                        {isPt ? 'Combinado com HVAC' : 'Combined with HVAC'}
+                      </h3>
+                      <p className="text-sm text-gray-600">
+                        {isPt
+                          ? 'Integração com ventilação existente para máxima eficiência. Recomendado para armazéns, pavilhões industriais e centros comerciais.'
+                          : 'Integration with existing ventilation for maximum efficiency. Recommended for warehouses, industrial pavilions and shopping centers.'}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
               {/* Use Cases */}
               <section>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">
-                  {isPt ? 'Aplicações Ideais' : 'Ideal Applications'}
+                  {isPt ? 'Soluções por Setor' : 'Solutions by Sector'}
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {useCases.map((uc, i) => (
-                    <div key={i} className="bg-gray-50 rounded-xl p-5 border border-gray-100">
-                      <h3 className="font-bold text-gray-900 text-sm mb-1">{uc.title}</h3>
-                      <p className="text-gray-500 text-sm leading-relaxed">{uc.desc}</p>
+                    <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                      <CheckCircle2 className="w-5 h-5 text-blue-500 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{uc.title}</h3>
+                        <p className="text-sm text-gray-600">{uc.desc}</p>
+                      </div>
                     </div>
                   ))}
+                </div>
+              </section>
+
+              {/* Processo */}
+              <section>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-4">
+                  {isPt ? 'Como Escolhemos a Solução (Passo a Passo)' : 'How We Choose the Solution (Step by Step)'}
+                </h2>
+                <div className="space-y-4">
+                  {[
+                    {
+                      num: 1,
+                      title: isPt ? 'Análise do Espaço' : 'Space Analysis',
+                      desc: isPt
+                        ? 'Medimos área, volume, ventilação, isolamento e clima local para determinar necessidades de arrefecimento.'
+                        : 'We measure area, volume, ventilation, insulation and local climate to determine cooling needs.',
+                    },
+                    {
+                      num: 2,
+                      title: isPt ? 'Recomendação de Tipo' : 'Type Recommendation',
+                      desc: isPt
+                        ? 'Escolhemos entre portátil, fixo ou combinado com HVAC, baseado na análise de viabilidade e orçamento.'
+                        : 'We choose between portable, fixed or combined with HVAC, based on feasibility and budget analysis.',
+                    },
+                    {
+                      num: 3,
+                      title: isPt ? 'Simulação de Poupança' : 'Savings Simulation',
+                      desc: isPt
+                        ? 'Calculamos consumo estimado, poupança face ao ar condicionado (até 80%) e retorno do investimento.'
+                        : 'We calculate estimated consumption, savings compared to air conditioning (up to 80%) and return on investment.',
+                    },
+                    {
+                      num: 4,
+                      title: isPt ? 'Instalação e Configuração' : 'Installation & Setup',
+                      desc: isPt
+                        ? 'Instalação profissional com ligação de água, elétrica e testes de funcionamento completo.'
+                        : 'Professional installation with water, electrical connections and full operation testing.',
+                    },
+                    {
+                      num: 5,
+                      title: isPt ? 'Acompanhamento' : 'Follow-up',
+                      desc: isPt
+                        ? 'Manutenção, limpeza de painéis alveolares, reposição de água e suporte técnico durante toda a estação.'
+                        : 'Maintenance, honeycomb panel cleaning, water refill and technical support throughout the season.',
+                    },
+                  ].map((step, i) => (
+                    <div key={i} className="flex gap-4 p-5 bg-white border border-gray-200 rounded-xl">
+                      <div className="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        {step.num}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-1">{step.title}</h3>
+                        <p className="text-sm text-gray-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* Cobertura geográfica */}
+              <section>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-4">
+                  {isPt ? 'Onde Instalamos Sistemas de Arrefecimento' : 'Where We Install Cooling Systems'}
+                </h2>
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  {[
+                    'Algarve', 'Lisboa', 'Porto', 'Cascais', 'Sintra',
+                    'Setúbal', 'Comporta', 'Madeira', 'Açores'
+                  ].map((region, i) => (
+                    <div key={i} className="flex items-center gap-3 p-4 bg-white border border-gray-200 rounded-xl">
+                      <CheckCircle2 className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium">{region}</span>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-5 bg-blue-50 border border-blue-200 rounded-xl">
+                  <p className="text-sm text-gray-700">
+                    {isPt
+                      ? 'Especialmente recomendado para o Algarve e Alentejo, onde o clima seco e quente maximiza a eficiência do arrefecimento evaporativo. Disponível em todo o país.'
+                      : 'Especially recommended for the Algarve and Alentejo, where the dry, hot climate maximizes the efficiency of evaporative cooling. Available throughout the country.'}
+                  </p>
+                  <Link to="/algarve" className="text-blue-600 font-semibold mt-3 inline-flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    {isPt ? 'Soluções de arrefecimento no Algarve' : 'Cooling solutions in Algarve'} <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </section>
 
