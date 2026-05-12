@@ -13,11 +13,19 @@ const PRODUCTS = [
 ];
 
 const SOLUTIONS = [
-  { label: 'Aquecer Esplanadas', path: '/solutions/outdoor-comfort' },
-  { label: 'Eliminar Humidade', path: '/solutions/eliminate-moisture' },
-  { label: 'Reduzir Custos', path: '/solutions/reduce-heating-costs' },
-  { label: 'Arrefecimento Natural', path: '/solutions/natural-cooling' },
-  { label: 'Soluções para Empresas', path: '/solutions/sustainable-business' },
+  { label: 'Humidade nas Paredes', path: '/humidade-nas-paredes' },
+  { label: 'Aquecimento Sem Obras', path: '/aquecimento-sem-obras' },
+  { label: 'Casa Quente no Verão', path: '/casa-quente-no-verao' },
+  { label: 'Reduzir Custos de Aquecimento', path: '/reduzir-custos-aquecimento' },
+  { label: 'Aquecimento Exterior', path: '/aquecimento-exterior' },
+  { label: 'Isolamento Térmico', path: '/isolamento-termico' },
+];
+
+const REGIONS = [
+  { label: 'Algarve', path: '/algarve' },
+  { label: 'Lisboa e Margem Sul', path: '/lisboa' },
+  { label: 'Porto e Norte', path: '/porto' },
+  { label: 'Madeira e Açores', path: '/madeira-acores' },
 ];
 
 export default function Footer() {
@@ -133,13 +141,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Empresa */}
+          {/* Empresa + Regiões */}
           <div>
-            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B84500', marginBottom: '20px' }}>Empresa</p>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '32px' }}>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B84500', marginBottom: '20px' }}>Regiões</p>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
+              {REGIONS.map(r => (
+                <li key={r.path}>
+                  <Link to={r.path} style={{ color: '#7A7470', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s' }}
+                    onMouseEnter={e => e.target.style.color = '#F0EBE3'}
+                    onMouseLeave={e => e.target.style.color = '#7A7470'}>
+                    {r.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#B84500', marginBottom: '14px' }}>Empresa</p>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
               {[
                 { label: 'Sobre Nós', path: '/about' },
-                { label: 'Algarve', path: '/algarve' },
                 { label: 'Serviços Imobiliários', path: '/real-estate' },
                 { label: 'Contactos', path: '/contact' },
                 { label: 'Política de Privacidade', path: '/privacy-policy' },

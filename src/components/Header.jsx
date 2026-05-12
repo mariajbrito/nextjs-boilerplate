@@ -30,14 +30,28 @@ const NAV = [
     path: '/solutions',
     children: [
       { label: 'Todas as Soluções', path: '/solutions' },
-      { group: 'Aquecimento' },
+      { group: 'Problemas e Intenção' },
+      { label: 'Humidade nas Paredes', path: '/humidade-nas-paredes' },
+      { label: 'Aquecimento Sem Obras', path: '/aquecimento-sem-obras' },
+      { label: 'Casa Quente no Verão', path: '/casa-quente-no-verao' },
+      { label: 'Reduzir Custos de Aquecimento', path: '/reduzir-custos-aquecimento' },
+      { label: 'Aquecimento Exterior', path: '/aquecimento-exterior' },
+      { label: 'Isolamento Térmico', path: '/isolamento-termico' },
+      { group: 'Por Categoria' },
       { label: 'Aquecer Esplanadas e Terraços', path: '/solutions/outdoor-comfort' },
-      { label: 'Reduzir Custos de Aquecimento', path: '/solutions/reduce-heating-costs' },
-      { group: 'Proteção e Conforto' },
       { label: 'Eliminar Humidade nas Paredes', path: '/solutions/eliminate-moisture' },
       { label: 'Arrefecimento Natural', path: '/solutions/natural-cooling' },
-      { group: 'Empresas' },
       { label: 'Soluções para Empresas', path: '/solutions/sustainable-business' },
+    ]
+  },
+  {
+    label: 'Regiões',
+    path: '/algarve',
+    children: [
+      { label: 'Algarve', path: '/algarve' },
+      { label: 'Lisboa e Margem Sul', path: '/lisboa' },
+      { label: 'Porto e Norte', path: '/porto' },
+      { label: 'Madeira e Açores', path: '/madeira-acores' },
     ]
   },
   { label: 'Imobiliário', path: '/real-estate' },

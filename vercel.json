@@ -1,4 +1,20 @@
 {
+  "redirects": [
+    { "source": "/generic.html", "destination": "/", "statusCode": 301 },
+    { "source": "/elements.html", "destination": "/products", "statusCode": 301 },
+    { "source": "/index.html", "destination": "/", "statusCode": 301 },
+    { "source": "/home.html", "destination": "/", "statusCode": 301 },
+    { "source": "/contact.html", "destination": "/contact", "statusCode": 301 },
+    { "source": "/contacto.html", "destination": "/contact", "statusCode": 301 },
+    { "source": "/about.html", "destination": "/about", "statusCode": 301 },
+    { "source": "/sobre.html", "destination": "/about", "statusCode": 301 },
+    { "source": "/products.html", "destination": "/products", "statusCode": 301 },
+    { "source": "/produtos.html", "destination": "/products", "statusCode": 301 },
+    { "source": "/services.html", "destination": "/solutions", "statusCode": 301 },
+    { "source": "/servicos.html", "destination": "/solutions", "statusCode": 301 },
+    { "source": "/landing.html", "destination": "/", "statusCode": 301 },
+    { "source": "/(.*).html", "destination": "/", "statusCode": 301 }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ],

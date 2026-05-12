@@ -4,7 +4,7 @@ import { ArrowRight, MessageCircle, Phone, Sun, Droplets, Wind, Thermometer, Zap
 import { motion, useInView, useMotionValue, useSpring } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateLocalBusinessSchema, generateOrganizationSchema } from '@/utils/schemaMarkup';
+import { generateLocalBusinessSchema, generateOrganizationSchema, generateFAQSchema } from '@/utils/schemaMarkup';
 
 /* ── Animated SVG Hero (interactive) ──────────────────────────────── */
 function HeroGraphic() {
@@ -291,6 +291,87 @@ const SOLUTIONS = [
   { label: 'Soluções para Empresas', path: '/solutions/sustainable-business', icon: Flame, desc: 'Soluções ecológicas para empresas que querem poupar e ser responsáveis.' },
 ];
 
+/* ── Estrutura temática para o Google entender áreas de negócio ── */
+const THEMES = [
+  {
+    title: 'Aquecimento Interior',
+    icon: Thermometer,
+    desc: 'Radiadores em pedra natural, painéis infravermelhos e piso radiante eléctrico para aquecer salas, quartos e escritórios com baixo consumo.',
+    links: [
+      { label: 'Aquecimento sem obras', path: '/aquecimento-sem-obras' },
+      { label: 'Duotherm radiante', path: '/products/duotherm' },
+      { label: 'Piso radiante eléctrico', path: '/products/piso-radiante' },
+    ],
+  },
+  {
+    title: 'Aquecimento Exterior',
+    icon: Sun,
+    desc: 'Aquecedores infravermelhos para esplanadas, terraços, varandas e zonas de bar. Calor imediato, sem combustão, eficiência até 92%.',
+    links: [
+      { label: 'Aquecedores para esplanadas', path: '/aquecimento-exterior' },
+      { label: 'Solamagic Premium', path: '/products/solamagic' },
+      { label: 'ComfortSun', path: '/products/comfortsun' },
+    ],
+  },
+  {
+    title: 'Humidade e Isolamento',
+    icon: Droplets,
+    desc: 'Eliminação de humidade ascendente nas paredes e isolamento térmico cerâmico aplicado como tinta. Sem demolições, sem injecções químicas.',
+    links: [
+      { label: 'Humidade nas paredes', path: '/humidade-nas-paredes' },
+      { label: 'Isolamento térmico', path: '/isolamento-termico' },
+      { label: 'Drymat', path: '/products/drymat' },
+      { label: 'ClimateCoating', path: '/products/climatecoating' },
+    ],
+  },
+  {
+    title: 'Água Quente',
+    icon: Flame,
+    desc: 'Esquentadores eléctricos instantâneos de fabrico alemão. Água quente sem depósito, sem gás, com poupança energética significativa.',
+    links: [
+      { label: 'Esquentadores Clage', path: '/products/esquentadores' },
+    ],
+  },
+  {
+    title: 'Conforto e Eficiência Energética',
+    icon: Zap,
+    desc: 'Bioclimatizadores para arrefecimento natural no verão e soluções integradas para reduzir custos de aquecimento ao longo de todo o ano.',
+    links: [
+      { label: 'Casa quente no verão', path: '/casa-quente-no-verao' },
+      { label: 'Reduzir custos de aquecimento', path: '/reduzir-custos-aquecimento' },
+      { label: 'Bioclimatizadores', path: '/products/bioclimatizadores' },
+    ],
+  },
+];
+
+/* ── FAQs SEO da homepage (intenção de pesquisa geral) ── */
+const HOMEPAGE_FAQS = [
+  {
+    question: 'Que tipo de soluções de aquecimento oferecem?',
+    answer: 'Oferecemos aquecimento por infravermelhos (Solamagic e ComfortSun para exterior e interior), radiadores em pedra natural Duotherm, piso radiante eléctrico, biolareiras de bioetanol e esquentadores eléctricos Clage. Todas as soluções são europeias, eficientes e instaladas sem obras pesadas.',
+  },
+  {
+    question: 'Como elimino humidade ascendente nas paredes sem obras?',
+    answer: 'O sistema austríaco Drymat elimina humidade ascendente através de frequência eletromagnética, sem demolições, sem químicos e sem injecções. A instalação demora poucas horas e a parede seca progressivamente entre 2 a 6 meses, com 80 a 100% de redução da humidade.',
+  },
+  {
+    question: 'É possível isolar termicamente uma casa sem fazer obras na fachada?',
+    answer: 'Sim. O revestimento cerâmico ClimateCoating é aplicado como uma tinta normal sobre paredes interiores ou exteriores. Reduz pontes térmicas, regula a humidade do ar e diminui custos de aquecimento em até 30%, sem ter de retirar mobília nem fazer obras pesadas.',
+  },
+  {
+    question: 'Em que zonas de Portugal trabalham?',
+    answer: 'Cobertura nacional, com sede em Vila Nova de Cacela no Algarve. Fazemos visitas técnicas gratuitas em todo o Algarve, Lisboa, Porto, Setúbal, Coimbra, Braga, Madeira e Açores. Tempo de resposta tipicamente entre 24 e 72 horas.',
+  },
+  {
+    question: 'Quanto custa uma análise ao imóvel?',
+    answer: 'A análise técnica ao imóvel e a apresentação de orçamento são totalmente gratuitas e sem compromisso. Após a visita recebe um plano técnico personalizado, com custos e tempos de instalação detalhados.',
+  },
+  {
+    question: 'Os equipamentos são compatíveis com painéis solares?',
+    answer: 'Sim. Os aquecedores infravermelhos, o piso radiante e os esquentadores eléctricos funcionam a energia eléctrica e podem ser alimentados por painéis fotovoltaicos. Isto torna o conforto térmico ainda mais eficiente e independente da rede.',
+  },
+];
+
 /* ── Component ─────────────────────────────────────────────────────── */
 export default function HomePage() {
   return (
@@ -325,10 +406,14 @@ export default function HomePage() {
       `}</style>
 
       <SEOHead
-        title="Aquecimento, Anti-Humidade e Conforto Térmico | Evoluimos Comércio"
-        description="Soluções de aquecimento exterior e interior, eliminação de humidade nas paredes e arrefecimento natural. Tecnologia alemã, instalação sem obras, no Algarve e em Portugal."
+        title="Aquecimento, Anti-Humidade e Eficiência Energética | Evoluimos Comércio"
+        description="Aquecimento interior e exterior, eliminação de humidade nas paredes, isolamento térmico e arrefecimento natural. Tecnologia europeia, sem obras, em todo o Portugal."
         canonical="/"
-        schemas={[generateLocalBusinessSchema(), generateOrganizationSchema()]}
+        schemas={[
+          generateLocalBusinessSchema(),
+          generateOrganizationSchema(),
+          generateFAQSchema(HOMEPAGE_FAQS),
+        ]}
       />
 
       {/* ── HERO ── */}
@@ -341,12 +426,12 @@ export default function HomePage() {
         <div className="relative z-10 flex flex-col justify-between h-full px-6 sm:px-12 lg:px-20 py-10 sm:py-14">
           <div className="flex flex-col items-center justify-center flex-1 text-center max-w-3xl mx-auto w-full">
             <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.16,1,0.3,1] }}>
-              <span className="ec-tag pjs mb-6 inline-block">Tecnologia Alemã</span>
-              <h1 className="pjs" style={{ fontSize: 'clamp(2.4rem, 6vw, 5rem)', fontWeight: 800, color: '#F5F0E8', lineHeight: 1.05, letterSpacing: '-0.02em', marginBottom: '20px' }}>
-                Conforto Térmico<br /><span style={{ color: '#B84500' }}>Sustentável</span>
+              <span className="ec-tag pjs mb-6 inline-block">Tecnologia Europeia</span>
+              <h1 className="pjs" style={{ fontSize: 'clamp(2.2rem, 5.4vw, 4.6rem)', fontWeight: 800, color: '#F5F0E8', lineHeight: 1.06, letterSpacing: '-0.02em', marginBottom: '20px' }}>
+                Aquecimento, Humidade e <span style={{ color: '#B84500' }}>Eficiência Energética</span>
               </h1>
-              <p className="pjs" style={{ fontSize: 'clamp(1.05rem, 2vw, 1.2rem)', color: '#B8B0A5', lineHeight: 1.75, marginBottom: '36px', maxWidth: '480px', margin: '0 auto 36px' }}>
-                Aquecimento, arrefecimento e proteção de edifícios. Soluções de alta tecnologia europeia para habitação e negócio.
+              <p className="pjs" style={{ fontSize: 'clamp(1.05rem, 2vw, 1.2rem)', color: '#B8B0A5', lineHeight: 1.75, marginBottom: '36px', maxWidth: '560px', margin: '0 auto 36px' }}>
+                Conforto térmico premium para casas e empresas. Aquecimento interior e exterior, eliminação de humidade nas paredes, isolamento térmico e arrefecimento natural. Tecnologia europeia, sem obras.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
                 <a href={WA} target="_blank" rel="noopener noreferrer" className="pjs" aria-label="Contactar via WhatsApp"
@@ -469,6 +554,52 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── ÁREAS DE NEGÓCIO (estrutura temática para SEO) ── */}
+      <section aria-label="Áreas de negócio" style={{ background: '#0D0D10', padding: 'clamp(64px, 8vw, 100px) 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} style={{ marginBottom: '52px', maxWidth: '720px' }}>
+            <div style={{ width: '36px', height: '3px', background: '#B84500', borderRadius: '2px', marginBottom: '20px' }} />
+            <h2 className="pjs" style={{ fontSize: 'clamp(1.9rem, 3.5vw, 2.8rem)', fontWeight: 800, color: '#F5F0E8', lineHeight: 1.1, marginBottom: '16px' }}>
+              Cinco áreas, <span style={{ color: '#B84500' }}>uma só missão</span>
+            </h2>
+            <p className="pjs" style={{ color: '#9A9490', fontSize: '17px', lineHeight: 1.75 }}>
+              Trabalhamos o conforto térmico de forma integrada. Aquecimento interior e exterior, humidade e isolamento, água quente e eficiência energética. Cada área tem produtos e soluções pensados para problemas reais das casas portuguesas.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {THEMES.map((th, i) => {
+              const Icon = th.icon;
+              return (
+                <motion.article
+                  key={th.title}
+                  initial={{ opacity:0, y:20 }}
+                  whileInView={{ opacity:1, y:0 }}
+                  viewport={{ once:true }}
+                  transition={{ delay: i*0.08 }}
+                  style={{ background: '#16161A', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '20px', padding: '28px', display: 'flex', flexDirection: 'column', gap: '18px', height: '100%' }}
+                >
+                  <div style={{ width: '52px', height: '52px', borderRadius: '14px', background: 'rgba(184,69,0,0.14)', border: '1px solid rgba(184,69,0,0.28)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Icon style={{ width: '24px', height: '24px', color: '#F0A020' }} aria-hidden="true" />
+                  </div>
+                  <h3 className="pjs" style={{ fontSize: '20px', fontWeight: 800, color: '#F5F0E8', lineHeight: 1.25 }}>{th.title}</h3>
+                  <p className="pjs" style={{ fontSize: '14px', color: '#9A9490', lineHeight: 1.7, flex: 1 }}>{th.desc}</p>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: '6px', listStyle: 'none', padding: 0, margin: 0 }}>
+                    {th.links.map(l => (
+                      <li key={l.path}>
+                        <Link to={l.path} className="pjs" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '13.5px', fontWeight: 600, color: '#F0A020', textDecoration: 'none' }}>
+                          <ArrowRight style={{ width: '12px', height: '12px' }} aria-hidden="true" /> {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ── SOLUTIONS 4 cards com descrição ── */}
       <section aria-label="Soluções" style={{ background: '#141417', padding: 'clamp(64px, 8vw, 100px) 0' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -506,6 +637,33 @@ export default function HomePage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ SEO ── */}
+      <section aria-label="Perguntas frequentes" style={{ background: '#0F0F11', padding: 'clamp(64px, 8vw, 100px) 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <motion.div initial={{ opacity:0, y:20 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} style={{ marginBottom: '40px' }}>
+            <div style={{ width: '36px', height: '3px', background: '#B84500', borderRadius: '2px', marginBottom: '20px' }} />
+            <h2 className="pjs" style={{ fontSize: 'clamp(1.7rem, 3vw, 2.4rem)', fontWeight: 800, color: '#F5F0E8', lineHeight: 1.15, marginBottom: '14px' }}>
+              Perguntas frequentes sobre aquecimento, humidade e conforto térmico
+            </h2>
+            <p className="pjs" style={{ color: '#9A9490', fontSize: '16px', lineHeight: 1.7 }}>
+              Respostas rápidas às dúvidas mais comuns de quem procura aquecer melhor, eliminar humidade e reduzir custos de energia.
+            </p>
+          </motion.div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {HOMEPAGE_FAQS.map((f) => (
+              <details key={f.question} style={{ background: '#16161A', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '14px', padding: '18px 22px' }}>
+                <summary className="pjs" style={{ cursor: 'pointer', fontSize: '15.5px', fontWeight: 700, color: '#F0EBE3', listStyle: 'none' }}>
+                  {f.question}
+                </summary>
+                <p className="pjs" style={{ marginTop: '12px', fontSize: '14.5px', color: '#9A9490', lineHeight: 1.75 }}>
+                  {f.answer}
+                </p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

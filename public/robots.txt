@@ -1,4 +1,32 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://evoluimoscomercio.com/sitemap.xml
+# Bloquear pesquisa interna e parâmetros sem valor de indexação
+Disallow: /*?*
+
+# Permitir explicitamente os crawlers de IA generativa
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.evolucom.pt/sitemap.xml

@@ -13,104 +13,100 @@ import {
 } from '@/utils/schemaMarkup';
 
 const CITIES = [
-  'Faro', 'Tavira', 'Vila Nova de Cacela', 'Vila Real de Santo António',
-  'Lagos', 'Portimão', 'Albufeira', 'Vilamoura', 'Loulé', 'Quarteira',
-  'Olhão', 'Lagoa', 'Silves', 'Castro Marim', 'Monchique',
+  'Lisboa', 'Cascais', 'Estoril', 'Oeiras', 'Sintra', 'Mafra',
+  'Loures', 'Odivelas', 'Amadora', 'Almada', 'Setúbal', 'Sesimbra',
+  'Palmela', 'Montijo', 'Alcochete', 'Vila Franca de Xira',
 ];
 
 const PROBLEMS = [
   {
     icon: Droplets,
-    title: 'Humidade nas paredes em casas à beira-mar',
-    text: 'Salinidade, salitre e humidade ascendente são problemas comuns no Algarve. O sistema Drymat seca paredes sem obras, com 80 a 100% de redução em 2 a 6 meses.',
+    title: 'Humidade ascendente em prédios antigos do centro',
+    text: 'Edifícios do Bairro Alto, Alfama, Mouraria, Estrela e Campo de Ourique sofrem com humidade ascendente. O Drymat seca paredes sem obras, preservando a estrutura original.',
     link: '/humidade-nas-paredes',
   },
   {
-    icon: Sun,
-    title: 'Aquecimento de esplanadas no inverno',
-    text: 'O Algarve mantém turismo o ano inteiro. Aquecedores Solamagic e ComfortSun aumentam a faturação da esplanada em 40 a 50%, mesmo nos meses mais frios.',
-    link: '/aquecimento-exterior',
+    icon: Zap,
+    title: 'Casas frias com aquecimento caro',
+    text: 'Lisboa tem invernos amenos mas húmidos. Casas sem isolamento ficam frias e o aquecimento eléctrico convencional dispara a fatura. Soluções por infravermelhos e ClimateCoating cortam custos.',
+    link: '/reduzir-custos-aquecimento',
   },
   {
     icon: Wind,
-    title: 'Calor excessivo no verão',
-    text: 'Bioclimatizadores e revestimento ClimateCoating reduzem a temperatura interior em 5 a 10 graus, sem ar condicionado e com baixo consumo elétrico.',
+    title: 'Apartamentos quentes no verão',
+    text: 'Últimos andares e fachadas a sul ou oeste atingem temperaturas extremas. Bioclimatizadores e ClimateCoating ThermoProtect reduzem o calor sem ar condicionado.',
     link: '/casa-quente-no-verao',
   },
   {
-    icon: Zap,
-    title: 'Reabilitação de casas antigas',
-    text: 'Casas antigas em Tavira, Olhão, Lagos ou Faro precisam de soluções não invasivas. Drymat e ClimateCoating preservam a estrutura e melhoram conforto.',
-    link: '/isolamento-termico',
+    icon: Sun,
+    title: 'Esplanadas de Lisboa o ano inteiro',
+    text: 'Bares e restaurantes em Belém, Príncipe Real, Cais do Sodré e Marvila aumentam a faturação com aquecedores Solamagic e ComfortSun nas esplanadas.',
+    link: '/aquecimento-exterior',
   },
 ];
 
 const FAQS = [
   {
-    question: 'Atendem em todo o Algarve?',
-    answer: 'Sim. Estamos sediados em Vila Nova de Cacela e fazemos análise gratuita ao imóvel em todo o distrito de Faro, incluindo Algarve barlavento e sotavento.',
+    question: 'Trabalham em todo o distrito de Lisboa?',
+    answer: 'Sim. Servimos Lisboa, Cascais, Estoril, Oeiras, Sintra, Mafra, Loures, Odivelas, Amadora, Almada e toda a margem sul incluindo Setúbal. Visitas técnicas gratuitas.',
+  },
+  {
+    question: 'É possível tratar humidade em prédios antigos de Lisboa?',
+    answer: 'Sim. Trabalhamos frequentemente em edifícios pombalinos e gaioleiros em Alfama, Bairro Alto, Mouraria e Estrela. O sistema Drymat não exige demolições, sendo adequado a estruturas históricas.',
   },
   {
     question: 'Quanto tempo demora a primeira visita?',
-    answer: 'Tipicamente entre 24 e 72 horas após contacto. A análise técnica ao imóvel é gratuita e sem compromisso.',
+    answer: 'Tipicamente entre 48 e 96 horas após contacto. Como temos sede no Algarve, a marcação para Lisboa é semanal e agendada por zonas.',
   },
   {
-    question: 'Trabalham com casas antigas em zonas históricas?',
-    answer: 'Sim. Trabalhamos frequentemente em centros históricos de Tavira, Olhão, Lagos e Faro. Os sistemas Drymat e ClimateCoating não exigem obras invasivas.',
-  },
-  {
-    question: 'Há clientes de referência no Algarve?',
-    answer: 'Sim. Servimos restaurantes, hotéis e condomínios no Algarve. Apresentamos casos de referência com autorização do cliente, durante a visita.',
+    question: 'Tratam de condomínios e edifícios com várias frações?',
+    answer: 'Sim. Apresentamos planos faseados para condomínios em Lisboa, com possibilidade de tratamento por fração ou intervenção integrada na envolvente do edifício.',
   },
 ];
 
-export default function AlgarvePage() {
+export default function LisboaPage() {
   const localBusiness = generateLocalBusinessSchema('pt');
-  const localBusinessAlgarve = {
+  const localBusinessLisboa = {
     ...localBusiness,
     'areaServed': [
-      { '@type': 'AdministrativeArea', 'name': 'Algarve' },
-      { '@type': 'City', 'name': 'Faro' },
-      { '@type': 'City', 'name': 'Tavira' },
-      { '@type': 'City', 'name': 'Vila Real de Santo António' },
-      { '@type': 'City', 'name': 'Lagos' },
-      { '@type': 'City', 'name': 'Portimão' },
-      { '@type': 'City', 'name': 'Albufeira' },
-      { '@type': 'City', 'name': 'Loulé' },
-      { '@type': 'City', 'name': 'Olhão' },
+      { '@type': 'AdministrativeArea', 'name': 'Distrito de Lisboa' },
+      { '@type': 'City', 'name': 'Lisboa' },
+      { '@type': 'City', 'name': 'Cascais' },
+      { '@type': 'City', 'name': 'Oeiras' },
+      { '@type': 'City', 'name': 'Sintra' },
+      { '@type': 'City', 'name': 'Almada' },
+      { '@type': 'City', 'name': 'Setúbal' },
     ],
   };
 
   return (
     <>
       <SEOHead
-        title="Aquecimento e Anti-Humidade no Algarve | Evoluimos Comércio"
-        description="Soluções de aquecimento, eliminação de humidade ascendente e arrefecimento natural em todo o Algarve. Análise gratuita ao imóvel em Faro, Tavira, Lagos, Portimão."
-        canonical="/algarve"
-        image="/eduardoexp1.webp"
+        title="Aquecimento, Anti-Humidade e Isolamento Térmico em Lisboa | Evoluimos Comércio"
+        description="Soluções de aquecimento, eliminação de humidade ascendente e isolamento térmico em Lisboa, Cascais, Sintra, Almada e Setúbal. Análise gratuita ao imóvel."
+        canonical="/lisboa"
+        image="/ClimateCoating/bannermarketing.png"
         schemas={[
-          localBusinessAlgarve,
+          localBusinessLisboa,
           generateFAQSchema(FAQS),
           generateServiceSchema({
-            name: 'Soluções de Conforto Térmico no Algarve',
-            description: 'Aquecimento, anti-humidade e arrefecimento natural com instalação em todo o Algarve. Análise gratuita ao imóvel.',
-            url: `${COMPANY.baseUrl}/algarve`,
+            name: 'Soluções de Conforto Térmico em Lisboa',
+            description: 'Aquecimento, anti-humidade e isolamento térmico em Lisboa e área metropolitana.',
+            url: `${COMPANY.baseUrl}/lisboa`,
             serviceType: 'Conforto térmico residencial e empresarial',
             areaServed: [
-              { '@type': 'AdministrativeArea', 'name': 'Algarve' },
+              { '@type': 'AdministrativeArea', 'name': 'Distrito de Lisboa' },
               { '@type': 'Country', 'name': 'Portugal' },
             ],
           }),
-          generatePtBreadcrumb([{ name: 'Algarve', path: '/algarve' }]),
+          generatePtBreadcrumb([{ name: 'Lisboa', path: '/lisboa' }]),
         ]}
       />
 
       <div className="min-h-screen bg-gray-50 pt-10 pb-20">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <Breadcrumb items={[{ label: 'Início', path: '/' }, { label: 'Lisboa', path: '/lisboa' }]} />
 
-          <Breadcrumb items={[{ label: 'Início', path: '/' }, { label: 'Algarve', path: '/algarve' }]} />
-
-          {/* Hero */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,13 +116,13 @@ export default function AlgarvePage() {
               <div className="p-8 sm:p-12 flex flex-col justify-center">
                 <div className="inline-flex items-center gap-2 text-orange-600 text-xs font-extrabold uppercase tracking-widest mb-4">
                   <MapPin className="w-4 h-4" aria-hidden="true" />
-                  Algarve
+                  Lisboa
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                  Aquecimento, Anti-Humidade e Arrefecimento <span className="text-orange-600">no Algarve</span>
+                  Aquecimento, Anti-Humidade e Isolamento Térmico <span className="text-orange-600">em Lisboa</span>
                 </h1>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Sediados em Vila Nova de Cacela, fazemos visitas gratuitas a imóveis em todo o Algarve, do barlavento ao sotavento. Trabalhamos com habitação privada, restauração, hotelaria e reabilitação de edifícios.
+                  Servimos toda a área metropolitana de Lisboa, do litoral atlântico à península de Setúbal. Trabalhamos com habitação privada, prédios antigos do centro histórico, condomínios e estabelecimentos comerciais.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href={WA} target="_blank" rel="noopener noreferrer"
@@ -134,24 +130,23 @@ export default function AlgarvePage() {
                     <MessageCircle className="w-5 h-5" aria-hidden="true" />
                     WhatsApp
                   </a>
-                  <a href="tel:+351965026603"
+                  <a href={`tel:${COMPANY.phoneBare}`}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-bold transition-colors">
                     <Phone className="w-5 h-5" aria-hidden="true" />
-                    +351 965 026 603
+                    {COMPANY.phone}
                   </a>
                 </div>
               </div>
               <div className="relative h-64 md:h-auto min-h-[280px]">
-                <img src="/eduardoexp2.webp" alt="Conforto térmico no Algarve" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
+                <img src="/eduardoexp3.webp" alt="Aquecimento e anti-humidade em Lisboa" className="absolute inset-0 w-full h-full object-cover" loading="eager" />
               </div>
             </div>
           </motion.div>
 
-          {/* Problems */}
-          <section aria-label="Problemas comuns no Algarve" className="mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Problemas comuns no Algarve</h2>
+          <section aria-label="Problemas comuns em Lisboa" className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-2">Problemas comuns em Lisboa</h2>
             <p className="text-gray-600 mb-8 max-w-2xl">
-              O clima do Algarve traz desafios específicos. Salinidade junto ao mar, oscilação de temperatura, pressão turística sazonal. Para cada problema, há uma solução comprovada.
+              O parque habitacional de Lisboa combina edifícios pombalinos, gaioleiros, modernismo e prédios contemporâneos. Cada tipologia traz desafios térmicos próprios. Para cada um há uma solução comprovada e instalada sem obras pesadas.
             </p>
             <div className="grid md:grid-cols-2 gap-5">
               {PROBLEMS.map((p, i) => {
@@ -179,11 +174,10 @@ export default function AlgarvePage() {
             </div>
           </section>
 
-          {/* Cities */}
           <section aria-label="Cidades servidas" className="mb-12 bg-white rounded-2xl p-8 border border-gray-100">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Servimos todo o Algarve</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-3">Servimos toda a área metropolitana</h2>
             <p className="text-gray-600 mb-6">
-              Visitas técnicas gratuitas em qualquer concelho do distrito de Faro. Tempo de resposta tipicamente entre 24 e 72 horas.
+              Visitas técnicas gratuitas em Lisboa, Cascais, Sintra, Oeiras, Almada e toda a margem sul até Setúbal. Marcações agrupadas semanalmente por zona.
             </p>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
               {CITIES.map(city => (
@@ -195,9 +189,8 @@ export default function AlgarvePage() {
             </div>
           </section>
 
-          {/* FAQ */}
           <section aria-label="Perguntas frequentes" className="mb-12">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Perguntas frequentes sobre o serviço no Algarve</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Perguntas frequentes sobre o serviço em Lisboa</h2>
             <div className="space-y-4">
               {FAQS.map((f) => (
                 <div key={f.question} className="bg-white rounded-2xl p-6 border border-gray-100">
@@ -208,11 +201,10 @@ export default function AlgarvePage() {
             </div>
           </section>
 
-          {/* CTA */}
           <section aria-label="Pedir análise gratuita" className="bg-orange-50 border border-orange-200 rounded-2xl p-8 text-center">
-            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Pedir análise gratuita ao imóvel</h2>
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-2">Pedir análise gratuita ao imóvel em Lisboa</h2>
             <p className="text-gray-600 mb-6 max-w-md mx-auto text-sm">
-              Resposta em 24 a 72 horas. Visita técnica gratuita em todo o Algarve, sem compromisso.
+              Resposta entre 48 e 96 horas. Visita técnica gratuita em Lisboa e área metropolitana, sem compromisso.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href={WA} target="_blank" rel="noopener noreferrer"

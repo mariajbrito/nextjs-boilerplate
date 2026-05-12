@@ -21,7 +21,7 @@ export const COMPANY = {
   geo: { lat: 37.1669, lng: -7.5374 },
   founded: '2018',
   founder: 'Eduardo Catarino',
-  baseUrl: 'https://evoluimoscomercio.com',
+  baseUrl: 'https://www.evolucom.pt',
   social: {
     facebook: 'https://facebook.com/evoluimoscomercio',
     linkedin: 'https://linkedin.com/company/evoluimoscomercio',

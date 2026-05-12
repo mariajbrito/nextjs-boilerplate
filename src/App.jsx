@@ -37,10 +37,21 @@ const AboutPage = lazy(() => import('@/pages/AboutPage'));
 const ContactPage = lazy(() => import('@/pages/ContactPage'));
 const RealEstatePage = lazy(() => import('@/pages/RealEstatePage'));
 const AlgarvePage = lazy(() => import('@/pages/AlgarvePage'));
+const LisboaPage = lazy(() => import('@/pages/LisboaPage'));
+const PortoPage = lazy(() => import('@/pages/PortoPage'));
+const MadeiraAcoresPage = lazy(() => import('@/pages/MadeiraAcoresPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+
+// Páginas SEO problema-orientadas
+const HumidadeParedesPage = lazy(() => import('@/pages/seo/HumidadeParedesPage'));
+const AquecimentoSemObrasPage = lazy(() => import('@/pages/seo/AquecimentoSemObrasPage'));
+const CasaQuenteVeraoPage = lazy(() => import('@/pages/seo/CasaQuenteVeraoPage'));
+const ReduzirCustosAquecimentoPage = lazy(() => import('@/pages/seo/ReduzirCustosAquecimentoPage'));
+const AquecimentoExteriorPage = lazy(() => import('@/pages/seo/AquecimentoExteriorPage'));
+const IsolamentoTermicoPage = lazy(() => import('@/pages/seo/IsolamentoTermicoPage'));
 
 function PageLoader() {
   return (
@@ -91,10 +102,21 @@ function App() {
                   <Route path="/solutions/sustainable-business" element={<SustainableBusinessPage />} />
                   <Route path="/solutions/natural-cooling" element={<ArrefecimentoNaturalPage />} />
 
+                  {/* Páginas SEO problema-orientadas (intenção de pesquisa real) */}
+                  <Route path="/humidade-nas-paredes" element={<HumidadeParedesPage />} />
+                  <Route path="/aquecimento-sem-obras" element={<AquecimentoSemObrasPage />} />
+                  <Route path="/casa-quente-no-verao" element={<CasaQuenteVeraoPage />} />
+                  <Route path="/reduzir-custos-aquecimento" element={<ReduzirCustosAquecimentoPage />} />
+                  <Route path="/aquecimento-exterior" element={<AquecimentoExteriorPage />} />
+                  <Route path="/isolamento-termico" element={<IsolamentoTermicoPage />} />
+
                   <Route path="/about" element={<AboutPage />} />
                   <Route path="/contact" element={<ContactPage />} />
                   <Route path="/real-estate" element={<RealEstatePage />} />
                   <Route path="/algarve" element={<AlgarvePage />} />
+                  <Route path="/lisboa" element={<LisboaPage />} />
+                  <Route path="/porto" element={<PortoPage />} />
+                  <Route path="/madeira-acores" element={<MadeiraAcoresPage />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
                   <Route path="/faqs" element={<FAQPage />} />
