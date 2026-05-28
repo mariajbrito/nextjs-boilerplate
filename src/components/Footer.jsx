@@ -22,7 +22,6 @@ const SOLUTIONS = [
 ];
 
 const REGIONS = [
-  { label: 'Algarve', path: '/algarve' },
   { label: 'Lisboa e Margem Sul', path: '/lisboa' },
   { label: 'Porto e Norte', path: '/porto' },
   { label: 'Madeira e Açores', path: '/madeira-acores' },
@@ -83,7 +82,10 @@ export default function Footer() {
                 <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'rgba(184,69,0,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: '1px' }}>
                   <MapPin style={{ width: '14px', height: '14px', color: '#F0A020' }} aria-hidden="true" />
                 </div>
-                <span style={{ lineHeight: 1.6 }}>{COMPANY.address.street}<br />{COMPANY.address.postalCode} · {COMPANY.address.country}</span>
+                <span style={{ lineHeight: 1.6 }} itemScope itemType="https://schema.org/PostalAddress">
+                  <span itemProp="streetAddress">{COMPANY.address.street}</span><br />
+                  <span itemProp="postalCode">{COMPANY.address.postalCode}</span> · <Link to="/algarve" style={{ color: 'inherit', textDecoration: 'none' }} itemProp="addressRegion">{COMPANY.address.region}</Link> · <span itemProp="addressCountry">{COMPANY.address.country}</span>
+                </span>
               </li>
             </ul>
             <p style={{ marginTop: '20px', fontSize: '12px', color: '#6A6460' }}>NIF: {COMPANY.nif}</p>

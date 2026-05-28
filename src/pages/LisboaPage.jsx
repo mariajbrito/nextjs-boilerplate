@@ -219,6 +219,10 @@ export default function LisboaPage() {
             </div>
           </section>
 
+          <p className="text-center text-xs text-gray-500 mt-10 leading-relaxed">
+            Cobertura nacional a partir da nossa sede no <Link to="/algarve" className="underline hover:text-orange-600">Algarve</Link>. Servimos também o <Link to="/porto" className="underline hover:text-orange-600">Porto e Norte</Link> e <Link to="/madeira-acores" className="underline hover:text-orange-600">Madeira e Açores</Link>.
+          </p>
+
         </div>
       </div>
     </>

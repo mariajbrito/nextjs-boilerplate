@@ -8,8 +8,8 @@ export const generateLocalBusinessSchema = (language = 'pt') => {
     'name': COMPANY.name,
     'image': `${COMPANY.baseUrl}/logo.png`,
     'description': isPortuguese
-      ? 'Soluções inteligentes de aquecimento, conforto térmico e eliminação de humidade.'
-      : 'Intelligent heating, thermal comfort, and moisture elimination solutions.',
+      ? 'Soluções inteligentes de aquecimento interior e exterior, conforto térmico, isolamento, eliminação de humidade, água quente e eficiência energética. Instalação em todo o Portugal: Algarve, Lisboa, Porto, Madeira e Açores.'
+      : 'Intelligent heating, thermal comfort, insulation, moisture elimination, hot water and energy efficiency solutions. Service across Portugal: Algarve, Lisbon, Porto, Madeira and Azores.',
     '@id': COMPANY.baseUrl,
     'url': COMPANY.baseUrl,
     'telephone': COMPANY.phoneBare,
@@ -18,6 +18,7 @@ export const generateLocalBusinessSchema = (language = 'pt') => {
       '@type': 'PostalAddress',
       'streetAddress': COMPANY.address.street,
       'addressLocality': COMPANY.address.city,
+      'addressRegion': COMPANY.address.region,
       'postalCode': COMPANY.address.postalCode,
       'addressCountry': COMPANY.address.countryCode,
     },
@@ -26,6 +27,14 @@ export const generateLocalBusinessSchema = (language = 'pt') => {
       'latitude': COMPANY.geo.lat,
       'longitude': COMPANY.geo.lng,
     },
+    'areaServed': [
+      { '@type': 'Country', 'name': 'Portugal' },
+      { '@type': 'AdministrativeArea', 'name': 'Algarve' },
+      { '@type': 'AdministrativeArea', 'name': 'Lisboa e Vale do Tejo' },
+      { '@type': 'AdministrativeArea', 'name': 'Norte de Portugal' },
+      { '@type': 'AdministrativeArea', 'name': 'Região Autónoma da Madeira' },
+      { '@type': 'AdministrativeArea', 'name': 'Região Autónoma dos Açores' },
+    ],
     'openingHoursSpecification': {
       '@type': 'OpeningHoursSpecification',
       'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],

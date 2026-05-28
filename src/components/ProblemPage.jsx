@@ -51,7 +51,14 @@ export default function ProblemPage({
       description: metaDescription,
       url: `${COMPANY.baseUrl}${canonical}`,
       serviceType: serviceType || pageTitle,
-      areaServed: [{ '@type': 'Country', 'name': 'Portugal' }],
+      areaServed: [
+        { '@type': 'Country', 'name': 'Portugal' },
+        { '@type': 'AdministrativeArea', 'name': 'Algarve' },
+        { '@type': 'AdministrativeArea', 'name': 'Lisboa e Vale do Tejo' },
+        { '@type': 'AdministrativeArea', 'name': 'Norte de Portugal' },
+        { '@type': 'AdministrativeArea', 'name': 'Região Autónoma da Madeira' },
+        { '@type': 'AdministrativeArea', 'name': 'Região Autónoma dos Açores' },
+      ],
     }),
     generatePtBreadcrumb([{ name: pageTitle, path: canonical }]),
   ];

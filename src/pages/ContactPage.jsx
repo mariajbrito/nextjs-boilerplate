@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { MessageCircle, Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -47,29 +47,88 @@ const CONTACT_ITEMS = [
 ];
 
 function ContactForm() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', subject: '', message: '', website: '' });
   const [status, setStatus] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+  const startedAt = useRef(Date.now());
 
   const handleChange = (e) => setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setStatus('sending');
+  const openMailFallback = () => {
     const subject = encodeURIComponent(form.subject || 'Contacto via site');
     const body = encodeURIComponent(
       `Nome: ${form.name}\nEmail: ${form.email}\nTelefone: ${form.phone || 'Não indicado'}\n\n${form.message}`
     );
     window.location.href = `mailto:${COMPANY.email}?subject=${subject}&body=${body}`;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Anti-spam: honeypot (campo escondido). Bots preenchem, humanos não.
+    if (form.website) { setStatus('sent'); return; }
+    // Anti-spam: submissões em menos de 3s são quase sempre bots.
+    if (Date.now() - startedAt.current < 3000) { setStatus('sent'); return; }
+
+    setStatus('sending');
+    setErrorMsg(null);
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY;
+
+    if (accessKey) {
+      // Envio direto via Web3Forms (chega como email a evolucom@gmail.com)
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            access_key: accessKey,
+            subject: form.subject ? `[Site] ${form.subject}` : '[Site] Contacto via formulário',
+            from_name: form.name,
+            replyto: form.email,
+            name: form.name,
+            email: form.email,
+            phone: form.phone || 'Não indicado',
+            message: form.message,
+            botcheck: '',
+          }),
+        });
+        const data = await res.json();
+        if (data.success) {
+          setStatus('sent');
+          setForm({ name: '', email: '', phone: '', subject: '', message: '', website: '' });
+          return;
+        }
+        setStatus('error');
+        setErrorMsg('Não foi possível enviar. Tente o WhatsApp ou abra o seu email.');
+        return;
+      } catch {
+        setStatus('error');
+        setErrorMsg('Falha de rede. Abrimos o seu cliente de email como alternativa.');
+        openMailFallback();
+        return;
+      }
+    }
+
+    // Fallback: abre cliente de email já preenchido para evolucom@gmail.com
+    openMailFallback();
     setTimeout(() => {
       setStatus('sent');
-      setForm({ name: '', email: '', phone: '', subject: '', message: '' });
+      setForm({ name: '', email: '', phone: '', subject: '', message: '', website: '' });
     }, 500);
   };
 
   const inputClass = "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:border-orange-400 focus:ring-2 focus:ring-orange-100 outline-none transition-all";
 
   return (
-    <form onSubmit={handleSubmit} aria-label="Formulário de contacto" className="space-y-4">
+    <form onSubmit={handleSubmit} aria-label="Formulário de contacto" className="space-y-4" noValidate>
+      {/* Honeypot anti-spam: invisível para utilizadores, preenchido por bots */}
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-10000px', top: 'auto', width: '1px', height: '1px', overflow: 'hidden' }}>
+        <label>
+          Não preencha este campo
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={handleChange} />
+        </label>
+      </div>
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="contact-name" className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -131,8 +190,15 @@ function ContactForm() {
 
       {status === 'sent' && (
         <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-          className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium" role="status">
-          Mensagem preparada. Se o cliente de email não abriu automaticamente, contacte-nos via WhatsApp.
+          className="p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium" role="status" aria-live="polite">
+          Mensagem recebida. Respondemos em 24 horas úteis. Se preferir, pode também usar o WhatsApp ou enviar diretamente para <a href={`mailto:${COMPANY.email}`} className="underline font-semibold">{COMPANY.email}</a>.
+        </motion.div>
+      )}
+
+      {status === 'error' && (
+        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+          className="p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium" role="alert" aria-live="assertive">
+          {errorMsg || 'Ocorreu um erro.'} Pode também escrever diretamente para <a href={`mailto:${COMPANY.email}`} className="underline font-semibold">{COMPANY.email}</a> ou usar o WhatsApp.
         </motion.div>
       )}
     </form>

@@ -227,6 +227,10 @@ export default function AlgarvePage() {
             </div>
           </section>
 
+          <p className="text-center text-xs text-gray-500 mt-10 leading-relaxed">
+            Servimos também <Link to="/lisboa" className="underline hover:text-orange-600">Lisboa e Margem Sul</Link>, <Link to="/porto" className="underline hover:text-orange-600">Porto e Norte</Link> e <Link to="/madeira-acores" className="underline hover:text-orange-600">Madeira e Açores</Link>.
+          </p>
+
         </div>
       </div>
     </>

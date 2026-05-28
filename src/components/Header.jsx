@@ -46,9 +46,8 @@ const NAV = [
   },
   {
     label: 'Regiões',
-    path: '/algarve',
+    path: '/lisboa',
     children: [
-      { label: 'Algarve', path: '/algarve' },
       { label: 'Lisboa e Margem Sul', path: '/lisboa' },
       { label: 'Porto e Norte', path: '/porto' },
       { label: 'Madeira e Açores', path: '/madeira-acores' },
