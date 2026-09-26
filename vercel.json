@@ -13,7 +13,7 @@
     { "source": "/services.html", "destination": "/solutions", "statusCode": 301 },
     { "source": "/servicos.html", "destination": "/solutions", "statusCode": 301 },
     { "source": "/landing.html", "destination": "/", "statusCode": 301 },
-    { "source": "/(.*).html", "destination": "/", "statusCode": 301 }
+    { "source": "/((?!google[a-z0-9]+).*).html", "destination": "/", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
