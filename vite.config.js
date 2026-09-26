@@ -9,6 +9,11 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  ssr: {
+    // react-helmet-async e CommonJS. Se ficar externa ao bundle de servidor,
+    // o Node nao consegue importar os named exports e a pre-renderizacao falha.
+    noExternal: ['react-helmet-async'],
+  },
   build: {
     target: 'es2020',
     chunkSizeWarningLimit: 600,

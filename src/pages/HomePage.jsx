@@ -406,7 +406,7 @@ export default function HomePage() {
       `}</style>
 
       <SEOHead
-        title="Aquecimento, Anti-Humidade e Eficiência Energética | Evoluimos Comércio"
+        title="Aquecimento e Anti-Humidade Sem Obras | Evoluimos Comércio"
         description="Aquecimento interior e exterior, eliminação de humidade nas paredes, isolamento térmico e arrefecimento natural. Tecnologia europeia, sem obras, em todo o Portugal."
         canonical="/"
         schemas={[

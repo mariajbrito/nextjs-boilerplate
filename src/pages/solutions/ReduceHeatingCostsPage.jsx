@@ -4,20 +4,25 @@ import { CheckCircle2, ArrowRight, TrendingDown, Euro, Zap, Thermometer } from '
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
+import PaginaIrma from '@/components/PaginaIrma';
 import Breadcrumb from '@/components/Breadcrumb';
 import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 import { COMPANY } from '@/config/company';
 
 const ReduceHeatingCostsPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
   const isPt = language === 'pt';
 
   const title = isPt ? 'Reduzir Custos de Aquecimento' : 'Reduce Heating Costs';
+  // Cluster desta pagina: eficiencia energetica e retorno do investimento, para
+  // empresas e prescritores. O termo de consumidor fica em /reduzir-custos-aquecimento.
   const metaTitle = isPt
-    ? 'Como Reduzir Custos de Aquecimento até 40%'
-    : 'How to Reduce Heating Costs by up to 40%';
+    ? 'Eficiência Energética em Edifícios: Retorno do Investimento'
+    : 'Building Energy Efficiency: Return on Investment';
   const desc = isPt
-    ? 'Reduza a fatura de aquecimento entre 30 e 40% com radiadores Duotherm em pedra natural e revestimento cerâmico ClimateCoating. Retorno do investimento em 3 a 5 anos.'
+    ? 'Eficiência energética para empresas e edifícios: 30 a 40% menos custo de aquecimento com Duotherm e ClimateCoating, com retorno do investimento em 3 a 5 anos.'
     : 'Cut heating bills by 30 to 40% with Duotherm natural stone radiators and ClimateCoating ceramic coating. Return on investment in 3 to 5 years.';
 
   const faqs = isPt ? [
@@ -64,7 +69,8 @@ const ReduceHeatingCostsPage = () => {
       <SEOHead
         title={metaTitle}
         description={desc}
-        canonical="/solutions/reduce-heating-costs"
+        canonical={canonical}
+        alternates={alternates}
         schemas={[
           generateFAQSchema(faqs),
           generateServiceSchema({
@@ -456,6 +462,14 @@ const ReduceHeatingCostsPage = () => {
           </div>
         </div>
       </div>
+
+      {isPt ? (
+        <PaginaIrma
+          to="/reduzir-custos-aquecimento"
+          label="Ver aquecimento económico para casa"
+          texto="Esta página olha para a eficiência energética na perspetiva do retorno do investimento, útil para empresas e para quem gere edifícios. Para reduzir a fatura de aquecimento numa habitação, a página de aquecimento económico é mais direta."
+        />
+      ) : null}
     </>
   );
 };

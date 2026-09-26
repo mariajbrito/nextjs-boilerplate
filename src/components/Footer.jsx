@@ -187,6 +187,14 @@ export default function Footer() {
               onMouseLeave={e => e.currentTarget.style.color = '#6A6460'}>
               <span style={{ fontSize: '10px' }}>↗</span> Site do Fabricante
             </a>
+            {/* Entrada para a versao inglesa. Sem uma ligacao a apontar-lhes, as
+                paginas /en ficavam orfas e o Google nao as rastreava. */}
+            <Link to="/en/solutions"
+              style={{ display: 'block', marginTop: '14px', fontSize: '12px', color: '#6A6460', textDecoration: 'none' }}
+              onMouseEnter={e => e.currentTarget.style.color = '#F0A020'}
+              onMouseLeave={e => e.currentTarget.style.color = '#6A6460'}>
+              English: thermal comfort solutions
+            </Link>
           </div>
         </div>
       </div>

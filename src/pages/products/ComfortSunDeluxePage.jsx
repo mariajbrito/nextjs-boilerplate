@@ -59,7 +59,7 @@ export default function ComfortSunDeluxePage() {
   return (
     <>
       <SEOHead
-        title="Aquecedor Infravermelhos com Bluetooth e App | ComfortSun Deluxe"
+        title="Aquecedor Infravermelhos com App | ComfortSun Deluxe"
         description="Aquecedores ComfortSun Deluxe 2000W e 2800W com Bluetooth, app e telecomando. Calor imediato para esplanadas e uso portátil. A partir de 412€ + IVA."
         canonical="/products/comfortsun/deluxe"
         schemas={[

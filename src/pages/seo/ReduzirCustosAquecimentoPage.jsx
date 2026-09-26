@@ -6,8 +6,8 @@ export default function ReduzirCustosAquecimentoPage() {
     <ProblemPage
       slug="reduzir-custos-aquecimento"
       pageTitle="Reduzir Custos de Aquecimento: Aquecimento Económico Para a Sua Casa"
-      metaTitle="Reduzir Custos de Aquecimento: Soluções Eficientes | Evoluimos Comércio"
-      metaDescription="Aquecimento económico e eficiente. Saiba como reduzir os custos de aquecimento até 60% com infravermelhos, isolamento ClimateCoating e integração com painéis solares."
+      metaTitle="Aquecimento Económico: Reduzir a Fatura Até 60% em Casa"
+      metaDescription="Como ter aquecimento económico em casa: infravermelhos de baixo consumo, isolamento térmico ClimateCoating e integração com painéis solares. Até 60% menos na fatura."
       heroImage="/reduzircustos.png"
       heroImageAlt="Familia confortável com aquecimento eficiente e baixo consumo"
       introParagraph="Aquecer a casa não tem de ser sinónimo de contas de eletricidade dolorosas. Combinando equipamentos eficientes, isolamento adequado e bons hábitos, é possível baixar a fatura de aquecimento em 40 a 60% sem perder conforto."

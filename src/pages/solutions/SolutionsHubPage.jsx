@@ -4,16 +4,18 @@ import { ArrowRight, Droplets, TrendingDown, Sun, Building2, MessageCircle, Wind
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA } from '@/config/company';
 
 const SolutionsHubPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
 
   const title = language === 'pt' ? 'Soluções de Conforto Térmico e Anti-Humidade' : 'Thermal Comfort and Anti-Moisture Solutions';
   const metaTitle = language === 'pt'
-    ? 'Soluções de Conforto Térmico e Anti-Humidade | Evoluimos Comércio'
-    : 'Thermal Comfort and Anti-Moisture Solutions | Evoluimos Comércio';
+    ? 'Soluções de Conforto Térmico para Empresas | Evoluimos'
+    : 'Thermal Comfort and Damp Proofing Solutions in Portugal';
   const desc = language === 'pt'
     ? 'Eliminar humidade nas paredes, aquecer esplanadas, reduzir custos de aquecimento, arrefecer sem ar condicionado. Soluções por problema, com tecnologia europeia.'
     : 'Eliminate wall moisture, heat patios, reduce heating costs, cool without air conditioning. Problem-driven solutions with European technology.';
@@ -58,7 +60,7 @@ const SolutionsHubPage = () => {
 
   return (
     <>
-      <SEOHead title={metaTitle} description={desc} canonical="/solutions" language={language} image="/semhumidade.png" />
+      <SEOHead title={metaTitle} description={desc} canonical={canonical} alternates={alternates} language={language} image="/semhumidade.png" />
       <div className="min-h-screen pt-24 pb-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <Breadcrumb items={[{ label: t?.nav?.home || 'Home', path: '/' }, { label: t?.nav?.solutions || 'Solutions', path: '/solutions' }]} />

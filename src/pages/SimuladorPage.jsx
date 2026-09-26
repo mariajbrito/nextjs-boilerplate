@@ -24,7 +24,29 @@ import {
   formatarPercentagem,
 } from '@/lib/simulador';
 import { WA_URL, COMPANY } from '@/config/company';
-import { generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { generatePtBreadcrumb, generateFAQSchema } from '@/utils/schemaMarkup';
+
+// A ferramenta em si nao da texto para o Google indexar, e a secao de resultados
+// so existe depois de a pessoa interagir. Este bloco de conteudo esta sempre
+// presente no HTML e cobre as perguntas de custo que trazem as pesquisas.
+const FAQS_SIMULADOR = [
+  {
+    question: 'Quanto custa pintar a fachada de uma casa?',
+    answer: 'O custo divide-se em três parcelas: o preço da tinta por metro quadrado, a mão de obra de preparação e aplicação, e o andaime ou meio de elevação quando a fachada tem mais de um piso. A parcela que quase nunca entra na conta é a repintura: uma tinta convencional pede nova aplicação a cada 5 a 8 anos, e é aí que o custo real se decide. O simulador desta página compara o custo a 20 anos em vez do custo do primeiro balde.',
+  },
+  {
+    question: 'Porque é que comparar o preço por litro engana?',
+    answer: 'Porque o que interessa é o custo por metro quadrado por ano de vida útil. Uma tinta mais barata por litro que precise de ser reaplicada três vezes no período em que outra dura uma só acaba mais caro, contando material, mão de obra e andaime de cada repintura. É esse cálculo que o simulador faz.',
+  },
+  {
+    question: 'O ClimateCoating é tinta ou isolamento?',
+    answer: 'É um revestimento cerâmico de base aquosa, com microesferas ocas, que se aplica como tinta mas atua na transferência de calor e na regulação do vapor de água da parede. Não substitui um cápoto em termos de resistência térmica, mas melhora o comportamento térmico da fachada sem obras, sem andaimes permanentes e sem alterar a espessura da parede, o que é decisivo em fachadas que não podem receber ETICS.',
+  },
+  {
+    question: 'Os valores do simulador são um orçamento?',
+    answer: 'Não. São uma estimativa baseada em faixas de preço de mercado e serve para comparar cenários, não para contratar. O valor fechado depende do estado da superfície, da acessibilidade e da área real medida no local, que confirmamos em visita.',
+  },
+];
 
 /* Cores das séries do gráfico. Azul para ClimateCoating (como no resto do site),
    laranja para a tinta convencional. Par validado para daltonismo. */
@@ -152,11 +174,12 @@ export default function SimuladorPage() {
   return (
     <>
       <SEOHead
-        title="Simulador de Custos de Pintura | Quanto Poupa com ClimateCoating"
+        title="Simulador: Quanto Custa Pintar a Fachada | Grátis"
         description="Calcule em 30 segundos quanto vai gastar a pintar a sua casa com ClimateCoating ou com tinta convencional. Custo a 20 anos, custo por ano e poupança em euros."
         canonical="/simulador"
         image="/ClimateCoating/bannermarketing.png"
         schemas={[
+          generateFAQSchema(FAQS_SIMULADOR),
           generatePtBreadcrumb([
             { name: 'ClimateCoating', path: '/products/climatecoating' },
             { name: 'Simulador de custos', path: '/simulador' },
@@ -690,6 +713,57 @@ export default function SimuladorPage() {
               </p>
             </section>
           ) : null}
+
+          {/* Conteudo permanente: existe no HTML pre-renderizado, ao contrario
+              da secao de resultados, que depende de interacao. */}
+          <section className="mt-14 border-t border-gray-200 pt-10">
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-4">
+              O que pesa no preço de pintar uma fachada
+            </h2>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Quase todos os orçamentos de pintura são comparados pelo preço do material. É o
+              critério mais fácil e o que leva a decisões mais caras. Numa fachada, o material
+              raramente passa de um terço do custo total: o resto é preparação da superfície,
+              mão de obra e acesso, seja andaime, plataforma ou trabalhos verticais.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              É por isso que a durabilidade manda mais no custo do que o preço por litro. Cada
+              repintura repete tudo: o material, a mão de obra e o acesso. Duas fachadas com o
+              mesmo orçamento inicial podem ter custos muito diferentes ao fim de vinte anos,
+              dependendo apenas de quantas vezes foram repintadas nesse período.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-8">
+              O simulador acima faz essa conta. Indica a área, escolhe o cenário e compara o
+              custo acumulado do ClimateCoating com o de uma tinta convencional de qualidade,
+              incluindo as repinturas de cada um. Não pede dados pessoais.
+            </p>
+
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-5">Perguntas frequentes</h2>
+            <div className="space-y-3">
+              {FAQS_SIMULADOR.map((f) => (
+                <div key={f.question} className="bg-white border border-gray-200 rounded-2xl p-5">
+                  <h3 className="font-bold text-gray-900 mb-2">{f.question}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-8 text-sm text-gray-600">
+              Ver também{' '}
+              <Link to="/products/climatecoating" className="font-bold text-blue-700 hover:text-blue-900">
+                o revestimento ClimateCoating
+              </Link>
+              ,{' '}
+              <Link to="/isolamento-termico" className="font-bold text-blue-700 hover:text-blue-900">
+                isolamento térmico sem obras
+              </Link>
+              {' '}e{' '}
+              <Link to="/casa-quente-no-verao" className="font-bold text-blue-700 hover:text-blue-900">
+                como baixar a temperatura no verão
+              </Link>
+              .
+            </p>
+          </section>
         </div>
       </div>
     </>

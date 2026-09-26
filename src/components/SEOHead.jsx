@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { COMPANY } from '@/config/company';
 
 const SEOHead = ({
@@ -10,6 +10,10 @@ const SEOHead = ({
   language = 'pt',
   image = '/logo.png',
   type = 'website',
+  // Par de URLs equivalentes em portugues e ingles, por exemplo
+  // { pt: '/solutions', en: '/en/solutions' }. Quando existe, a pagina declara
+  // as duas versoes ao Google em vez de se declarar como unica.
+  alternates = null,
 }) => {
   const fullCanonical = canonical ? `${COMPANY.baseUrl}${canonical}` : COMPANY.baseUrl;
   const fullImageUrl = image.startsWith('http') ? image : `${COMPANY.baseUrl}${image}`;
@@ -22,9 +26,22 @@ const SEOHead = ({
       <meta name="description" content={description} />
       <link rel="canonical" href={fullCanonical} />
 
-      {/* hreflang: o site serve PT como idioma principal. Quando existirem URLs separados em /es ou /en, ativar tags individuais aqui. */}
-      <link rel="alternate" hreflang="pt-PT" href={fullCanonical} />
-      <link rel="alternate" hreflang="x-default" href={fullCanonical} />
+      {/* hreflang. Sem par de traducao, a pagina declara-se como a unica versao.
+          Com par, declara ambas e aponta o x-default para portugues, que e o
+          idioma principal do site. */}
+      {alternates ? (
+        <link rel="alternate" hreflang="pt-PT" href={`${COMPANY.baseUrl}${alternates.pt}`} />
+      ) : (
+        <link rel="alternate" hreflang="pt-PT" href={fullCanonical} />
+      )}
+      {alternates ? (
+        <link rel="alternate" hreflang="en" href={`${COMPANY.baseUrl}${alternates.en}`} />
+      ) : null}
+      <link
+        rel="alternate"
+        hreflang="x-default"
+        href={alternates ? `${COMPANY.baseUrl}${alternates.pt}` : fullCanonical}
+      />
 
       {/* Open Graph */}
       <meta property="og:site_name" content={COMPANY.name} />

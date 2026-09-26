@@ -4,12 +4,14 @@ import { CheckCircle2, ArrowRight, Leaf, TrendingDown, Award, Building2 } from '
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
 import Breadcrumb from '@/components/Breadcrumb';
 import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 import { COMPANY } from '@/config/company';
 
 const SustainableBusinessPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
   const isPt = language === 'pt';
 
   const title = isPt ? 'Negócios Sustentáveis' : 'Sustainable Business';
@@ -96,7 +98,8 @@ const SustainableBusinessPage = () => {
       <SEOHead
         title={metaTitle}
         description={desc}
-        canonical="/solutions/sustainable-business"
+        canonical={canonical}
+        alternates={alternates}
         schemas={[
           generateFAQSchema(faqs),
           generateServiceSchema({

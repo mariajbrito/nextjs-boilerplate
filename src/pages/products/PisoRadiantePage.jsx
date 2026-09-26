@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb, generateFAQSchema } from '@/utils/schemaMarkup';
 
 const FEATURES = [
   'Aquecimento uniforme por toda a superfície do piso',
@@ -25,6 +25,32 @@ const SPECS = [
   { label: 'Alimentação', value: 'Elétrica (220V)' },
   { label: 'Instalação', value: 'Sob o revestimento' },
   { label: 'Marca', value: 'AHT' },
+];
+
+// Perguntas que as pessoas escrevem no Google antes de pedir orcamento. Alem de
+// aparecerem na pagina, alimentam o FAQPage do schema.org, o que faz o resultado
+// ocupar mais espaco na pesquisa.
+const FAQS = [
+  {
+    question: 'Quanto custa instalar piso radiante elétrico?',
+    answer: 'O custo depende da área a aquecer, do tipo de revestimento e da potência necessária. Numa casa de banho típica de 4 a 6 m2 o investimento situa-se na gama de algumas centenas de euros, material e termostato incluídos. Como o sistema AHT tem apenas 1 mm de espessura e é aplicado sob o revestimento, não há custos de demolição nem de elevação do pavimento. Pedimos sempre as medidas da divisão para dar um valor fechado.',
+  },
+  {
+    question: 'Qual é o consumo de um piso radiante elétrico?',
+    answer: 'O consumo depende da potência instalada por metro quadrado e das horas de funcionamento. Com termostato programável, o sistema só trabalha nos períodos definidos e desliga ao atingir a temperatura, pelo que o consumo real é muito inferior à potência nominal. Em divisões bem isoladas o piso radiante é dos sistemas elétricos mais eficientes, porque aquece as superfícies e não o ar.',
+  },
+  {
+    question: 'Qual a diferença entre piso radiante elétrico e a água?',
+    answer: 'O piso radiante elétrico usa uma resistência ligada à corrente e instala-se sob o revestimento, sem caldeira, sem tubagem e sem obras. O piso radiante a água exige caldeira ou bomba de calor, circuito hidráulico e betonilha, o que implica obra e subida do nível do pavimento. Para remodelações e divisões isoladas, a versão elétrica é bastante mais simples e mais rápida.',
+  },
+  {
+    question: 'Pode ser instalado em obra de remodelação?',
+    answer: 'Sim. É esse o caso mais comum. O sistema AHT em metal amorfo tem 1 mm de espessura, o que permite aplicá-lo sobre o pavimento existente e assentar a cerâmica por cima, sem levantar o piso antigo e sem perder altura útil na divisão.',
+  },
+  {
+    question: 'Serve para casa de banho e zonas húmidas?',
+    answer: 'Sim, é a aplicação mais procurada. Mantém o pavimento seco e quente, o que reduz a condensação e o risco de bolor nas zonas húmidas. A instalação é feita por eletricista com as proteções exigidas para estes espaços.',
+  },
 ];
 
 const BENEFITS = [
@@ -54,13 +80,14 @@ export default function PisoRadiantePage() {
   return (
     <>
       <SEOHead
-        title="Piso Radiante Elétrico para Casa de Banho e Cozinha | AHT"
-        description="Piso radiante elétrico AHT para aquecimento de pavimento. Instalação simples sob cerâmica, pedra ou vinyl, baixo consumo. Ideal para casas de banho e cozinhas."
+        title="Piso Radiante Elétrico: Preço, Consumo e Instalação | AHT"
+        description="Piso radiante elétrico ultrafino de 1 mm, aplicado sem obras sob cerâmica, pedra ou vinyl. Saiba o preço, o consumo real e onde instalar chão ou pavimento radiante elétrico."
         canonical="/products/piso-radiante"
         image="/Piso radiante/Pisoradianteahtcasadebanho.jpg"
         schemas={[
-          generateProductSchema({ name: 'Piso Radiante Elétrico AHT', description: 'Piso radiante elétrico AHT para aquecimento de pavimento sob cerâmica, pedra ou vinyl. Termostato programável, baixo consumo.', image: `${COMPANY.baseUrl}/Piso radiante/Pisoradianteahtcasadebanho.jpg`, brand: 'AHT', url: `${COMPANY.baseUrl}/products/piso-radiante` }),
-          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Piso Radiante', path: '/products/piso-radiante' }]),
+          generateProductSchema({ name: 'Piso Radiante Elétrico AHT', description: 'Piso radiante elétrico ultrafino de 1 mm em metal amorfo, para aquecimento de pavimento sob cerâmica, pedra ou vinyl. Termostato programável, instalação sem obras.', image: `${COMPANY.baseUrl}/Piso radiante/Pisoradianteahtcasadebanho.jpg`, brand: 'AHT', url: `${COMPANY.baseUrl}/products/piso-radiante` }),
+          generateFAQSchema(FAQS),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Piso Radiante Elétrico', path: '/products/piso-radiante' }]),
         ]}
       />
 
@@ -87,8 +114,8 @@ export default function PisoRadiantePage() {
             </div>
             <div className="flex-1 flex flex-col items-center justify-center text-center px-4 pb-8">
               <span className="inline-block bg-orange-600 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">Proteção e Conforto</span>
-              <h1 className="text-4xl sm:text-6xl font-extrabold text-white mt-4 tracking-tight drop-shadow-lg">Piso Radiante Eléctrico</h1>
-              <p className="text-orange-400 font-semibold mt-2 text-lg drop-shadow">Aquecimento de Pavimento · AHT · Alta Eficiência</p>
+              <h1 className="text-4xl sm:text-6xl font-extrabold text-white mt-4 tracking-tight drop-shadow-lg">Piso Radiante Elétrico</h1>
+              <p className="text-orange-400 font-semibold mt-2 text-lg drop-shadow">Chão e Pavimento Radiante · 1 mm de Espessura · Sem Obras</p>
             </div>
           </div>
         </div>
@@ -105,6 +132,9 @@ export default function PisoRadiantePage() {
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Ao contrário do aquecimento tradicional, que aquece o ar e deixa o pavimento frio, o piso radiante cria uma sensação de calor natural e envolvente, semelhante à do sol. Ideal para casas de banho, cozinhas, quartos e corredores.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Esta solução aparece com vários nomes: <strong>chão radiante elétrico</strong>, <strong>pavimento radiante elétrico</strong>, piso aquecido ou soalho radiante. Trata-se sempre do mesmo princípio, uma resistência elétrica sob o revestimento que aquece toda a superfície do pavimento.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
                   Com o termostato programável incluído, é possível definir horários e temperaturas para cada divisão, maximizando o conforto e a eficiência energética.
@@ -181,6 +211,38 @@ export default function PisoRadiantePage() {
                     <div key={s.label} className="bg-white border border-gray-200 rounded-xl p-4">
                       <div className="text-xs text-gray-400 font-semibold uppercase tracking-widest mb-1">{s.label}</div>
                       <div className="font-bold text-gray-900 text-sm">{s.value}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Preço e consumo: as duas perguntas que travam a decisão */}
+              <div>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Preço e consumo</h2>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  O preço de um piso radiante elétrico depende de três coisas: a área a aquecer, a potência necessária para essa divisão e o tipo de revestimento que vai por cima. Não há valor único, mas há uma vantagem clara em relação ao piso radiante a água: como o sistema AHT tem 1 mm de espessura e assenta sobre o pavimento existente, não entra na conta nenhum custo de demolição, de betonilha nova ou de ajuste de portas.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Quanto ao consumo, o número que interessa não é a potência instalada mas as horas em que o sistema trabalha de facto. Com o termostato programável, o piso aquece nos períodos definidos e desliga ao atingir a temperatura. Numa divisão com isolamento razoável, os ciclos de funcionamento são curtos. Em casas sem isolamento, o consumo sobe muito, e nesse caso vale a pena tratar primeiro o isolamento.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <Link to="/simulador" className="inline-flex items-center px-5 py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-bold text-sm transition-colors">
+                    Simular custos
+                  </Link>
+                  <Link to="/isolamento-termico" className="inline-flex items-center px-5 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-xl font-bold text-sm transition-colors">
+                    Ver isolamento térmico
+                  </Link>
+                </div>
+              </div>
+
+              {/* Perguntas frequentes, espelho do FAQPage no schema */}
+              <div>
+                <h2 className="text-2xl font-extrabold text-gray-900 mb-5">Perguntas frequentes</h2>
+                <div className="space-y-3">
+                  {FAQS.map((f) => (
+                    <div key={f.question} className="bg-white border border-gray-200 rounded-2xl p-5">
+                      <h3 className="font-bold text-gray-900 mb-2">{f.question}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{f.answer}</p>
                     </div>
                   ))}
                 </div>

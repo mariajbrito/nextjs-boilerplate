@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const LanguageContext = createContext(null);
 
@@ -8,7 +9,7 @@ export const useLanguage = () => {
     if (import.meta.env.DEV) {
       console.warn('useLanguage must be used within a LanguageProvider. Using fallback.');
     }
-    return { language: 'pt', toggleLanguage: () => {}, t: translations.pt };
+    return { language: 'pt', t: translations.pt };
   }
   return context;
 };
@@ -155,19 +156,18 @@ const translations = {
 };
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState(() => {
-    const saved = localStorage.getItem('evolucom_language');
-    return saved === 'en' ? 'en' : 'pt';
-  });
+  // O idioma vem do URL, nao de uma preferencia guardada no browser.
+  //
+  // Antes era estado local alternado por toggleLanguage, que nunca foi ligado a
+  // nenhum botao: o conteudo em ingles das paginas /solutions existia mas era
+  // inalcancavel, tanto para visitantes como para o Google. Ao passar a depender
+  // do caminho, cada versao ganha um URL proprio e pode ser indexada.
+  const { pathname } = useLocation();
+  const language = pathname === '/en' || pathname.startsWith('/en/') ? 'en' : 'pt';
 
   useEffect(() => {
-    localStorage.setItem('evolucom_language', language);
     document.documentElement.lang = language;
   }, [language]);
-
-  const toggleLanguage = () => {
-    setLanguage(prev => prev === 'pt' ? 'en' : 'pt');
-  };
 
   // Defensive fallback getter
   const t = new Proxy(translations[language] || translations.pt, {
@@ -177,7 +177,7 @@ export const LanguageProvider = ({ children }) => {
   });
 
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, t }}>
       {children}
     </LanguageContext.Provider>
   );

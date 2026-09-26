@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import { WA_URL as WA, COMPANY } from '@/config/company';
-import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { generateProductSchema, generatePtBreadcrumb, generateFAQSchema } from '@/utils/schemaMarkup';
 
 const FEATURES = [
   'Aquecimento instantâneo sem depósito',
@@ -18,6 +18,31 @@ const FEATURES = [
   'Adequados para habitação, cozinha e pontos de uso',
 ];
 
+// O termo com procura real e 'esquentador eletrico sem gas', nao a marca. Estas
+// perguntas cobrem as duvidas que aparecem a volta desse termo na pesquisa.
+const FAQS = [
+  {
+    question: 'Existe esquentador elétrico sem gás?',
+    answer: 'Sim. Um esquentador elétrico instantâneo aquece a água no momento em que ela passa no aparelho, através de uma resistência elétrica, sem qualquer queima de gás. Não precisa de botija, não precisa de ligação à rede de gás, não tem chama e não produz monóxido de carbono, pelo que também não exige exaustão para o exterior.',
+  },
+  {
+    question: 'É mais barato que um esquentador a gás?',
+    answer: 'O gás costuma ter um custo por kWh inferior à eletricidade, mas a comparação não se faz só aí. O esquentador elétrico instantâneo não tem depósito, logo não gasta energia a manter água quente que ninguém usa, não tem perdas por standby, não tem contrato de gás, não tem inspeções periódicas nem manutenção de queimador. Em pontos de uso isolados, como um lavatório ou uma cozinha afastada da caldeira, é normalmente a opção mais económica no conjunto.',
+  },
+  {
+    question: 'Qual a diferença entre esquentador elétrico e termoacumulador?',
+    answer: 'O termoacumulador tem um depósito que mantém a água quente permanentemente, com o consumo constante que isso implica, e acaba quando o depósito esgota. O esquentador elétrico instantâneo não tem depósito: aquece só o que passa, no momento, e nunca acaba a água quente. Ocupa também bastante menos espaço.',
+  },
+  {
+    question: 'Que potência e que instalação elétrica são necessárias?',
+    answer: 'Depende do caudal pretendido e do número de pontos de água servidos. Modelos monofásicos servem lavatórios e pontos de uso individuais; caudais maiores, como um duche, pedem modelos de maior potência e por norma ligação trifásica. A instalação é feita por eletricista, com disjuntor dedicado e secção de cabo adequada. Indicamos a potência certa depois de saber onde vai ser usado.',
+  },
+  {
+    question: 'Pode substituir um esquentador a gás existente?',
+    answer: 'Sim, e é um caso frequente, sobretudo em apartamentos onde se quer eliminar a botija ou dispensar a rede de gás. A substituição exige verificar a instalação elétrica do local e dimensionar o modelo para os pontos de água a servir.',
+  },
+];
+
 const CATALOGS = [
   { label: 'Catálogo Clage 1', url: 'https://jumpshare.com/v/C0i89LsYBKCpl2L7bpW2' },
   { label: 'Catálogo Clage 2', url: 'https://jumpshare.com/v/7iVPezJFdJFAyx8HqnS2' },
@@ -27,12 +52,13 @@ export default function EsquentadoresPage() {
   return (
     <>
       <SEOHead
-        title="Esquentador Elétrico Instantâneo Sem Gás | Clage"
-        description="Esquentadores elétricos Clage com água quente imediata, sem depósito e sem gás. Alta eficiência, alternativa segura ao termoacumulador. Made in Germany."
+        title="Esquentador Elétrico Sem Gás: Água Quente Instantânea | Clage"
+        description="Esquentador elétrico instantâneo sem gás e sem depósito: água quente imediata, sem botija e sem exaustão. Modelos monofásicos e trifásicos Clage, alternativa ao termoacumulador."
         canonical="/products/esquentadores"
         schemas={[
           generateProductSchema({ name: 'Esquentadores Clage', description: 'Esquentadores elétricos instantâneos sem depósito. Água quente imediata, alta eficiência energética. Tecnologia alemã.', image: `${COMPANY.baseUrl}/Esquentadores/produto1.png`, brand: 'Clage', url: `${COMPANY.baseUrl}/products/esquentadores` }),
-          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Esquentadores Clage', path: '/products/esquentadores' }]),
+          generateFAQSchema(FAQS),
+          generatePtBreadcrumb([{ name: 'Produtos', path: '/products' }, { name: 'Esquentador Elétrico Sem Gás', path: '/products/esquentadores' }]),
         ]}
       />
       <div className="min-h-screen">
@@ -62,10 +88,10 @@ export default function EsquentadoresPage() {
               Made in Germany
             </span>
             <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight drop-shadow-lg">
-              Esquentadores Clage
+              Esquentador Elétrico Sem Gás
             </h1>
             <p className="text-blue-200 font-semibold mt-3 text-base sm:text-lg drop-shadow px-2">
-              Água Quente Instantânea · Sem Depósito · Alta Eficiência
+              Clage · Água Quente Instantânea · Sem Depósito · Sem Botija
             </p>
           </div>
           </div>
@@ -81,7 +107,10 @@ export default function EsquentadoresPage() {
                   Água quente<br />quando precisa, sem esperas
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  Ao contrário dos esquentadores tradicionais a gás, este produto é totalmente elétrico, tornando-se mais económico.
+                  Ao contrário dos esquentadores tradicionais a gás, este produto é totalmente elétrico, tornando-se mais económico. Sem botija, sem ligação à rede de gás, sem chama e sem necessidade de exaustão para o exterior.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4">
+                  Encontrará este equipamento referido como esquentador elétrico, esquentador eléctrico ou esquentador de água elétrico, em versões monofásicas para pontos de uso individuais e em versões de maior potência para caudais superiores.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-6">
                   Em comparação com os termoacumuladores elétricos com reservatório, os modelos Clage aquecem a água apenas no momento em que é necessária, de forma descentralizada, eliminando perdas de energia e garantindo água quente imediata com maior higiene.
@@ -190,6 +219,21 @@ export default function EsquentadoresPage() {
                   ))}
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Perguntas frequentes, espelho do FAQPage no schema ── */}
+        <section className="bg-gray-50 py-16">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6">
+            <h2 className="text-2xl font-extrabold text-gray-900 mb-6">Perguntas frequentes</h2>
+            <div className="space-y-3">
+              {FAQS.map((f) => (
+                <div key={f.question} className="bg-white border border-gray-200 rounded-2xl p-5">
+                  <h3 className="font-bold text-gray-900 mb-2">{f.question}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{f.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

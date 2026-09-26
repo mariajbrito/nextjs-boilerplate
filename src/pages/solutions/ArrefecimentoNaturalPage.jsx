@@ -4,20 +4,25 @@ import { CheckCircle2, ArrowRight, Wind, Leaf, Zap, ThermometerSnowflake } from 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
+import PaginaIrma from '@/components/PaginaIrma';
 import Breadcrumb from '@/components/Breadcrumb';
 import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 import { WA_URL as WA, COMPANY } from '@/config/company';
 
 const ArrefecimentoNaturalPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
   const isPt = language === 'pt';
 
   const title = isPt ? 'Arrefecimento Natural sem Ar Condicionado' : 'Natural Cooling Without Air Conditioning';
+  // Cluster desta pagina: arrefecimento evaporativo em espacos amplos e comerciais.
+  // O termo de consumidor 'casa quente no verao' pertence a /casa-quente-no-verao.
   const metaTitle = isPt
-    ? 'Casa Fresca sem Ar Condicionado | Arrefecimento Natural'
-    : 'Cool Home Without Air Conditioning | Natural Cooling';
+    ? 'Arrefecimento Evaporativo para Lojas, Armazéns e Esplanadas'
+    : 'Evaporative Cooling for Shops, Warehouses and Patios';
   const desc = isPt
-    ? 'Arrefecimento ecológico por evaporação, sem compressor e sem gases. Até 80% menos consumo do que o ar condicionado, ideal para esplanadas, lojas, armazéns e habitação.'
+    ? 'Bioclimatizadores para arrefecer armazéns, lojas, pavilhões e esplanadas cobertas. Até 80% menos consumo do que ar condicionado, sem compressor, sem gases e com ar renovado.'
     : 'Eco-friendly evaporative cooling, no compressor or gases. Up to 80% less consumption than air conditioning, ideal for patios, shops, warehouses and homes.';
 
   const faqs = isPt ? [
@@ -66,7 +71,8 @@ const ArrefecimentoNaturalPage = () => {
       <SEOHead
         title={metaTitle}
         description={desc}
-        canonical="/solutions/natural-cooling"
+        canonical={canonical}
+        alternates={alternates}
         schemas={[
           generateFAQSchema(faqs),
           generateServiceSchema({
@@ -400,6 +406,14 @@ const ArrefecimentoNaturalPage = () => {
           </div>
         </div>
       </div>
+
+      {isPt ? (
+        <PaginaIrma
+          to="/casa-quente-no-verao"
+          label="Ver soluções para casa quente no verão"
+          texto="Esta página trata do arrefecimento evaporativo em espaços amplos e comerciais, como armazéns, lojas e esplanadas cobertas. Para uma habitação que aquece demasiado no verão, a abordagem é outra e começa pela fachada."
+        />
+      ) : null}
     </>
   );
 };

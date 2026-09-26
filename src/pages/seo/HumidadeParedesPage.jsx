@@ -6,8 +6,8 @@ export default function HumidadeParedesPage() {
     <ProblemPage
       slug="humidade-nas-paredes"
       pageTitle="Humidade nas Paredes: Causas, Sinais e Solução Sem Obras"
-      metaTitle="Humidade nas Paredes: Solução Sem Obras | Evoluimos Comércio"
-      metaDescription="Humidade ascendente, condensação e salitre nas paredes. Identifique as causas e elimine o problema com Drymat, sem obras e com 80 a 100% de redução em 2 a 6 meses."
+      metaTitle="Humidade nas Paredes: Tratamento Sem Obras em Todo o País"
+      metaDescription="Tem humidade nas paredes? Tratamos paredes com humidade sem obras e sem picar, com 80 a 100% de redução em 2 a 6 meses. Análise gratuita no Porto, Lisboa, Algarve e ilhas."
       heroImage="/semhumidade.png"
       heroImageAlt="Parede de casa portuguesa com humidade ascendente eliminada"
       introParagraph="Manchas escuras, tinta a descascar, salitre, cheiro a bolor. Se a sua casa tem estes sinais, o problema é humidade nas paredes. A boa notícia: hoje é possível tratar sem demolir."

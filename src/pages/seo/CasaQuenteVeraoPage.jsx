@@ -6,8 +6,8 @@ export default function CasaQuenteVeraoPage() {
     <ProblemPage
       slug="casa-quente-no-verao"
       pageTitle="Casa Quente no Verão: Como Refrescar Sem Ar Condicionado"
-      metaTitle="Casa Quente no Verão: Solução Sem Ar Condicionado | Evoluimos Comércio"
-      metaDescription="Casa muito quente no verão? Reduza a temperatura em 5 a 10 graus com bioclimatizadores e revestimento térmico ClimateCoating. Sem ar condicionado, sem gases, baixo consumo."
+      metaTitle="Casa Quente no Verão: Como Baixar 5 a 10 Graus Sem Obras"
+      metaDescription="Casa muito quente no verão? Baixe a temperatura interior 5 a 10 graus com revestimento térmico ClimateCoating e bioclimatizadores. Sem obras, sem gases e com baixo consumo."
       heroImage="/arrefecimentonatural.png"
       heroImageAlt="Casa fresca no verão com arrefecimento natural"
       introParagraph="Há casas que se tornam fornos no verão. Tetos altos, pouca ventilação cruzada, fachadas expostas ao sol. O ar condicionado parece a única solução, mas existem alternativas com menos consumo, sem gases e melhores para a saúde."

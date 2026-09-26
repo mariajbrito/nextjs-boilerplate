@@ -4,12 +4,15 @@ import { CheckCircle2, ArrowRight, Sun, TrendingUp, Euro, Users } from 'lucide-r
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
+import PaginaIrma from '@/components/PaginaIrma';
 import Breadcrumb from '@/components/Breadcrumb';
 import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 import { COMPANY } from '@/config/company';
 
 const OutdoorComfortPage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
   const isPt = language === 'pt';
 
   const title = isPt ? 'Conforto em Esplanadas e Terraços' : 'Outdoor Patio & Terrace Comfort';
@@ -66,7 +69,8 @@ const OutdoorComfortPage = () => {
       <SEOHead
         title={metaTitle}
         description={desc}
-        canonical="/solutions/outdoor-comfort"
+        canonical={canonical}
+        alternates={alternates}
         schemas={[
           generateFAQSchema(faqs),
           generateServiceSchema({
@@ -345,6 +349,14 @@ const OutdoorComfortPage = () => {
           </div>
         </div>
       </div>
+
+      {isPt ? (
+        <PaginaIrma
+          to="/aquecimento-exterior"
+          label="Ver aquecedores de esplanada"
+          texto="Aqui explicamos como se aquece uma esplanada e porque os infravermelhos funcionam com vento. Se já sabe que é essa a solução e quer ver equipamentos, potências e preços, a página de aquecedores de esplanada e terraço é o passo seguinte."
+        />
+      ) : null}
     </>
   );
 };

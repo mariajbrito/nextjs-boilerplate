@@ -78,11 +78,14 @@ export default function MadeiraAcoresPage() {
     ],
   };
 
+  // Nota: o titulo anterior tinha 88 caracteres e o Google cortava-o antes de
+  // 'Acores' e de 'Isolamento Termico', que eram os termos que traziam as
+  // impressoes. Dai 92 impressoes na posicao 5 sem um unico clique.
   return (
     <>
       <SEOHead
-        title="Aquecimento, Anti-Humidade e Isolamento Térmico na Madeira e Açores | Evoluimos Comércio"
-        description="Soluções de aquecimento, eliminação de humidade ascendente e isolamento térmico na Madeira e Açores. Tratamento adaptado ao clima atlântico e à maresia."
+        title="Isolamento Térmico Natural nos Açores e Madeira | Sem Obras"
+        description="Isolamento térmico natural e tratamento de humidade nos Açores e na Madeira. Revestimento respirável aplicado como tinta, sem obras, resistente à maresia e ao clima atlântico."
         canonical="/madeira-acores"
         image="/ClimateCoating/baldestinta.webp"
         schemas={[
@@ -119,10 +122,13 @@ export default function MadeiraAcoresPage() {
                   Madeira e Açores
                 </div>
                 <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                  Aquecimento, Anti-Humidade e Isolamento Térmico <span className="text-orange-600">na Madeira e Açores</span>
+                  Isolamento Térmico Natural e Anti-Humidade <span className="text-orange-600">nos Açores e Madeira</span>
                 </h1>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   Trabalhamos em todas as ilhas da Madeira e dos Açores. As nossas soluções estão adaptadas ao clima atlântico, à humidade permanente e à maresia agressiva que caracteriza o edificado insular.
+                </p>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  O isolamento térmico natural que aplicamos é um revestimento cerâmico respirável, à base de água, que se aplica como tinta sobre a fachada existente. Não é cápoto, não exige andaimes nem blocos térmicos novos, e deixa a parede continuar a trocar vapor com o exterior, o que é decisivo num clima húmido como o das ilhas.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3">
                   <a href={WA} target="_blank" rel="noopener noreferrer"

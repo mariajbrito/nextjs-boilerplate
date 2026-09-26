@@ -1,5 +1,16 @@
 {
+  "trailingSlash": false,
   "redirects": [
+    { "source": "/products/painel-aht", "destination": "/products/duotherm", "statusCode": 301 },
+
+    { "source": "/pedra.pdf", "destination": "/products/duotherm", "statusCode": 301 },
+    { "source": "/blocoradiante.pdf", "destination": "/products/duotherm", "statusCode": 301 },
+    { "source": "/ThermoProtectFolhetoPT.pdf", "destination": "/products/climatecoating", "statusCode": 301 },
+    { "source": "/saving_of_heating_energy_with_ThermoShield_overview.pdf", "destination": "/reduzir-custos-aquecimento", "statusCode": 301 },
+    { "source": "/HERKELL_ECOFLAMES_2016_web.pdf", "destination": "/products/eco-fireplaces", "statusCode": 301 },
+    { "source": "/herkell.html", "destination": "/products/eco-fireplaces", "statusCode": 301 },
+    { "source": "/clage.html", "destination": "/products/esquentadores", "statusCode": 301 },
+
     { "source": "/generic.html", "destination": "/", "statusCode": 301 },
     { "source": "/elements.html", "destination": "/products", "statusCode": 301 },
     { "source": "/index.html", "destination": "/", "statusCode": 301 },
@@ -16,7 +27,10 @@
     { "source": "/((?!google[a-z0-9]+).*).html", "destination": "/", "statusCode": 301 }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/app-shell.html"
+    }
   ],
   "headers": [
     {

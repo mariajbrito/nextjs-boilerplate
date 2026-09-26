@@ -4,20 +4,26 @@ import { CheckCircle2, ArrowRight, AlertTriangle, Droplet, Shield, TrendingDown 
 import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SEOHead from '@/components/SEOHead';
+import { useCanonical } from '@/hooks/useCanonical';
+import PaginaIrma from '@/components/PaginaIrma';
 import Breadcrumb from '@/components/Breadcrumb';
 import { generateFAQSchema, generateServiceSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 import { COMPANY } from '@/config/company';
 
 const EliminateWallMoisturePage = () => {
   const { language = 'pt', t = {} } = useLanguage() || {};
+  const { canonical, alternates } = useCanonical();
 
   const isPt = language === 'pt';
   const title = isPt ? 'Eliminar Humidade nas Paredes' : 'Eliminate Wall Moisture';
+  // Esta pagina fica com o cluster informativo (humidade ascendente, capilaridade,
+  // condensacao, salitre). O termo de cabeca 'humidade nas paredes' pertence a
+  // /humidade-nas-paredes, para as duas nao competirem pelo mesmo resultado.
   const metaTitle = isPt
-    ? 'Como Eliminar Humidade Ascendente nas Paredes Sem Obras'
-    : 'How to Eliminate Ascending Wall Moisture Without Renovation';
+    ? 'Humidade Ascendente e Capilaridade: Causas e Tratamento'
+    : 'Rising Damp and Capillary Moisture: Causes and Treatment';
   const desc = isPt
-    ? 'Solução para humidade ascendente, salitre e condensação nas paredes sem obras. Drymat reduz 80 a 100% da humidade em 2 a 6 meses. ClimateCoating regula o ar interior.'
+    ? 'Humidade ascendente, infiltração por capilaridade, condensação e salitre: como distinguir cada causa e que tratamento aplicar. Drymat reduz 80 a 100% em 2 a 6 meses, sem obras.'
     : 'Solution for ascending moisture, saltpeter and condensation without renovation. Drymat reduces wall moisture by 80 to 100% in 2 to 6 months, with ClimateCoating support.';
 
   const faqs = isPt ? [
@@ -56,7 +62,8 @@ const EliminateWallMoisturePage = () => {
       <SEOHead
         title={metaTitle}
         description={desc}
-        canonical="/solutions/eliminate-moisture"
+        canonical={canonical}
+        alternates={alternates}
         schemas={[
           generateFAQSchema(faqs),
           generateServiceSchema({
@@ -345,6 +352,14 @@ const EliminateWallMoisturePage = () => {
           </div>
         </div>
       </div>
+
+      {isPt ? (
+        <PaginaIrma
+          to="/humidade-nas-paredes"
+          label="Ver tratamento de humidade nas paredes"
+          texto="Esta página explica as causas da humidade e como se distinguem. Se o que procura é resolver o problema numa casa concreta, com análise no local e orçamento, a página de tratamento de humidade nas paredes cobre o serviço, as zonas onde trabalhamos e os prazos de resultado."
+        />
+      ) : null}
     </>
   );
 };

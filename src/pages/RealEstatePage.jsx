@@ -114,7 +114,7 @@ export default function RealEstatePage() {
   return (
     <>
       <SEOHead
-        title="Eduardo Catarino · Consultor Imobiliário no Algarve | EXP Portugal"
+        title="Eduardo Catarino · Consultor Imobiliário no Algarve"
         description="Eduardo Catarino, agente CAP certificado pela EXP Portugal. Compra e venda de imóveis no Algarve com diagnóstico técnico integrado. Atendimento em PT, EN e DE."
         canonical="/real-estate"
         image="/eduardoexp1.webp"

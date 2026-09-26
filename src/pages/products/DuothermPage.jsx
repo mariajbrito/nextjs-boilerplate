@@ -23,8 +23,8 @@ export default function DuothermPage() {
   return (
     <>
       <SEOHead
-        title="Radiadores em Pedra Natural | Aquecimento Saudável Sem CO2"
-        description="Radiadores Duotherm em pedra natural com aquecimento por infravermelhos. Baixo consumo, sem CO2, sem manutenção. Produção em Portugal, tecnologia alemã."
+        title="Radiador de Pedra Natural | Aquecimento de Parede Sem Obras"
+        description="Radiadores Duotherm em pedra natural, aquecimento por infravermelhos montado na parede. Emissor térmico de baixo consumo, sem CO2 e sem manutenção. Tecnologia alemã, feito em Portugal."
         canonical="/products/duotherm"
         image="/Duotherm/saladeestar.png"
         schemas={[
@@ -56,8 +56,11 @@ export default function DuothermPage() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   O Duotherm® é um sistema de aquecimento por infravermelhos em pedra natural, desenvolvido na Alemanha e produzido em Portugal. Os radiadores superam os sistemas clássicos de aquecimento em todos os aspetos: baixo consumo energético, fácil instalação sem obras, silencioso e completamente limpo.
                 </p>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed mb-4">
                   Na versão <strong>DELUXE</strong>, a pedra natural é aquecida através de uma placa de vidro que integra a resistência elétrica à base de nanotecnologia. Esta alta tecnologia permite maior aproveitamento térmico com menor potência elétrica mais acumulação de calor e menor consumo.
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  Este tipo de equipamento é procurado com nomes muito diferentes: radiador de pedra, aquecedor de pedra, placa aquecida, radiador mural, painel radiante de parede ou emissor térmico de parede. Todos descrevem o mesmo princípio, uma massa que acumula calor e o devolve por radiação, montada na parede e sem obras.
                 </p>
               </div>
 

@@ -128,7 +128,7 @@ export default function ProductsHubPage() {
   return (
     <>
       <SEOHead
-        title="Aquecimento, Anti-Humidade e Arrefecimento | Produtos Evoluimos"
+        title="Aquecimento, Anti-Humidade e Arrefecimento | Produtos"
         description="Aquecedores infravermelhos para esplanadas e interior, eliminação de humidade ascendente, isolamento térmico cerâmico, esquentadores elétricos e bioclimatizadores."
         canonical="/products"
       />

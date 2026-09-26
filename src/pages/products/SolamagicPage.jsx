@@ -27,7 +27,7 @@ export default function SolamagicPage() {
   return (
     <>
       <SEOHead
-        title="Aquecedores Infravermelhos para Esplanadas | Solamagic Portugal"
+        title="Aquecedor Infravermelhos para Esplanadas | Solamagic"
         description="Aquecedores Solamagic para esplanadas, terraços e restaurantes. Calor imediato à prova de chuva, 92% de eficiência, made in Germany. Análise gratuita."
         canonical="/products/solamagic"
         image="/Solamagic/aquecedorexterior.png"

@@ -6,7 +6,7 @@ export default function AquecimentoSemObrasPage() {
     <ProblemPage
       slug="aquecimento-sem-obras"
       pageTitle="Aquecimento Sem Obras: Como Aquecer Casa Sem Partir Paredes"
-      metaTitle="Aquecimento Sem Obras | Soluções Rápidas para Casa | Evoluimos Comércio"
+      metaTitle="Aquecimento Sem Obras: Instalação em Poucas Horas"
       metaDescription="Aquecer a casa sem fazer obras é possível. Painéis infravermelhos, radiadores em pedra e piso radiante eléctrico fino. Instalação em poucas horas, sem demolições."
       heroImage="/Duotherm/saladeestar.png"
       heroImageAlt="Sala de estar aquecida por painel infravermelho sem obras"

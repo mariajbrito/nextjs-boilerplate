@@ -5,18 +5,21 @@ export default function AquecimentoExteriorPage() {
   return (
     <ProblemPage
       slug="aquecimento-exterior"
-      pageTitle="Aquecimento Exterior: Aquecedores para Esplanadas, Terraços e Varandas"
-      metaTitle="Aquecimento Exterior para Esplanadas e Terraços | Evoluimos Comércio"
-      metaDescription="Aquecedores infravermelhos para esplanadas, terraços e varandas. Solamagic e ComfortSun, calor imediato, 92% de eficiência. Aumente a faturação do seu negócio o ano todo."
+      pageTitle="Aquecedores de Esplanada, Terraço e Varanda"
+      metaTitle="Aquecedor de Esplanada e Terraço | Infravermelhos Sem Gás"
+      metaDescription="Aquecedores de esplanada por infravermelhos, sem gás e sem bilhas. Calor imediato mesmo com vento, 92% de eficiência. Solamagic e ComfortSun para restaurantes, hotéis e varandas."
       heroImage="/Solamagic/aquecedorexterior.png"
       heroImageAlt="Aquecedor infravermelho exterior numa esplanada"
-      introParagraph="No inverno, a esplanada pode ser a divisão mais rentável do restaurante, do bar ou do hotel. Com o aquecimento certo, mantém os clientes confortáveis com qualquer tempo e prolonga a estação alta o ano todo."
+      introParagraph="No inverno, a esplanada pode ser a divisão mais rentável do restaurante, do bar ou do hotel. Com o aquecedor de esplanada certo, mantém os clientes confortáveis com qualquer tempo e prolonga a estação alta o ano todo."
       searchKeywords={[
-        'aquecimento exterior',
+        'aquecedor de esplanada',
+        'aquecedores de esplanada',
         'aquecedor esplanada',
-        'aquecimento para esplanadas',
+        'aquecimento exterior',
         'aquecedor terraço',
-        'aquecedor infravermelho exterior',
+        'aquecedor infravermelho',
+        'aquecedores infravermelhos de parede',
+        'aquecimento para esplanadas',
       ]}
       problem="Em Portugal, esplanadas e terraços fecham frequentemente entre Novembro e Março ou ficam vazios mesmo abertos, porque os clientes não estão dispostos a sentar-se ao frio. Para muitos restaurantes, bares e hotéis isto representa perda de 30 a 50% da receita possível em meses críticos. Sistemas tradicionais de aquecimento exterior (cogumelos a gás) são ineficientes, ruidosos, dependem de bilhas e não fornecem calor verdadeiramente confortável."
       causes={[
