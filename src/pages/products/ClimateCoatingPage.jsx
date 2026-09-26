@@ -6,8 +6,22 @@ import Breadcrumb from '@/components/Breadcrumb';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
 import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
+import { SIMULADOR_CONFIG } from '@/config/simulador';
+import { calcularZona, formatarEuros, formatarNumero, formatarPercentagem } from '@/lib/simulador';
+
+/* Exemplo do convite ao simulador, calculado a partir da mesma configuração
+   do simulador para que os números nunca divirjam entre as duas páginas. */
+function exemploExterior() {
+  return calcularZona(SIMULADOR_CONFIG.exterior, {
+    area: SIMULADOR_CONFIG.areaInicial,
+    acabamento: SIMULADOR_CONFIG.acabamentoInicial,
+    horizonteAnos: SIMULADOR_CONFIG.horizonteAnos,
+    margem: SIMULADOR_CONFIG.margemEstimativa,
+  });
+}
 
 export default function ClimateCoatingPage() {
+  const exemplo = exemploExterior();
   const products = [
     { name: 'ThermoVital / ThermoPlus', zone: 'Interior', desc: 'Regula a humidade do ar (≈55%), funciona como esponja. Ideal para todas as paredes e tetos interiores.' },
     { name: 'ThermoProtect', zone: 'Exterior', desc: 'Membrana impermeável para fachadas. Reflete o calor solar e protege contra chuva e humidade.' },
@@ -62,6 +76,72 @@ export default function ClimateCoatingPage() {
                   </p>
                 </blockquote>
               </div>
+
+              {/* Convite ao simulador. Números vindos de src/config/simulador.js */}
+              <section className="bg-gray-900 rounded-3xl p-6 sm:p-8 text-white" aria-labelledby="convite-simulador">
+                <span className="inline-block bg-orange-600 text-white text-xs font-extrabold px-3 py-1 rounded-full uppercase tracking-wider">
+                  Simulador gratuito
+                </span>
+                <h2 id="convite-simulador" className="text-2xl sm:text-3xl font-extrabold mt-3 tracking-tight">
+                  Quanto custa pintar a sua casa?
+                </h2>
+                <p className="text-gray-300 mt-2 text-sm sm:text-base leading-relaxed">
+                  No exterior, a diferença não está no preço do balde, está nas repinturas que deixa de
+                  fazer. Indique a área e veja as duas contas lado a lado, em 30 segundos e sem deixar
+                  os seus dados.
+                </p>
+
+                <div className="grid grid-cols-2 gap-3 mt-6">
+                  <div className="bg-white/10 rounded-2xl p-4">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span aria-hidden="true" className="inline-block w-4 h-1 rounded-full bg-blue-400 flex-shrink-0" />
+                      <span className="text-xs font-bold text-gray-300">
+                        {exemplo.referencia.produto.nome}
+                      </span>
+                    </div>
+                    <p className="text-xl sm:text-2xl font-extrabold tabular-nums">
+                      {formatarEuros(exemplo.referencia.total, { decimais: 0 })}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      {exemplo.referencia.numeroDePinturas === 1
+                        ? 'uma única pintura'
+                        : `${exemplo.referencia.numeroDePinturas} pinturas`}
+                    </p>
+                  </div>
+                  <div className="bg-white/10 rounded-2xl p-4">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span aria-hidden="true" className="inline-block w-4 h-1 rounded-full bg-orange-400 flex-shrink-0" />
+                      <span className="text-xs font-bold text-gray-300">Tinta convencional</span>
+                    </div>
+                    <p className="text-xl sm:text-2xl font-extrabold tabular-nums">
+                      {formatarEuros(exemplo.alternativa.total, { decimais: 0 })}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5">
+                      {exemplo.alternativa.numeroDePinturas} pinturas
+                    </p>
+                  </div>
+                </div>
+
+                <p className="text-sm font-bold text-orange-400 mt-4">
+                  Poupança de {formatarEuros(exemplo.poupanca.valor, { decimais: 0 })}, ou seja{' '}
+                  {formatarPercentagem(exemplo.poupanca.percentagem)} menos.
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Exemplo com {formatarNumero(SIMULADOR_CONFIG.areaInicial)} m² de fachada, acabamento
+                  branco, ao longo de {SIMULADOR_CONFIG.horizonteAnos} anos. {SIMULADOR_CONFIG.avisoValores}
+                </p>
+
+                <Link
+                  to="/simulador"
+                  className="mt-6 w-full flex items-center justify-center gap-2 py-4 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-extrabold text-base transition-colors"
+                >
+                  <Calculator className="w-5 h-5" />
+                  Calcular para a minha casa
+                </Link>
+                <p className="text-xs text-gray-500 mt-2.5 text-center">
+                  Também funciona para interior, com ThermoVital.
+                </p>
+              </section>
 
               <div>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Linhas de Produto</h2>

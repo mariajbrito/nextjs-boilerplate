@@ -1,6 +1,17 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Building2, CheckCircle2, Home, Info, MessageCircle, Ruler } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  CheckCircle2,
+  ChevronDown,
+  Home,
+  Info,
+  MessageCircle,
+  Ruler,
+  SlidersHorizontal,
+} from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 import CustoAcumuladoChart from '@/components/simulador/CustoAcumuladoChart';
@@ -39,6 +50,7 @@ export default function SimuladorPage() {
   const [alteracoes, setAlteracoes] = useState({});
   const [erro, setErro] = useState('');
   const resultadoRef = useRef(null);
+  const passo1Ref = useRef(null);
 
   const zona = CONFIG[zonaId];
   const areaNumero = Number(area);
@@ -99,6 +111,15 @@ export default function SimuladorPage() {
     window.requestAnimationFrame(() => {
       resultadoRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
+  };
+
+  /* Sobe primeiro e só depois esconde o resultado. Se fosse pela ordem
+     inversa, a página encurtava com o visitante lá em baixo e o browser
+     deixava-o no rodapé. */
+  const voltarAoPasso1 = () => {
+    passo1Ref.current?.scrollIntoView({ behavior: 'auto', block: 'start' });
+    setPasso(1);
+    setErro('');
   };
 
   const alterarPreco = (produtoId, campo, valor) => {
@@ -197,7 +218,11 @@ export default function SimuladorPage() {
           </ol>
 
           {/* ---------------------------------------------------- passo 1 */}
-          <section className="bg-white rounded-3xl border border-gray-200 p-5 sm:p-7" aria-label="Passo 1: zona e área">
+          <section
+            ref={passo1Ref}
+            className="bg-white rounded-3xl border border-gray-200 p-5 sm:p-7 scroll-mt-20"
+            aria-label="Passo 1: zona e área"
+          >
             <h2 className="text-lg font-extrabold text-gray-900 mb-4">O que vai pintar?</h2>
 
             <div className="grid grid-cols-2 gap-3 mb-6">
@@ -446,48 +471,27 @@ export default function SimuladorPage() {
                 <p className="text-xs text-gray-500 mt-3">{CONFIG.notaFaixa}</p>
               </div>
 
-              {/* gráfico, só quando há projeção */}
-              {series ? (
-                <div className="mt-6 bg-white rounded-3xl border border-gray-200 p-5 sm:p-7">
-                  <CustoAcumuladoChart
-                    series={series}
-                    horizonteAnos={CONFIG.horizonteAnos}
-                    titulo={`Custo acumulado em ${CONFIG.horizonteAnos} anos`}
-                    descricao="A linha sobe de cada vez que é preciso pintar outra vez."
-                  />
-                </div>
-              ) : null}
-
-              {/* textos qualitativos */}
-              {[resultado.referencia, resultado.alternativa].some((r) => r.produto.vantagens) ? (
-                <div className="mt-6 grid sm:grid-cols-2 gap-4">
-                  {[resultado.referencia, resultado.alternativa].map((r) =>
-                    r.produto.vantagens ? (
-                      <div
-                        key={r.produto.id}
-                        className={`rounded-2xl p-5 border ${
-                          r.produto.id === resultado.referencia.produto.id
-                            ? 'bg-cyan-50 border-cyan-200'
-                            : 'bg-white border-gray-200'
-                        }`}
-                      >
-                        <h3 className="font-extrabold text-gray-900 text-sm mb-2">
-                          {r.produto.vantagens.titulo}
-                        </h3>
-                        <p className="text-sm text-gray-700 leading-relaxed">{r.produto.vantagens.texto}</p>
-                      </div>
-                    ) : null,
-                  )}
-                </div>
-              ) : null}
-
               {/* campos editáveis da tinta convencional */}
               {resultado.alternativa.produto.editavel.precos ? (
-                <details className="mt-6 bg-white rounded-3xl border border-gray-200 p-5 sm:p-7">
-                  <summary className="font-extrabold text-gray-900 text-base cursor-pointer">
-                    Tem outros valores? Ajuste a tinta convencional
+                <details className="group mt-6 bg-white rounded-3xl border-2 border-dashed border-gray-300 p-5 sm:p-7 open:border-solid open:border-gray-200">
+                  <summary className="flex items-center gap-3 cursor-pointer list-none marker:content-none [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-orange-50 flex-shrink-0">
+                      <SlidersHorizontal className="w-4 h-4 text-orange-600" />
+                    </span>
+                    <span className="flex-1">
+                      <span className="block font-extrabold text-gray-900 text-base">
+                        Tem outros valores? Ajuste a tinta convencional
+                      </span>
+                      <span className="block text-xs text-gray-500 mt-0.5 group-open:hidden">
+                        Toque para abrir e usar os seus preços
+                      </span>
+                    </span>
+                    <ChevronDown
+                      aria-hidden="true"
+                      className="w-5 h-5 text-gray-400 flex-shrink-0 transition-transform group-open:rotate-180"
+                    />
                   </summary>
-                  <p className="text-sm text-gray-600 mt-2 mb-4">
+                  <p className="text-sm text-gray-600 mt-4 mb-4">
                     Os valores do {resultado.referencia.produto.nome} são os nossos e são fixos. Os da tinta
                     convencional são uma referência de mercado, por isso pode alterá-los.
                   </p>
@@ -563,6 +567,41 @@ export default function SimuladorPage() {
                 </details>
               ) : null}
 
+              {/* gráfico, só quando há projeção */}
+              {series ? (
+                <div className="mt-6 bg-white rounded-3xl border border-gray-200 p-5 sm:p-7">
+                  <CustoAcumuladoChart
+                    series={series}
+                    horizonteAnos={CONFIG.horizonteAnos}
+                    titulo={`Custo acumulado em ${CONFIG.horizonteAnos} anos`}
+                    descricao="A linha sobe de cada vez que é preciso pintar outra vez."
+                  />
+                </div>
+              ) : null}
+
+              {/* textos qualitativos */}
+              {[resultado.referencia, resultado.alternativa].some((r) => r.produto.vantagens) ? (
+                <div className="mt-6 grid sm:grid-cols-2 gap-4">
+                  {[resultado.referencia, resultado.alternativa].map((r) =>
+                    r.produto.vantagens ? (
+                      <div
+                        key={r.produto.id}
+                        className={`rounded-2xl p-5 border ${
+                          r.produto.id === resultado.referencia.produto.id
+                            ? 'bg-cyan-50 border-cyan-200'
+                            : 'bg-white border-gray-200'
+                        }`}
+                      >
+                        <h3 className="font-extrabold text-gray-900 text-sm mb-2">
+                          {r.produto.vantagens.titulo}
+                        </h3>
+                        <p className="text-sm text-gray-700 leading-relaxed">{r.produto.vantagens.texto}</p>
+                      </div>
+                    ) : null,
+                  )}
+                </div>
+              ) : null}
+
               {/* o que está incluído */}
               <div className="mt-6 bg-white rounded-3xl border border-gray-200 p-5 sm:p-7">
                 <h3 className="font-extrabold text-gray-900 text-base mb-4">O que está incluído</h3>
@@ -606,7 +645,7 @@ export default function SimuladorPage() {
 
               <button
                 type="button"
-                onClick={() => setPasso(1)}
+                onClick={voltarAoPasso1}
                 className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-gray-600 hover:text-gray-900"
               >
                 <ArrowLeft className="w-4 h-4" />
