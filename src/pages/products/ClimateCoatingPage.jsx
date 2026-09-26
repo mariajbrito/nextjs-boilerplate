@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, MessageCircle, Wind } from 'lucide-react';
+import { Calculator, CheckCircle2, MessageCircle, Wind } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
 
@@ -130,6 +130,18 @@ export default function ClimateCoatingPage() {
                 </a>
                 <Link to="/contact" className="block w-full py-3 bg-orange-600 hover:bg-orange-700 text-white rounded-xl font-bold text-center transition-colors">
                   Pedir Orçamento
+                </Link>
+              </div>
+              <div className="bg-blue-50 border border-blue-200 rounded-2xl p-5">
+                <div className="flex items-center gap-2 mb-2">
+                  <Calculator className="w-4 h-4 text-blue-700" />
+                  <p className="text-sm font-bold text-gray-900">Quanto vai gastar?</p>
+                </div>
+                <p className="text-xs text-gray-600 mb-3">
+                  Indique a área e veja o custo a 20 anos com ClimateCoating e com tinta convencional de qualidade.
+                </p>
+                <Link to="/simulador" className="block w-full py-2.5 bg-blue-700 hover:bg-blue-800 text-white rounded-xl font-bold text-center text-sm transition-colors">
+                  Abrir simulador
                 </Link>
               </div>
               <div className="bg-cyan-50 border border-cyan-200 rounded-2xl p-5">

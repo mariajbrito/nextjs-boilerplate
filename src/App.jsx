@@ -43,6 +43,7 @@ const MadeiraAcoresPage = lazy(() => import('@/pages/MadeiraAcoresPage'));
 const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
+const SimuladorPage = lazy(() => import('@/pages/SimuladorPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 // Páginas SEO problema-orientadas
@@ -120,6 +121,7 @@ function App() {
                   <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
                   <Route path="/terms" element={<TermsPage />} />
                   <Route path="/faqs" element={<FAQPage />} />
+                  <Route path="/simulador" element={<SimuladorPage />} />
 
                   {/* 404 deve ser sempre a última rota */}
                   <Route path="*" element={<NotFoundPage />} />
