@@ -536,6 +536,7 @@ export default function SimuladorPage() {
                         resultado.alternativa.produto.precos.maoDeObra,
                       )}
                       onChange={(v) => alterarPreco(resultado.alternativa.produto.id, 'maoDeObra', v)}
+                      nota={zona.notaMaoDeObra}
                     />
                     {resultado.alternativa.produto.mostrarPrimario === false ? null : (
                       <CampoEuros
@@ -654,6 +655,12 @@ export default function SimuladorPage() {
                             {item}
                           </li>
                         ))}
+                        {zona.notaMaoDeObra ? (
+                          <li className="flex items-start gap-2 text-sm text-gray-700">
+                            <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
+                            {CONFIG.rotulos.maoDeObra}: {zona.notaMaoDeObra}
+                          </li>
+                        ) : null}
                         {r.produto.mostrarPrimario === false ? null : (
                           <li className="flex items-start gap-2 text-sm text-gray-700">
                             <CheckCircle2 className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" />
@@ -782,7 +789,7 @@ export default function SimuladorPage() {
   );
 }
 
-function CampoEuros({ id, label, valor, onChange }) {
+function CampoEuros({ id, label, valor, onChange, nota }) {
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-gray-700 mb-1.5">
@@ -803,6 +810,7 @@ function CampoEuros({ id, label, valor, onChange }) {
           {CONFIG.rotulos.porM2}
         </span>
       </div>
+      {nota ? <p className="text-xs text-gray-500 mt-1.5">{nota}</p> : null}
     </div>
   );
 }

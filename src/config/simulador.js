@@ -46,6 +46,9 @@ export const SIMULADOR_CONFIG = {
     /* mostra a projeção de custo acumulado ao longo do horizonte */
     projecao: true,
     tituloResultado: 'O que vai gastar em 20 anos',
+    /* texto de apoio da linha de mao de obra, igual nos dois produtos */
+    notaMaoDeObra:
+      'Inclui preparação, lavagem a alta pressão, reparação com materiais, uma demão de primário e duas demãos de pintura.',
     /* nota de rodape do asterisco na durabilidade de 20 anos */
     notaVidaUtil:
       '* Baseado na experiência dos nossos clientes em todo o mundo, em climas moderados como Portugal.',
@@ -58,14 +61,15 @@ export const SIMULADOR_CONFIG = {
         primario: 0,
         tinta: { branco: 6.5, corClara: 7 },
       },
-      /* texto mostrado no lugar do valor quando o primário é 0 */
-      primarioNota: 'não necessário',
+      /* texto mostrado no lugar do valor: o primário é necessário, mas o
+         seu custo já está incluído no preço da tinta, por isso entra a 0 */
+      primarioNota: 'Incluído no preço da tinta',
       durabilidadeAnos: 20,
       editavel: { precos: false, durabilidade: false },
       vantagens: null, // no exterior o resultado em euros já é a vantagem
       incluido: [
         'Aplicação por equipa especializada',
-        'Membrana ThermoProtect, sem necessidade de primário',
+        'Membrana ThermoProtect em fachadas e paredes exteriores',
         'Durabilidade de 20 anos sem repintura*',
       ],
     },
