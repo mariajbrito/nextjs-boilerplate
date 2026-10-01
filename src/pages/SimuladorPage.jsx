@@ -210,6 +210,12 @@ export default function SimuladorPage() {
             </p>
           </header>
 
+          {/* aviso de enquadramento, antes de qualquer campo */}
+          <div className="flex items-start gap-2.5 mb-6 p-4 bg-blue-50 border border-blue-200 rounded-2xl">
+            <Info aria-hidden="true" className="w-5 h-5 text-blue-700 flex-shrink-0 mt-0.5" />
+            <p className="text-sm text-gray-700 leading-relaxed">{CONFIG.avisoTopo}</p>
+          </div>
+
           {/* indicador de passos */}
           <ol className="flex items-center gap-2 mb-6 list-none p-0">
             {PASSOS.map((p) => {
@@ -399,7 +405,7 @@ export default function SimuladorPage() {
 
                 {/* destaque: poupança no exterior, diferença no interior */}
                 {zona.projecao ? (
-                  <div className="bg-blue-700 rounded-2xl p-5 sm:p-6 text-white mb-6">
+                  <div className="bg-blue-700 rounded-2xl p-5 sm:p-6 text-white mb-3">
                     <p className="text-sm font-semibold text-blue-100">
                       Poupança com {resultado.referencia.produto.nome} em {CONFIG.horizonteAnos} anos
                     </p>
@@ -412,7 +418,7 @@ export default function SimuladorPage() {
                     </p>
                   </div>
                 ) : (
-                  <div className="bg-gray-100 rounded-2xl p-5 mb-6">
+                  <div className="bg-gray-100 rounded-2xl p-5 mb-3">
                     <p className="text-sm font-semibold text-gray-600">Diferença hoje</p>
                     <p className="text-3xl font-extrabold text-gray-900 tracking-tight mt-1 tabular-nums">
                       {formatarEuros(Math.abs(resultado.poupanca.valor), { decimais: 0 })}
@@ -424,6 +430,8 @@ export default function SimuladorPage() {
                     </p>
                   </div>
                 )}
+
+                <p className="text-xs text-gray-500 mb-6">{CONFIG.avisoResultado}</p>
 
                 {/* totais dos dois produtos */}
                 <div className="grid sm:grid-cols-2 gap-4">
@@ -659,6 +667,10 @@ export default function SimuladorPage() {
                     </div>
                   ))}
                 </div>
+
+                {zona.notaVidaUtil ? (
+                  <p className="text-xs text-gray-500 mt-4 leading-relaxed">{zona.notaVidaUtil}</p>
+                ) : null}
 
                 <p className="flex items-start gap-2 text-xs text-gray-500 mt-5 pt-4 border-t border-gray-100">
                   <Info className="w-4 h-4 flex-shrink-0 mt-0.5" />

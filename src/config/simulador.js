@@ -33,6 +33,10 @@ export const SIMULADOR_CONFIG = {
     'Valores indicativos, sem IVA, sujeitos a avaliação da superfície.',
   notaFaixa:
     'A faixa reflete variações normais de estado da parede, acessos e acabamento.',
+  avisoTopo:
+    'Este simulador serve para comparar e ter uma ideia dos valores antes da adjudicação. É sempre necessário um orçamento personalizado.',
+  avisoResultado:
+    'Valores indicativos. É sempre necessário um orçamento personalizado.',
 
   /* ------------------------------------------------------------- exterior */
   exterior: {
@@ -42,6 +46,9 @@ export const SIMULADOR_CONFIG = {
     /* mostra a projeção de custo acumulado ao longo do horizonte */
     projecao: true,
     tituloResultado: 'O que vai gastar em 20 anos',
+    /* nota de rodape do asterisco na durabilidade de 20 anos */
+    notaVidaUtil:
+      '* Baseado na experiência dos nossos clientes em todo o mundo, em climas moderados como Portugal.',
     referencia: {
       id: 'thermoprotect',
       nome: 'ThermoProtect',
@@ -59,7 +66,7 @@ export const SIMULADOR_CONFIG = {
       incluido: [
         'Aplicação por equipa especializada',
         'Membrana ThermoProtect, sem necessidade de primário',
-        'Durabilidade de 20 anos sem repintura',
+        'Durabilidade de 20 anos sem repintura*',
       ],
     },
     alternativa: {
