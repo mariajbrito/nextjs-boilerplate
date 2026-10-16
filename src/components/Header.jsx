@@ -13,6 +13,7 @@ const NAV = [
       { group: 'Infravermelhos Exterior' },
       { label: 'Solamagic', path: '/products/solamagic', badge: 'Premium' },
       { label: 'ComfortSun', path: '/products/comfortsun', badge: 'Polivalente' },
+      { label: 'SRP eWave', path: '/products/srp-ewave', badge: 'Novidade' },
       { group: 'Aquecimento Interior' },
       { label: 'Duotherm Radiante', path: '/products/duotherm' },
       { group: 'Proteção e Conforto' },

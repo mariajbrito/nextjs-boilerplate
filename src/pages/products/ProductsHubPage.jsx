@@ -29,6 +29,15 @@ const ALL_PRODUCTS = [
     lines: ['Infravermelhos', 'Polivalente', 'Profissional', 'Deluxe'],
   },
   {
+    name: 'SRP eWave',
+    tag: 'ONDA LONGA, SEM LUZ',
+    badge: 'Novidade',
+    badgeColor: 'bg-amber-500',
+    desc: 'Infravermelhos de onda longa que aquecem sem emitir luz visível. Perfil discreto em alumínio anodizado negro, IP55. Indicados para esplanadas cobertas, pérgolas e varandas.',
+    path: '/products/srp-ewave',
+    img: '/srp-eWave3.webp',
+  },
+  {
     name: 'Duotherm',
     tag: 'AQUECIMENTO RADIANTE',
     desc: 'Radiadores em pedra natural produzidos em Portugal. Calor saudável por infravermelhos, sem emissão de CO₂, com termostato e efeito decorativo único.',
@@ -147,7 +156,7 @@ export default function ProductsHubPage() {
             </p>
           </div>
 
-          {/* Uniform product grid — 9 produtos em grelha 3×3 */}
+          {/* Uniform product grid, 10 produtos */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {ALL_PRODUCTS.map((p, i) => <ProductCard key={i} p={p} />)}
           </div>

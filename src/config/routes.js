@@ -29,6 +29,7 @@ export const ROUTES = [
   { path: '/products/duotherm', priority: '0.9', changefreq: 'monthly' },
   { path: '/products/bioclimatizadores', priority: '0.85', changefreq: 'monthly' },
   { path: '/products/solamagic', priority: '0.85', changefreq: 'monthly' },
+  { path: '/products/srp-ewave', priority: '0.85', changefreq: 'monthly' },
   { path: '/products/comfortsun', priority: '0.85', changefreq: 'monthly' },
   { path: '/products/comfortsun/professional', priority: '0.7', changefreq: 'monthly' },
   { path: '/products/comfortsun/deluxe', priority: '0.7', changefreq: 'monthly' },

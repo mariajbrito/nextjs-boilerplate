@@ -15,6 +15,7 @@ import HomePage from '@/pages/HomePage';
 // Lazy loading de todas as outras páginas para code splitting
 const ProductsHubPage = lazy(() => import('@/pages/products/ProductsHubPage'));
 const SolamagicPage = lazy(() => import('@/pages/products/SolamagicPage'));
+const SrpEwavePage = lazy(() => import('@/pages/products/SrpEwavePage'));
 const ComfortSunPage = lazy(() => import('@/pages/products/ComfortSunPage'));
 const ComfortSunProfessionalPage = lazy(() => import('@/pages/products/ComfortSunProfessionalPage'));
 const ComfortSunDeluxePage = lazy(() => import('@/pages/products/ComfortSunDeluxePage'));
@@ -83,6 +84,7 @@ function AppShell() {
 
                 <Route path="/products" element={<ProductsHubPage />} />
                 <Route path="/products/solamagic" element={<SolamagicPage />} />
+                <Route path="/products/srp-ewave" element={<SrpEwavePage />} />
                 <Route path="/products/comfortsun" element={<ComfortSunPage />} />
                 <Route path="/products/comfortsun/professional" element={<ComfortSunProfessionalPage />} />
                 <Route path="/products/comfortsun/deluxe" element={<ComfortSunDeluxePage />} />
