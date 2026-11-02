@@ -23,7 +23,7 @@ export default function BlogListPage() {
     <>
       <SEOHead
         title="Blogue | Evoluimos Comércio"
-        description="Artigos sobre conforto térmico, eficiência energética e soluções para aquecer, arrefecer e proteger edifícios. Trinta anos de experiência partilhados sem jargão."
+        description="Artigos sobre aquecimento, arrefecimento, humidade e eficiência energética. Trinta anos de experiência a ajudar a fazer melhores escolhas para a sua casa."
         canonical={canonical}
         image={destaque ? destaque.image : '/logo.png'}
         {...(destaque ? { imageWidth: destaque.imageW, imageHeight: destaque.imageH } : {})}
@@ -60,7 +60,7 @@ export default function BlogListPage() {
                 Blogue
               </h1>
               <p className="text-amber-400 font-semibold mt-3 text-lg">
-                Conhecimento partilhado, sem jargão
+                Conhecimento que ajuda a fazer melhores escolhas
               </p>
               <p className="text-gray-400 leading-relaxed mt-5 max-w-2xl">
                 Trinta anos a trabalhar com quem quer uma casa mais confortável ensinaram-nos
