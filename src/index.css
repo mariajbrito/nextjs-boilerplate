@@ -121,3 +121,183 @@ a:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+   Corpo dos artigos do blogue.
+
+   Em vez de cada artigo repetir classes Tailwind em todas as tags, o texto e
+   escrito como marcacao simples dentro de .artigo-corpo e e esta folha que o
+   formata. Publicar um artigo novo passa a ser escrever paragrafos e titulos.
+
+   Nunca definir aqui hyphens nem word-break: o body ja garante que as palavras
+   nao sao partidas ao fim da linha, e repetir a regra so cria um sitio a mais
+   onde se pode quebrar essa garantia por engano.
+   --------------------------------------------------------------------------- */
+.artigo-corpo {
+  color: #374151;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+.artigo-corpo > * + * {
+  margin-top: 1.25rem;
+}
+
+/* Primeiro paragrafo, maior, a servir de entrada no texto */
+.artigo-corpo .entrada {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.artigo-corpo h2 {
+  font-size: 1.625rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #111827;
+  margin-top: 3rem;
+  scroll-margin-top: 88px; /* a altura do cabecalho fixo, para as ancoras */
+}
+
+.artigo-corpo h3 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #111827;
+  margin-top: 2.25rem;
+  scroll-margin-top: 88px;
+}
+
+.artigo-corpo h2 + p,
+.artigo-corpo h3 + p {
+  margin-top: 0.75rem;
+}
+
+.artigo-corpo strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.artigo-corpo a {
+  color: #B84500;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.artigo-corpo a:hover {
+  color: #8f3600;
+}
+
+.artigo-corpo ul,
+.artigo-corpo ol {
+  padding-left: 1.5rem;
+}
+
+.artigo-corpo ul { list-style: disc; }
+.artigo-corpo ol { list-style: decimal; }
+
+.artigo-corpo li + li {
+  margin-top: 0.5rem;
+}
+
+.artigo-corpo li::marker {
+  color: #F0A020;
+}
+
+.artigo-corpo blockquote {
+  border-left: 3px solid #F0A020;
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: #4b5563;
+}
+
+.artigo-corpo hr {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2.5rem;
+}
+
+/* Caixa de destaque para avisos e notas dentro do artigo */
+.artigo-corpo .destaque {
+  background: #FFF7ED;
+  border: 1px solid #FED7AA;
+  border-radius: 1rem;
+  padding: 1.25rem 1.5rem;
+}
+
+.artigo-corpo .destaque > * + * {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .artigo-corpo { font-size: 1.125rem; }
+  .artigo-corpo .entrada { font-size: 1.25rem; }
+  .artigo-corpo h2 { font-size: 1.875rem; }
+  .artigo-corpo h3 { font-size: 1.375rem; }
+}
+
+/* Lista de exemplos dentro de um artigo.
+
+   Serve para destacar uma serie de casos sem os transformar numa lista de
+   bullets, que tornaria o texto seco. Cada exemplo fica com uma barra lateral
+   ambar e um numero, e a numeracao e automatica: acrescentar ou remover um
+   exemplo nao obriga a renumerar nada a mao. */
+.artigo-corpo .exemplos {
+  counter-reset: exemplo;
+}
+
+.artigo-corpo .exemplo {
+  counter-increment: exemplo;
+  border-left: 3px solid #F0A020;
+  padding-left: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+.artigo-corpo .exemplo > h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.625rem;
+}
+
+.artigo-corpo .exemplo > h3::before {
+  content: counter(exemplo);
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #B84500;
+  background: #FFF4E6;
+  border: 1px solid #FED7AA;
+  border-radius: 999px;
+  min-width: 1.75rem;
+  padding: 0.125rem 0.5rem;
+  text-align: center;
+  /* baseline alinha o numero pelo texto do titulo, nao pelo topo da caixa */
+  align-self: flex-start;
+  line-height: 1.5rem;
+}
+
+.artigo-corpo .exemplo > * + * {
+  margin-top: 0.75rem;
+}
+
+/* Ligacao discreta para a pagina do produto, no fim de cada exemplo */
+.artigo-corpo .exemplo .ver-mais {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.artigo-corpo .exemplo .ver-mais:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (min-width: 640px) {
+  .artigo-corpo .exemplo { padding-left: 1.5rem; }
+}

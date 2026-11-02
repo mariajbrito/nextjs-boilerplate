@@ -30,10 +30,10 @@ const ALL_PRODUCTS = [
   },
   {
     name: 'SRP eWave',
-    tag: 'ONDA LONGA, SEM LUZ',
+    tag: 'ONDA MÉDIA, SEM LUZ',
     badge: 'Novidade',
     badgeColor: 'bg-amber-500',
-    desc: 'Infravermelhos de onda longa que aquecem sem emitir luz visível. Perfil discreto em alumínio anodizado negro, IP55. Indicados para esplanadas cobertas, pérgolas e varandas.',
+    desc: 'Infravermelhos de onda média que aquecem sem emitir luz visível. Perfil discreto em alumínio anodizado negro, IP55. Indicados para esplanadas cobertas, pérgolas e varandas.',
     path: '/products/srp-ewave',
     img: '/srp-eWave3.webp',
   },

@@ -156,6 +156,93 @@ export const generateArticleSchema = (article) => {
   };
 };
 
+/**
+ * Dados estruturados de um artigo do blogue.
+ *
+ * Difere de generateArticleSchema por usar a data real de publicacao em vez da
+ * data de hoje. Com a data de hoje, cada build voltava a anunciar o artigo como
+ * acabado de publicar, o que o Google despromove por inconsistencia.
+ *
+ * Recebe um artigo de src/content/blog/posts.js e o URL absoluto da pagina.
+ */
+export const generateBlogPostingSchema = (post, url) => {
+  const imagem = post.image.startsWith('http')
+    ? post.image
+    : `${COMPANY.baseUrl}${post.image}`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'headline': post.title,
+    'description': post.description,
+    'image': [imagem],
+    'datePublished': post.date,
+    'dateModified': post.updated || post.date,
+    'inLanguage': 'pt-PT',
+    'author': {
+      '@type': 'Person',
+      'name': post.author,
+      ...(post.authorImage ? { 'image': `${COMPANY.baseUrl}${post.authorImage}` } : {}),
+      'worksFor': {
+        '@type': 'Organization',
+        'name': COMPANY.name,
+        'url': COMPANY.baseUrl,
+      },
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': COMPANY.name,
+      'url': COMPANY.baseUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${COMPANY.baseUrl}/logo.png`,
+      },
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    'url': url,
+    ...(post.tags && post.tags.length ? { 'keywords': post.tags.join(', ') } : {}),
+  };
+};
+
+/**
+ * Dados estruturados da pagina de listagem do blogue, com os artigos por ordem
+ * de publicacao. Ajuda o Google a perceber que /blogue e um indice e nao um
+ * artigo solto.
+ */
+export const generateBlogSchema = (posts, url) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    'name': `Blogue ${COMPANY.name}`,
+    'description':
+      'Artigos sobre conforto termico, eficiencia energetica e solucoes para aquecer, arrefecer e proteger edificios.',
+    'url': url,
+    'inLanguage': 'pt-PT',
+    'publisher': {
+      '@type': 'Organization',
+      'name': COMPANY.name,
+      'url': COMPANY.baseUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${COMPANY.baseUrl}/logo.png`,
+      },
+    },
+    'blogPost': posts.map((p) => ({
+      '@type': 'BlogPosting',
+      'headline': p.title,
+      'description': p.description,
+      'datePublished': p.date,
+      'dateModified': p.updated || p.date,
+      'image': `${COMPANY.baseUrl}${p.image}`,
+      'author': { '@type': 'Person', 'name': p.author },
+      'url': `${COMPANY.baseUrl}/blogue/${p.slug}`,
+    })),
+  };
+};
+
 export const generateReviewSchema = (review) => {
   return {
     '@context': 'https://schema.org',

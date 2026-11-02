@@ -47,6 +47,8 @@ const PrivacyPolicyPage = lazy(() => import('@/pages/PrivacyPolicyPage'));
 const TermsPage = lazy(() => import('@/pages/TermsPage'));
 const FAQPage = lazy(() => import('@/pages/FAQPage'));
 const SimuladorPage = lazy(() => import('@/pages/SimuladorPage'));
+const BlogListPage = lazy(() => import('@/pages/blog/BlogListPage'));
+const BlogPostPage = lazy(() => import('@/pages/blog/BlogPostPage'));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
 
 // Páginas SEO problema-orientadas
@@ -135,6 +137,11 @@ function AppShell() {
                 <Route path="/terms" element={<TermsPage />} />
                 <Route path="/faqs" element={<FAQPage />} />
                 <Route path="/simulador" element={<SimuladorPage />} />
+
+                {/* Blogue. A listagem e cada artigo, resolvido pelo slug a
+                    partir de src/content/blog/posts.js. */}
+                <Route path="/blogue" element={<BlogListPage />} />
+                <Route path="/blogue/:slug" element={<BlogPostPage />} />
 
                 {/* 404 deve ser sempre a última rota */}
                 <Route path="*" element={<NotFoundPage />} />

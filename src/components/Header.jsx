@@ -54,11 +54,20 @@ const NAV = [
       { label: 'Madeira e Açores', path: '/madeira-acores' },
     ]
   },
+  { label: 'Blogue', path: '/blogue', matchPrefix: true },
   { label: 'Imobiliário', path: '/real-estate' },
   { label: 'Sobre', path: '/about' },
   { label: 'FAQ', path: '/faqs' },
   { label: 'Contacto', path: '/contact' },
 ];
+
+/**
+ * Uma entrada do menu esta ativa quando o endereco atual e o dela. Com
+ * matchPrefix, tambem quando e uma pagina abaixo dela, que e o caso do blogue:
+ * ao ler /blogue/um-artigo, o menu deve continuar a marcar "Blogue".
+ */
+const isNavActive = (item, pathname) =>
+  item.matchPrefix ? pathname === item.path || pathname.startsWith(item.path + '/') : pathname === item.path;
 
 const DropItem = ({ item, onClose }) => {
   const location = useLocation();
@@ -148,9 +157,9 @@ export default function Header() {
               ? <DesktopDrop key={i} item={item} />
               : (
                 <Link key={i} to={item.path}
-                  style={{ padding: '8px 12px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, color: location.pathname === item.path ? '#F0A020' : '#A09890', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'color 0.15s' }}
-                  onMouseEnter={e => { if (location.pathname !== item.path) e.currentTarget.style.color = '#F0EBE3'; }}
-                  onMouseLeave={e => { if (location.pathname !== item.path) e.currentTarget.style.color = '#A09890'; }}>
+                  style={{ padding: '8px 12px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, color: isNavActive(item, location.pathname) ? '#F0A020' : '#A09890', textDecoration: 'none', whiteSpace: 'nowrap', transition: 'color 0.15s' }}
+                  onMouseEnter={e => { if (!isNavActive(item, location.pathname)) e.currentTarget.style.color = '#F0EBE3'; }}
+                  onMouseLeave={e => { if (!isNavActive(item, location.pathname)) e.currentTarget.style.color = '#A09890'; }}>
                   {item.label}
                 </Link>
               )
@@ -243,7 +252,7 @@ export default function Header() {
                   </div>
                 ) : (
                   <Link key={i} to={item.path}
-                    style={{ display: 'block', padding: '13px 12px', borderRadius: '10px', color: location.pathname === item.path ? '#F0A020' : '#D5D0C8', fontWeight: 600, fontSize: '15px', textDecoration: 'none' }}>
+                    style={{ display: 'block', padding: '13px 12px', borderRadius: '10px', color: isNavActive(item, location.pathname) ? '#F0A020' : '#D5D0C8', fontWeight: 600, fontSize: '15px', textDecoration: 'none' }}>
                     {item.label}
                   </Link>
                 ))}

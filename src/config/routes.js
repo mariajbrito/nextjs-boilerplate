@@ -9,6 +9,20 @@
  * Ao adicionar uma rota nova em src/AppShell.jsx, acrescentar aqui tambem.
  * priority e changefreq existem so para o sitemap.
  */
+import { BLOG_BASE, POSTS } from '../content/blog/posts.js';
+
+/**
+ * Uma rota por artigo do blogue, derivada de src/content/blog/posts.js.
+ *
+ * Fica assim porque a alternativa era repetir cada artigo aqui a mao. Um artigo
+ * novo entra sozinho no sitemap e passa a ter pagina pre-renderizada propria.
+ */
+const BLOG_ROUTES = POSTS.map((post) => ({
+  path: `${BLOG_BASE}/${post.slug}`,
+  priority: '0.7',
+  changefreq: 'yearly',
+}));
+
 export const ROUTES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
 
@@ -62,6 +76,10 @@ export const ROUTES = [
   { path: '/lisboa', priority: '0.8', changefreq: 'monthly' },
   { path: '/porto', priority: '0.8', changefreq: 'monthly' },
   { path: '/madeira-acores', priority: '0.8', changefreq: 'monthly' },
+
+  // Blogue. A listagem e fixa, os artigos vem de BLOG_ROUTES.
+  { path: BLOG_BASE, priority: '0.8', changefreq: 'weekly' },
+  ...BLOG_ROUTES,
 
   // Institucional
   { path: '/about', priority: '0.6', changefreq: 'yearly' },

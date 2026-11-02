@@ -161,6 +161,7 @@ export default function Footer() {
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '24px' }}>
               {[
                 { label: 'Sobre Nós', path: '/about' },
+                { label: 'Blogue', path: '/blogue' },
                 { label: 'Serviços Imobiliários', path: '/real-estate' },
                 { label: 'Contactos', path: '/contact' },
                 { label: 'Política de Privacidade', path: '/privacy-policy' },

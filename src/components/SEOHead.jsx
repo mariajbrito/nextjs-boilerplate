@@ -9,6 +9,12 @@ const SEOHead = ({
   schemas = [],
   language = 'pt',
   image = '/logo.png',
+  // Dimensoes reais da imagem de partilha. O Facebook e o LinkedIn usam-nas
+  // para reservar o espaco do cartao antes de a ir buscar, por isso anunciar
+  // medidas que nao sao as do ficheiro da um primeiro desenho errado. Os
+  // valores por omissao sao os que o site ja anunciava.
+  imageWidth = 1200,
+  imageHeight = 630,
   type = 'website',
   // Par de URLs equivalentes em portugues e ingles, por exemplo
   // { pt: '/solutions', en: '/en/solutions' }. Quando existe, a pagina declara
@@ -48,8 +54,8 @@ const SEOHead = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImageUrl} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content={String(imageWidth)} />
+      <meta property="og:image:height" content={String(imageHeight)} />
       <meta property="og:image:alt" content={title} />
       <meta property="og:url" content={fullCanonical} />
       <meta property="og:type" content={type} />

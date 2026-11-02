@@ -11,13 +11,13 @@ import { WA_URL as WA, COMPANY } from '@/config/company';
 import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
 
 /* Dados confirmados na documentacao do fabricante (Superior Radiant Products,
-   brochura dos modelos eWAVE de onda longa e media). As medidas originais estao
+   brochura dos modelos eWAVE de onda media). As medidas originais estao
    em polegadas e libras, aqui convertidas. */
 const BENEFITS = [
   {
     icon: EyeOff,
     title: 'Sem luz visível',
-    text: 'A onda longa aquece sem brilho nem clarão alaranjado. O ambiente noturno mantém-se exatamente como foi pensado.',
+    text: 'A onda média aquece sem brilho nem clarão alaranjado. O ambiente noturno mantém-se exatamente como foi pensado.',
   },
   {
     icon: Waves,
@@ -58,7 +58,7 @@ const APLICACOES = [
 ];
 
 const SPECS = [
-  { label: 'Tecnologia', value: 'Infravermelhos de onda longa' },
+  { label: 'Tecnologia', value: 'Infravermelhos de onda média' },
   { label: 'Emissão de luz', value: 'Nenhuma luz visível' },
   { label: 'Potência', value: '1500 W a 4500 W' },
   { label: 'Alimentação', value: 'Monofásica ou trifásica' },
@@ -90,15 +90,15 @@ export default function SrpEwavePage() {
   return (
     <>
       <SEOHead
-        title="SRP eWave | Aquecedor Infravermelhos de Onda Longa"
-        description="Aquecedores SRP eWave de infravermelhos de onda longa, sem emissão de luz visível. Para esplanadas cobertas, pérgolas e varandas. IP55. Peça aconselhamento."
+        title="SRP eWave | Aquecedor Infravermelhos de Onda Média"
+        description="Aquecedores SRP eWave de infravermelhos de onda média, sem emissão de luz visível. Para esplanadas cobertas, pérgolas e varandas. IP55. Peça aconselhamento."
         canonical="/products/srp-ewave"
         image="/srp-eWave2.webp"
         schemas={[
           generateProductSchema({
             name: 'SRP eWave',
             description:
-              'Aquecedores elétricos de infravermelhos de onda longa, sem emissão de luz visível. Emissor em alumínio anodizado negro, IP55, certificados para interior e exterior. Indicados para espaços exteriores cobertos ou protegidos.',
+              'Aquecedores elétricos de infravermelhos de onda média, sem emissão de luz visível. Emissor em alumínio anodizado negro, IP55, certificados para interior e exterior. Indicados para espaços exteriores cobertos ou protegidos.',
             image: `${COMPANY.baseUrl}/srp-eWave2.webp`,
             brand: 'SRP',
             url: `${COMPANY.baseUrl}/products/srp-ewave`,
@@ -141,7 +141,7 @@ export default function SrpEwavePage() {
                   SRP eWave
                 </h1>
                 <p className="text-amber-400 font-semibold mt-3 text-lg">
-                  Infravermelhos de Onda Longa · Sem Luz Visível
+                  Infravermelhos de Onda Média · Sem Luz Visível
                 </p>
                 <p className="text-gray-400 leading-relaxed mt-5 max-w-lg">
                   Aquecedores elétricos de infravermelhos que aquecem sem brilhar. Pensados
@@ -208,19 +208,19 @@ export default function SrpEwavePage() {
                   Calor que se sente, luz que não se vê
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  A gama <strong>SRP eWave de onda longa</strong> é a mais recente novidade no nosso
+                  A gama <strong>SRP eWave de onda média</strong> é a mais recente novidade no nosso
                   portefólio de aquecimento exterior. São aquecedores elétricos de infravermelhos
                   com emissor em alumínio anodizado negro e extrusões parabólicas, desenvolvido em
                   conjunto com o Departamento de Engenharia da Universidade de Modena Enzo Ferrari.
                 </p>
                 <p className="text-gray-700 leading-relaxed mb-4">
                   Ao contrário dos aquecedores de onda curta, que trabalham com uma lâmpada
-                  incandescente, a onda longa aquece <strong>sem qualquer emissão de luz visível</strong>.
+                  incandescente, a onda média aquece <strong>sem qualquer emissão de luz visível</strong>.
                   O aparelho não brilha e não cria um clarão alaranjado sobre a mesa, pelo que a
                   iluminação pensada para o espaço se mantém intacta.
                 </p>
                 <p className="text-gray-700 leading-relaxed">
-                  A radiação de onda longa tem elevada absorção e baixa reflexão, o que se traduz
+                  A radiação de onda média tem elevada absorção e baixa reflexão, o que se traduz
                   numa sensação de calor suave e envolvente sobre a pele. E, como aquece diretamente
                   as pessoas e as superfícies em vez do ar, não gera correntes nem levanta poeiras.
                 </p>
@@ -229,7 +229,7 @@ export default function SrpEwavePage() {
               {/* Beneficios */}
               <div>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-5">
-                  O que distingue a onda longa
+                  O que distingue a onda média
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {BENEFITS.map((b) => {
@@ -273,7 +273,7 @@ export default function SrpEwavePage() {
                   Pensado para espaços exteriores cobertos
                 </h2>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  A onda longa trabalha a temperaturas de superfície mais baixas do que a onda curta
+                  A onda média trabalha a temperaturas de superfície mais baixas do que a onda curta
                   e entrega um calor mais difuso e envolvente. É nos espaços exteriores cobertos ou
                   protegidos que essa qualidade se nota melhor, porque o calor permanece junto das
                   pessoas em vez de se dispersar.
@@ -387,7 +387,7 @@ export default function SrpEwavePage() {
                   Qual escolher
                 </p>
                 <p className="text-sm text-gray-700 mb-2">
-                  <strong>eWave</strong>, onda longa, sem luz visível, para espaços cobertos ou
+                  <strong>eWave</strong>, onda média, sem luz visível, para espaços cobertos ou
                   protegidos.
                 </p>
                 <p className="text-sm text-gray-700">
@@ -418,7 +418,7 @@ export default function SrpEwavePage() {
             </h2>
             <p className="text-gray-600 text-sm mb-6 max-w-lg mx-auto">
               Fale com a Evoluimos Comércio. Analisamos o seu espaço exterior coberto, explicamos o
-              que esperar da onda longa e indicamos a configuração certa, sem compromisso.
+              que esperar da onda média e indicamos a configuração certa, sem compromisso.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a
