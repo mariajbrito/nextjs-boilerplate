@@ -8,6 +8,16 @@ import { COMPANY } from '@/config/company';
  * As redes sao abertas por URL de partilha em vez de widget oficial: nao carrega
  * JavaScript de terceiros, nao instala cookies e nao atrasa a pagina, o que
  * tambem evita ter de declarar mais um rastreador no banner de cookies.
+ *
+ * O botao do Facebook tem ainda a folha de partilha do proprio telemovel, onde
+ * ela existir. Isso e feito com um onClick por cima do <a>, e nao trocando o
+ * <a> por um <button> quando ha navigator.share, de proposito:
+ *
+ *  - o HTML pre-renderizado fica igual ao que ja era. Decidir no render a
+ *    partir do navigator dava marcacao diferente no servidor e no browser, que
+ *    e exatamente o que faz a hidratacao queixar-se.
+ *  - sem JavaScript, ou antes de ele chegar, o botao continua a ser uma
+ *    ligacao que funciona.
  */
 
 const FacebookIcon = (props) => (
@@ -47,6 +57,7 @@ const ShareButtons = ({ url, title, className = '' }) => {
       nome: 'Facebook',
       href: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
       Icon: FacebookIcon,
+      nativo: true,
     },
     {
       nome: 'WhatsApp',
@@ -71,6 +82,29 @@ const ShareButtons = ({ url, title, className = '' }) => {
     },
   ];
 
+  /**
+   * Abre a folha de partilha do sistema, se o browser a tiver.
+   *
+   * Sem navigator.share nao faz nada e deixa o clique seguir para o sharer.php
+   * do Facebook, como sempre fez.
+   */
+  const partilharNativo = (evento, href) => {
+    if (typeof navigator === 'undefined' || !navigator.share) return;
+
+    evento.preventDefault();
+    navigator.share({ title, url: fullUrl }).catch((erro) => {
+      // Fechar a folha de partilha sem escolher nada rejeita com AbortError.
+      // Nao e uma avaria, e a pessoa desistiu, por isso nao se faz nada: abrir
+      // o Facebook a seguir seria o contrario do que ela acabou de pedir.
+      if (erro?.name === 'AbortError') return;
+
+      // Qualquer outra falha, por exemplo dentro de um iframe sem
+      // allow="web-share", cai para a janela do Facebook. O preventDefault ja
+      // travou a ligacao, e sem isto o botao ficava morto.
+      window.open(href, '_blank', 'noopener,noreferrer');
+    });
+  };
+
   // navigator.clipboard so existe em contexto seguro. Sem ele, o botao de copiar
   // nao aparece, em vez de aparecer e nao fazer nada.
   const podeCopiar =
@@ -93,10 +127,11 @@ const ShareButtons = ({ url, title, className = '' }) => {
         Partilhar
       </span>
 
-      {redes.map(({ nome, href, Icon, sameTab }) => (
+      {redes.map(({ nome, href, Icon, sameTab, nativo }) => (
         <a
           key={nome}
           href={href}
+          onClick={nativo ? (evento) => partilharNativo(evento, href) : undefined}
           {...(sameTab ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
           aria-label={`Partilhar no ${nome}`}
           title={`Partilhar no ${nome}`}
