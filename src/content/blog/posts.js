@@ -34,11 +34,12 @@
  *                browser reservar o espaco certo antes de a imagem carregar.
  *                Erradas, a pagina salta durante o carregamento, o que conta
  *                como Cumulative Layout Shift e penaliza o SEO.
- *   imageRatio   proporcao da imagem de destaque no topo do artigo, opcional.
- *                Sem ela a imagem e cortada a 3/2, que serve a maioria das
- *                fotografias. Uma capa com texto perto das margens deve indicar
- *                aqui a sua proporcao real, por exemplo '16 / 9', senao o corte
- *                come as palavras dos lados.
+ *   imageRatio   proporcao a que a capa e mostrada, opcional. Vale no topo do
+ *                artigo e nos cartoes da listagem do blogue. Sem ela a imagem
+ *                e cortada a 3/2, que serve a maioria das fotografias. Uma
+ *                capa com texto perto das margens deve indicar aqui a sua
+ *                proporcao real, por exemplo '16 / 9', senao o corte come as
+ *                palavras dos lados.
  *   tags         etiquetas curtas mostradas no cartao e no artigo
  *   readingMin   tempo de leitura estimado, em minutos
  */

@@ -91,12 +91,19 @@ export default function BlogListPage() {
                 >
                   <div className="grid md:grid-cols-2">
                     <div className="bg-gray-100 overflow-hidden">
+                      {/* A proporcao vai numa variavel de CSS, e nao num style
+                          em linha como nos cartoes de baixo, porque aqui ela so
+                          vale ate ao md: a partir dai o md:aspect-auto manda, e
+                          a imagem estica para acompanhar a altura da coluna de
+                          texto ao lado. Um style em linha ganhava a esse
+                          md:aspect-auto e desmanchava o destaque no computador. */}
                       <img
                         src={destaque.image}
                         alt={destaque.imageAlt}
                         width={destaque.imageW}
                         height={destaque.imageH}
-                        className="w-full h-full object-cover aspect-[3/2] md:aspect-auto md:min-h-[320px] group-hover:scale-[1.02] transition-transform duration-500"
+                        style={{ '--capa': destaque.imageRatio || '3 / 2' }}
+                        className="w-full h-full object-cover aspect-[var(--capa)] md:aspect-auto md:min-h-[320px] group-hover:scale-[1.02] transition-transform duration-500"
                         loading="eager"
                       />
                     </div>
@@ -135,7 +142,9 @@ export default function BlogListPage() {
                             alt={post.imageAlt}
                             width={post.imageW}
                             height={post.imageH}
-                            className="w-full aspect-[3/2] object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                            /* 3/2 por omissao, como em BlogPostPage.jsx */
+                            style={{ aspectRatio: post.imageRatio || '3 / 2' }}
+                            className="w-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                             loading="lazy"
                           />
                         </div>
