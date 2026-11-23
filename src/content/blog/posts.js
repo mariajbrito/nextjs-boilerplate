@@ -40,6 +40,14 @@
  *                capa com texto perto das margens deve indicar aqui a sua
  *                proporcao real, por exemplo '16 / 9', senao o corte come as
  *                palavras dos lados.
+ *   cardImage    segunda capa, so para o cartao em destaque da listagem e so
+ *                a partir do md, opcional. Ali a imagem fica numa coluna alta
+ *                ao lado do texto, e uma capa larga nao tem como encher esse
+ *                espaco sem ser cortada. Uma versao mais quadrada da mesma
+ *                arte resolve. Abaixo do md o cartao passa a ocupar a largura
+ *                toda e volta a usar image com o imageRatio, por isso nenhum
+ *                telemovel chega a descarregar este ficheiro. Sem o campo, o
+ *                cartao usa image em todos os tamanhos, como sempre usou.
  *   tags         etiquetas curtas mostradas no cartao e no artigo
  *   readingMin   tempo de leitura estimado, em minutos
  */
@@ -64,6 +72,7 @@ export const POSTS = [
     imageW: 1600,
     imageH: 900,
     imageRatio: '16 / 9',
+    cardImage: '/clienterei.webp',
     tags: ['Aconselhamento técnico', 'Conforto térmico', 'Soluções à medida'],
     readingMin: 5,
   },

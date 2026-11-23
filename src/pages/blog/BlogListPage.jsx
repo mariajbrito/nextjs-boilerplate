@@ -96,16 +96,33 @@ export default function BlogListPage() {
                           vale ate ao md: a partir dai o md:aspect-auto manda, e
                           a imagem estica para acompanhar a altura da coluna de
                           texto ao lado. Um style em linha ganhava a esse
-                          md:aspect-auto e desmanchava o destaque no computador. */}
-                      <img
-                        src={destaque.image}
-                        alt={destaque.imageAlt}
-                        width={destaque.imageW}
-                        height={destaque.imageH}
-                        style={{ '--capa': destaque.imageRatio || '3 / 2' }}
-                        className="w-full h-full object-cover aspect-[var(--capa)] md:aspect-auto md:min-h-[320px] group-hover:scale-[1.02] transition-transform duration-500"
-                        loading="eager"
-                      />
+                          md:aspect-auto e desmanchava o destaque no computador.
+
+                          O cardImage entra por <source>, e nao por uma segunda
+                          <img> escondida com hidden md:block, porque o browser
+                          descarrega na mesma o que esta escondido: assim o
+                          telemovel so vai buscar um ficheiro. O contents no
+                          <picture> tira-lhe a caixa de layout, senao o h-full
+                          da <img> passava a contar a partir dele, que nao tem
+                          altura, e o destaque deixava de esticar no computador.
+
+                          Sem width e height no <source> de proposito: a partir
+                          do md quem manda nas duas medidas e a coluna, com o
+                          w-full e o h-full, e nao ha espaco nenhum por reservar. */}
+                      <picture className="contents">
+                        {destaque.cardImage && (
+                          <source media="(min-width: 768px)" srcSet={destaque.cardImage} />
+                        )}
+                        <img
+                          src={destaque.image}
+                          alt={destaque.imageAlt}
+                          width={destaque.imageW}
+                          height={destaque.imageH}
+                          style={{ '--capa': destaque.imageRatio || '3 / 2' }}
+                          className="w-full h-full object-cover aspect-[var(--capa)] md:aspect-auto md:min-h-[320px] group-hover:scale-[1.02] transition-transform duration-500"
+                          loading="eager"
+                        />
+                      </picture>
                     </div>
                     <div className="p-6 sm:p-8 flex flex-col justify-center">
                       <span className="inline-flex self-start items-center gap-2 rounded-full border border-amber-300 bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-widest text-amber-700 mb-4">
