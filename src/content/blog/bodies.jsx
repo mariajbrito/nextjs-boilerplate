@@ -10,7 +10,9 @@
  * posts.js. Nada mais precisa de ser tocado.
  */
 import MaisUmBlogueEEsteFaziaMesmoFalta from './mais-um-blogue-e-este-fazia-mesmo-falta.jsx';
+import OClienteERei from './o-cliente-e-rei-ou-sera-que-nao.jsx';
 
 export const BODIES = {
   'mais-um-blogue-e-este-fazia-mesmo-falta': MaisUmBlogueEEsteFaziaMesmoFalta,
+  'o-cliente-e-rei-ou-sera-que-nao': OClienteERei,
 };

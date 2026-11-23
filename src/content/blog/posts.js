@@ -42,6 +42,25 @@ export const BLOG_BASE = '/blogue';
 
 export const POSTS = [
   {
+    slug: 'o-cliente-e-rei-ou-sera-que-nao',
+    title: 'O cliente é rei… ou será que não?',
+    seoTitle: 'O cliente é rei, ou será que não?',
+    description:
+      'Nem sempre dizer que sim é servir bem o cliente. Dois casos reais: uma pedra de 900 W para 50 m² e uma igreja com nove metros de pé-direito.',
+    excerpt:
+      'Uma sala de 50 m² com uma pedra de 900 W. Uma igreja de nove metros de pé-direito aquecida a ar condicionado portátil. Dois casos em que aceitar o pedido do cliente sem o alertar seria o pior serviço a prestar-lhe.',
+    date: '2026-11-23',
+    author: 'Eduardo Catarino',
+    authorImage: '/eduardocatarino.jpg',
+    image: '/oclienteerei.webp',
+    imageAlt:
+      'Homem de fato preto com uma coroa dourada na cabeça e ar surpreendido, ao lado do título «O cliente é rei, ou será que não?»',
+    imageW: 1600,
+    imageH: 900,
+    tags: ['Aconselhamento técnico', 'Conforto térmico', 'Soluções à medida'],
+    readingMin: 5,
+  },
+  {
     slug: 'mais-um-blogue-e-este-fazia-mesmo-falta',
     title: 'Mais um blogue, e este fazia mesmo falta!',
     seoTitle: 'Mais um blogue, e este fazia mesmo falta',
