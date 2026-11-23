@@ -147,7 +147,11 @@ export default function BlogPostPage() {
               alt={post.imageAlt}
               width={post.imageW}
               height={post.imageH}
-              className="w-full aspect-[3/2] object-cover block"
+              className="w-full object-cover block"
+              /* 3/2 por omissao. Uma imagem com texto perto das margens, como as
+                 capas 16/9, diz a sua propria proporcao em posts.js para nao
+                 ficar com as palavras cortadas pelo object-cover. */
+              style={{ aspectRatio: post.imageRatio || '3 / 2' }}
               loading="eager"
             />
           </motion.figure>
