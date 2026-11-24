@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
+import ConviteVideo from '@/components/videos/ConviteVideo';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
 import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
@@ -153,6 +154,8 @@ export default function DuothermPage() {
                   ))}
                 </div>
               </div>
+
+              <ConviteVideo />
             </div>
 
             <div className="space-y-4">

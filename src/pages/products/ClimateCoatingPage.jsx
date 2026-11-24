@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Calculator, CheckCircle2, MessageCircle, Wind } from 'lucide-react';
 import SEOHead from '@/components/SEOHead';
 import Breadcrumb from '@/components/Breadcrumb';
+import ConviteVideo from '@/components/videos/ConviteVideo';
 
 import { WA_URL as WA, COMPANY } from '@/config/company';
 import { generateProductSchema, generatePtBreadcrumb } from '@/utils/schemaMarkup';
@@ -142,6 +143,8 @@ export default function ClimateCoatingPage() {
                   Também funciona para interior, com ThermoVital.
                 </p>
               </section>
+
+              <ConviteVideo />
 
               <div>
                 <h2 className="text-2xl font-extrabold text-gray-900 mb-4">Linhas de Produto</h2>
