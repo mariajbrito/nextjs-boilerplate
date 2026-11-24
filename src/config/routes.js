@@ -10,6 +10,7 @@
  * priority e changefreq existem so para o sitemap.
  */
 import { BLOG_BASE, POSTS } from '../content/blog/posts.js';
+import { VIDEOS_BASE, VIDEOS } from '../content/videos/videos.js';
 
 /**
  * Uma rota por artigo do blogue, derivada de src/content/blog/posts.js.
@@ -19,6 +20,13 @@ import { BLOG_BASE, POSTS } from '../content/blog/posts.js';
  */
 const BLOG_ROUTES = POSTS.map((post) => ({
   path: `${BLOG_BASE}/${post.slug}`,
+  priority: '0.7',
+  changefreq: 'yearly',
+}));
+
+/** O mesmo para os videos, derivado de src/content/videos/videos.js. */
+const VIDEO_ROUTES = VIDEOS.map((video) => ({
+  path: `${VIDEOS_BASE}/${video.slug}`,
   priority: '0.7',
   changefreq: 'yearly',
 }));
@@ -80,6 +88,10 @@ export const ROUTES = [
   // Blogue. A listagem e fixa, os artigos vem de BLOG_ROUTES.
   { path: BLOG_BASE, priority: '0.8', changefreq: 'weekly' },
   ...BLOG_ROUTES,
+
+  // Videos. A listagem e fixa, as paginas de cada video vem de VIDEO_ROUTES.
+  { path: VIDEOS_BASE, priority: '0.8', changefreq: 'weekly' },
+  ...VIDEO_ROUTES,
 
   // Institucional
   { path: '/about', priority: '0.6', changefreq: 'yearly' },

@@ -55,6 +55,7 @@ const NAV = [
     ]
   },
   { label: 'Blogue', path: '/blogue', matchPrefix: true },
+  { label: 'Vídeos', path: '/videos', matchPrefix: true },
   { label: 'Imobiliário', path: '/real-estate' },
   { label: 'Sobre', path: '/about' },
   { label: 'FAQ', path: '/faqs' },

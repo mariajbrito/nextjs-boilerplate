@@ -1,4 +1,7 @@
 import { COMPANY } from '@/config/company';
+import {
+  videoCover, videoEmbedUrl, videoIsoDate, videoPath,
+} from '@/content/videos/videos';
 
 export const generateLocalBusinessSchema = (language = 'pt') => {
   const isPortuguese = language === 'pt';
@@ -299,4 +302,83 @@ export const generatePtBreadcrumb = (items) => {
     url: i.path ? `${COMPANY.baseUrl}${i.path}` : i.url,
   }))];
   return generateBreadcrumbSchema(built);
+};
+
+
+/* ---------------------------------------------------------------------------
+   Videos. Gemeos dos geradores do blogue acima, mas com o tipo VideoObject,
+   que e o que leva o Google a mostrar a miniatura e o resultado de video na
+   pesquisa. Os dados vem todos de src/content/videos/videos.js, por isso estes
+   geradores recebem so o video e tratam do resto.
+   --------------------------------------------------------------------------- */
+
+/** Endereco absoluto de uma capa, venha ela do site ou do YouTube. */
+const absoluto = (caminho) =>
+  caminho.startsWith('http') ? caminho : `${COMPANY.baseUrl}${caminho}`;
+
+/**
+ * Dados estruturados de um video.
+ *
+ * embedUrl aponta para youtube-nocookie.com, que e mesmo o leitor que a pagina
+ * usa. Anunciar o dominio normal seria descrever uma pagina que nao existe.
+ */
+export const generateVideoObjectSchema = (video) => {
+  const url = `${COMPANY.baseUrl}${videoPath(video.slug)}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    'name': video.title,
+    'description': video.description,
+    'thumbnailUrl': [absoluto(videoCover(video))],
+    'uploadDate': videoIsoDate(video),
+    'embedUrl': videoEmbedUrl(video),
+    'inLanguage': 'pt-PT',
+    'publisher': {
+      '@type': 'Organization',
+      'name': COMPANY.name,
+      'url': COMPANY.baseUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${COMPANY.baseUrl}/logo.png`,
+      },
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': url,
+    },
+    'url': url,
+  };
+};
+
+/**
+ * Dados estruturados da listagem de videos, para que /videos seja entendido
+ * como um indice e nao como um video solto.
+ */
+export const generateVideosCollectionSchema = (videos, url) => {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    'name': `Vídeos ${COMPANY.name}`,
+    'description':
+      'Videos curtos sobre aquecimento, humidade, isolamento e conforto termico, explicados por quem trabalha com estas solucoes ha trinta anos.',
+    'url': url,
+    'inLanguage': 'pt-PT',
+    'publisher': {
+      '@type': 'Organization',
+      'name': COMPANY.name,
+      'url': COMPANY.baseUrl,
+      'logo': {
+        '@type': 'ImageObject',
+        'url': `${COMPANY.baseUrl}/logo.png`,
+      },
+    },
+    'mainEntity': {
+      '@type': 'ItemList',
+      'itemListElement': videos.map((v, i) => ({
+        '@type': 'ListItem',
+        'position': i + 1,
+        'item': generateVideoObjectSchema(v),
+      })),
+    },
+  };
 };

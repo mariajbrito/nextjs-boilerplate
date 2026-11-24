@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Gerado por scripts/sitemap.mjs a partir de src/content/videos/videos.js. Nao editar a mao. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  <url>
+    <loc>https://www.evolucom.pt/videos/esta-a-comparar-o-que-exatamente</loc>
+    <lastmod>2026-11-24</lastmod>
+    <video:video>
+      <video:thumbnail_loc>https://www.evolucom.pt/capa-videos-evoluimos.webp</video:thumbnail_loc>
+      <video:title>Está a comparar o quê exatamente?</video:title>
+      <video:description>Recebeu um orçamento mais barato e acha que o outro foi caro? Pode não estar a comparar o mesmo produto. Eduardo Catarino explica porquê.</video:description>
+      <video:player_loc>https://www.youtube-nocookie.com/embed/jBz9XapVwkQ</video:player_loc>
+      <video:publication_date>2026-11-24T12:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:requires_subscription>no</video:requires_subscription>
+      <video:live>no</video:live>
+      <video:platform relationship="allow">web mobile tv</video:platform>
+    </video:video>
+  </url>
+</urlset>

@@ -30,3 +30,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://www.evolucom.pt/sitemap.xml
+Sitemap: https://www.evolucom.pt/sitemap-videos.xml

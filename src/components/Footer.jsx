@@ -162,6 +162,7 @@ export default function Footer() {
               {[
                 { label: 'Sobre Nós', path: '/about' },
                 { label: 'Blogue', path: '/blogue' },
+                { label: 'Vídeos', path: '/videos' },
                 { label: 'Serviços Imobiliários', path: '/real-estate' },
                 { label: 'Contactos', path: '/contact' },
                 { label: 'Política de Privacidade', path: '/privacy-policy' },
